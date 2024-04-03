@@ -1,7 +1,7 @@
-From 44faca664827029414bf044c1d1b37874c0330c1 Mon Sep 17 00:00:00 2001
+From b259a201a4402586be55b484c8ca54aafa7ee866 Mon Sep 17 00:00:00 2001
 From: "Gautham R. Shenoy" <gautham.shenoy@amd.com>
 Date: Tue, 19 Mar 2024 16:28:36 +0800
-Subject: [PATCH 01/48] cpufreq: amd-pstate: Document *_limit_* fields in
+Subject: [PATCH 01/47] cpufreq: amd-pstate: Document *_limit_* fields in
  struct amd_cpudata
 
 The four fields of struct cpudata namely min_limit_perf,
@@ -37,10 +37,10 @@ index d21838835abd..212f377d615b 100644
 2.44.0
 
 
-From 46a674e834c793caac8b315ba968aebc90635f8e Mon Sep 17 00:00:00 2001
+From 6df298e655e9b8eff07a9d9cb4f076057ec4d6df Mon Sep 17 00:00:00 2001
 From: "Gautham R. Shenoy" <gautham.shenoy@amd.com>
 Date: Tue, 19 Mar 2024 16:28:37 +0800
-Subject: [PATCH 02/48] cpufreq: amd-pstate: Document the units for freq
+Subject: [PATCH 02/47] cpufreq: amd-pstate: Document the units for freq
  variables in amd_cpudata
 
 The min_limit_freq, max_limit_freq, min_freq, max_freq, nominal_freq
@@ -85,10 +85,10 @@ index 212f377d615b..ab7e82533718 100644
 2.44.0
 
 
-From 2f2b801865079300b95a3f58d2c90ce7e4932a14 Mon Sep 17 00:00:00 2001
+From 74934eef88d178472315b618342909edad8a8539 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Tue, 19 Mar 2024 16:28:38 +0800
-Subject: [PATCH 03/48] cpufreq: amd-pstate: Unify computation of
+Subject: [PATCH 03/47] cpufreq: amd-pstate: Unify computation of
  {max,min,nominal,lowest_nonlinear}_freq
 
 Currently the amd_get_{min, max, nominal, lowest_nonlinear}_freq()
@@ -300,10 +300,10 @@ index 2015c9fcc3c9..ba1baa6733e6 100644
 2.44.0
 
 
-From c7aea8a0afe9a7346bed42e2ce6ad1c7101e2f68 Mon Sep 17 00:00:00 2001
+From 1109f1e60475d3ca02705d1d4695aaaa4266b9d3 Mon Sep 17 00:00:00 2001
 From: "Gautham R. Shenoy" <gautham.shenoy@amd.com>
 Date: Tue, 19 Mar 2024 16:28:39 +0800
-Subject: [PATCH 04/48] cpufreq: amd-pstate: Remove
+Subject: [PATCH 04/47] cpufreq: amd-pstate: Remove
  amd_get_{min,max,nominal,lowest_nonlinear}_freq()
 
 amd_get_{min,max,nominal,lowest_nonlinear}_freq() functions merely
@@ -403,10 +403,10 @@ index ba1baa6733e6..132330b4942f 100644
 2.44.0
 
 
-From 43dfc749f8d1b0e9fdfd28a769e6d3e2625cf45e Mon Sep 17 00:00:00 2001
+From 79f8e570ce5c3eedb4593d1d8b4f33c901e5d26d Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Tue, 19 Mar 2024 16:28:40 +0800
-Subject: [PATCH 05/48] cpufreq: amd-pstate: Bail out if min/max/nominal_freq
+Subject: [PATCH 05/47] cpufreq: amd-pstate: Bail out if min/max/nominal_freq
  is 0
 
 The amd-pstate driver cannot work when the min_freq, nominal_freq or
@@ -457,10 +457,10 @@ index 132330b4942f..6708c436e1a2 100644
 2.44.0
 
 
-From a4af13e4258fbbc95f9dff133c385d40f6ddfd3a Mon Sep 17 00:00:00 2001
+From 1c958df7b9be948f3968974af8082954e3f57be0 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Tue, 19 Mar 2024 16:28:41 +0800
-Subject: [PATCH 06/48] cpufreq: amd-pstate: get transition delay and latency
+Subject: [PATCH 06/47] cpufreq: amd-pstate: get transition delay and latency
  value from ACPI tables
 
 Make pstate driver initially retrieve the P-state transition delay and
@@ -541,10 +541,10 @@ index 6708c436e1a2..ec049b62b366 100644
 2.44.0
 
 
-From bd1f4015c9d27c9398e4fe33b1c43eeef850d9af Mon Sep 17 00:00:00 2001
+From f69ce34b39afddaee0bcc36b880b67fe8a772c9c Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Tue, 19 Mar 2024 16:28:42 +0800
-Subject: [PATCH 07/48] cppc_acpi: print error message if CPPC is unsupported
+Subject: [PATCH 07/47] cppc_acpi: print error message if CPPC is unsupported
 
 The amd-pstate driver can fail when _CPC objects are not supported by
 the CPU. However, the current error message is ambiguous (see below) and
@@ -583,10 +583,10 @@ index 4bfbe55553f4..3134101f31b6 100644
 2.44.0
 
 
-From d07bb6d745221b92fc8c847b7786845aa61cb421 Mon Sep 17 00:00:00 2001
+From 913058dec0868b55cb61fc167c4a1327bba02aa1 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Tue, 19 Mar 2024 16:28:43 +0800
-Subject: [PATCH 08/48] cpufreq: amd-pstate: Add quirk for the pstate CPPC
+Subject: [PATCH 08/47] cpufreq: amd-pstate: Add quirk for the pstate CPPC
  capabilities missing
 
 Add quirks table to get CPPC capabilities issue fixed by providing
@@ -717,10 +717,10 @@ index ab7e82533718..6b832153a126 100644
 2.44.0
 
 
-From c15682b809020d88f68ef2709a5ad99a04b6d2c3 Mon Sep 17 00:00:00 2001
+From 231da8f8aa0fad4b08092d591e3e1f5af7c5f44b Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Mon, 18 Mar 2024 18:11:08 +0800
-Subject: [PATCH 09/48] cpufreq: acpi: move MSR_K7_HWCR_CPB_DIS_BIT into
+Subject: [PATCH 09/47] cpufreq: acpi: move MSR_K7_HWCR_CPB_DIS_BIT into
  msr-index.h
 
 There are some other drivers also need to use the
@@ -767,10 +767,10 @@ index 37f1cdf46d29..2fc82831bddd 100644
 2.44.0
 
 
-From 050457cfb82a214a128357653ac78ab51fd2c468 Mon Sep 17 00:00:00 2001
+From a8de7807e68585fb8cb867b29eb26b45a8397e38 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <Perry.Yuan@amd.com>
 Date: Mon, 18 Mar 2024 18:11:09 +0800
-Subject: [PATCH 10/48] cpufreq: amd-pstate: initialize new core precision
+Subject: [PATCH 10/47] cpufreq: amd-pstate: initialize new core precision
  boost state
 
 Add gloal global_params to represent current CPU Performance Boost(cpb)
@@ -907,10 +907,10 @@ index 6b832153a126..c5e41de65f70 100644
 2.44.0
 
 
-From c19a97438d2b920070300e103ee4d2f08cea0270 Mon Sep 17 00:00:00 2001
+From 51f606757d686d8722c67a240b073dd47adf7490 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <Perry.Yuan@amd.com>
 Date: Mon, 18 Mar 2024 18:11:10 +0800
-Subject: [PATCH 11/48] cpufreq: amd-pstate: implement cpb_boost sysfs entry
+Subject: [PATCH 11/47] cpufreq: amd-pstate: implement cpb_boost sysfs entry
  for boost control
 
 With this new sysfs entry `cpb_boost`created, user can change CPU boost
@@ -1062,10 +1062,10 @@ index 81787f83c906..4cd2818045c7 100644
 2.44.0
 
 
-From 0309447b728c8fb9280501517b96b70e03a69c4d Mon Sep 17 00:00:00 2001
+From ab8be749decdade86236f16956b54c8823e2a7f5 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <Perry.Yuan@amd.com>
 Date: Mon, 18 Mar 2024 18:11:11 +0800
-Subject: [PATCH 12/48] cpufreq: amd-pstate: fix the MSR highest perf will be
+Subject: [PATCH 12/47] cpufreq: amd-pstate: fix the MSR highest perf will be
  reset issue while cpb boost off
 
 Select the min perf to fix the highest perf value while update pstate
@@ -1106,10 +1106,10 @@ index 4cd2818045c7..513f91611cd5 100644
 2.44.0
 
 
-From d8dc52735c4bb090c609cbc86c3c0f81e84a8c21 Mon Sep 17 00:00:00 2001
+From d5a062eccc81f4258aa8aa60bdc286edc03ccdd9 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <Perry.Yuan@amd.com>
 Date: Mon, 18 Mar 2024 18:11:12 +0800
-Subject: [PATCH 13/48] Documentation: cpufreq: amd-pstate: introduce the new
+Subject: [PATCH 13/47] Documentation: cpufreq: amd-pstate: introduce the new
  cpu boost control method
 
 Introduce AMD CPU frequency boosting control sysfs entry which used for
@@ -1150,10 +1150,10 @@ index 1e0d101b020a..82fbd01da658 100644
 2.44.0
 
 
-From 789246c9d5740b495680a9e4058e050dd686d088 Mon Sep 17 00:00:00 2001
+From 203b250d319539f47252d87fb99b3f93e4450992 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Mon, 18 Mar 2024 18:11:13 +0800
-Subject: [PATCH 14/48] cpufreq: amd-pstate-ut: support new cpb boost control
+Subject: [PATCH 14/47] cpufreq: amd-pstate-ut: support new cpb boost control
  interface
 
 As the new CPB boost control is enabled, pstate unit test needs to remove
@@ -1182,10 +1182,10 @@ index f04ae67dda37..b3601b0e6dd3 100644
 2.44.0
 
 
-From f1b37efafffaf4ba629062127552a8e0dcf2da2b Mon Sep 17 00:00:00 2001
+From 99789414784479ddd0fb861062419543d9911068 Mon Sep 17 00:00:00 2001
 From: Lucas Lee Jing Yi <lucasleeeeeeeee@gmail.com>
 Date: Mon, 19 Feb 2024 00:10:31 +0800
-Subject: [PATCH 15/48] amd_pstate: fix erroneous highest_perf value on some
+Subject: [PATCH 15/47] amd_pstate: fix erroneous highest_perf value on some
  CPUs
 
 On a Ryzen 7840HS the highest_perf value is 196, not 166 as AMD assumed.
@@ -1257,10 +1257,10 @@ index 513f91611cd5..57bb1fc44b36 100644
 2.44.0
 
 
-From 857a205ac5c268b0234c776280ff5302201cdad6 Mon Sep 17 00:00:00 2001
+From 8d6f427d8231970abde68cd95d56b817da5765b7 Mon Sep 17 00:00:00 2001
 From: Meng Li <li.meng@amd.com>
 Date: Tue, 27 Feb 2024 15:11:33 +0800
-Subject: [PATCH 16/48] cpufreq/amd-pstate: fix setting policy current
+Subject: [PATCH 16/47] cpufreq/amd-pstate: fix setting policy current
  frequency value
 
 When scaling min/max freq values were being setted,
@@ -1340,10 +1340,10 @@ index 57bb1fc44b36..0fd9abe85e95 100644
 2.44.0
 
 
-From beb36604276d3a0a1d7eb7a882f6cfcd78172465 Mon Sep 17 00:00:00 2001
+From df4922fb8345fc4463958e02a2a0b299e9ddf94a Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Mon, 22 Jan 2024 20:21:40 +0100
-Subject: [PATCH 17/48] tcp/bbr3: initial import
+Subject: [PATCH 17/47] tcp/bbr3: initial import
 
 Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
 ---
@@ -1381,7 +1381,7 @@ index 55399ee2a57e..c6193d87a8e6 100644
  		recvmsg_inq : 1,/* Indicate # of bytes in queue upon recvmsg */
  		fastopen_connect:1, /* FASTOPEN_CONNECT sockopt */
 diff --git a/include/net/inet_connection_sock.h b/include/net/inet_connection_sock.h
-index 9ab4bf704e86..f681cfdb2164 100644
+index ccf171f7eb60..400a226d6bea 100644
 --- a/include/net/inet_connection_sock.h
 +++ b/include/net/inet_connection_sock.h
 @@ -137,8 +137,8 @@ struct inet_connection_sock {
@@ -1697,10 +1697,10 @@ index 7f518ea5f4ac..8f9b677c20e1 100644
  	.undo_cwnd = bpf_tcp_ca_undo_cwnd,
  	.sndbuf_expand = bpf_tcp_ca_sndbuf_expand,
 diff --git a/net/ipv4/tcp.c b/net/ipv4/tcp.c
-index d20b62d52171..fdc70f7e9479 100644
+index e767721b3a58..07deb518e14f 100644
 --- a/net/ipv4/tcp.c
 +++ b/net/ipv4/tcp.c
-@@ -3090,6 +3090,7 @@ int tcp_disconnect(struct sock *sk, int flags)
+@@ -3092,6 +3092,7 @@ int tcp_disconnect(struct sock *sk, int flags)
  	tp->rx_opt.dsack = 0;
  	tp->rx_opt.num_sacks = 0;
  	tp->rcv_ooopack = 0;
@@ -1708,7 +1708,7 @@ index d20b62d52171..fdc70f7e9479 100644
  
  
  	/* Clean up fastopen related fields */
-@@ -3816,6 +3817,8 @@ void tcp_get_info(struct sock *sk, struct tcp_info *info)
+@@ -3818,6 +3819,8 @@ void tcp_get_info(struct sock *sk, struct tcp_info *info)
  		info->tcpi_options |= TCPI_OPT_ECN;
  	if (tp->ecn_flags & TCP_ECN_SEEN)
  		info->tcpi_options |= TCPI_OPT_ECN_SEEN;
@@ -4727,10 +4727,10 @@ index d1ad20ce1c8c..ef74f33c7905 100644
 2.44.0
 
 
-From d7595828a0cbc4ebf344c944114a92c5b818e87e Mon Sep 17 00:00:00 2001
+From 54f62704e3296fa6dc046324c499496dfc8e07fa Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Fri, 19 Jan 2024 08:04:42 -0700
-Subject: [PATCH 18/48] block/mq-deadline: pass in queue directly to
+Subject: [PATCH 18/47] block/mq-deadline: pass in queue directly to
  dd_insert_request()
 
 The hardware queue isn't relevant, deadline only operates on the queue
@@ -4772,10 +4772,10 @@ index 02a916ba62ee..ea0e30c3f281 100644
 2.44.0
 
 
-From 066896b794d5c7d5a9f406913879f403cd21ce71 Mon Sep 17 00:00:00 2001
+From 1f69f50c23de31a4043ead7ef1f1d1d85ff92e45 Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Thu, 18 Jan 2024 10:46:52 -0700
-Subject: [PATCH 19/48] block/mq-deadline: serialize request dispatching
+Subject: [PATCH 19/47] block/mq-deadline: serialize request dispatching
 
 If we're entering request dispatch but someone else is already
 dispatching, then just skip this dispatch. We know IO is inflight and
@@ -4878,10 +4878,10 @@ index ea0e30c3f281..4e40223b6931 100644
 2.44.0
 
 
-From 87769a7428199be8fffa4012e3fcecb2d9e4776f Mon Sep 17 00:00:00 2001
+From 71c7bb75d16133ce66ad05eea370b43d966305e8 Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Fri, 19 Jan 2024 08:16:36 -0700
-Subject: [PATCH 20/48] block/mq-deadline: skip expensive merge lookups if
+Subject: [PATCH 20/47] block/mq-deadline: skip expensive merge lookups if
  contended
 
 We do several stages of merging in the block layer - the most likely one
@@ -4937,10 +4937,10 @@ index 4e40223b6931..524828b09ad9 100644
 2.44.0
 
 
-From 613dbfc23f5ab76c86435a2de6dc0b62bc39b0bb Mon Sep 17 00:00:00 2001
+From eac9730ab2ff0582d131b64ce9e3fe90a7bf5069 Mon Sep 17 00:00:00 2001
 From: Bart Van Assche <bvanassche@acm.org>
 Date: Thu, 18 Jan 2024 10:53:34 -0700
-Subject: [PATCH 21/48] block/mq-deadline: use separate insertion lists
+Subject: [PATCH 21/47] block/mq-deadline: use separate insertion lists
 
 [Missing commit message from Bart]
 
@@ -5125,10 +5125,10 @@ index 524828b09ad9..8bf621316a9e 100644
 2.44.0
 
 
-From f9a25b1a92d589b8d7c47be225ef12a7e39db25a Mon Sep 17 00:00:00 2001
+From b42443466c99874c64a01ab31f44a6981f932aac Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Sat, 20 Jan 2024 14:50:58 -0700
-Subject: [PATCH 22/48] block/bfq: pass in queue directly to
+Subject: [PATCH 22/47] block/bfq: pass in queue directly to
  dd_insert_request()
 
 The hardware queue isn't relevant, bfq only operates on the queue
@@ -5169,10 +5169,10 @@ index 4b88a54a9b76..9fa427d5f9f8 100644
 2.44.0
 
 
-From 75d6549aeddb4b30c02d37023661ebcfda45ed5d Mon Sep 17 00:00:00 2001
+From 4bedd4dfe43405b21320262cd077672875ecadf4 Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Sat, 20 Jan 2024 14:54:37 -0700
-Subject: [PATCH 23/48] block/bfq: serialize request dispatching
+Subject: [PATCH 23/47] block/bfq: serialize request dispatching
 
 If we're entering request dispatch but someone else is already
 dispatching, then just skip this dispatch. We know IO is inflight and
@@ -5280,10 +5280,10 @@ index 467e8cfc41a2..56ff69f22163 100644
 2.44.0
 
 
-From 8b3058afb1a326810588dd4c54f2eabb760a2357 Mon Sep 17 00:00:00 2001
+From e4f902490c7abfcadaab74587a3e63d1a3ddf30a Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Sat, 20 Jan 2024 14:58:37 -0700
-Subject: [PATCH 24/48] block/bfq: skip expensive merge lookups if contended
+Subject: [PATCH 24/47] block/bfq: skip expensive merge lookups if contended
 
 We do several stages of merging in the block layer - the most likely one
 to work is also the cheap one, merging direct in the per-task plug when
@@ -5364,10 +5364,10 @@ index 590882b64783..ec3ec719484d 100644
 2.44.0
 
 
-From 317f3be449cc84792f3b27b9e47e166e2e8bd4e3 Mon Sep 17 00:00:00 2001
+From 3e558a04a5f3fc9187457ea7bc909099aa2a4a3d Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Sat, 20 Jan 2024 15:04:51 -0700
-Subject: [PATCH 25/48] block/bfq: use separate insertion lists
+Subject: [PATCH 25/47] block/bfq: use separate insertion lists
 
 Based on the similar patch for mq-deadline, this uses separate
 insertion lists so we can defer touching dd->lock until dispatch
@@ -5587,10 +5587,10 @@ index 56ff69f22163..f44f5d4ec2f4 100644
 2.44.0
 
 
-From fbf62110ca4e71d14a27eaf29d986e2bc6dd3903 Mon Sep 17 00:00:00 2001
+From b2ecbb2febd55261eb2017a4538f78ecaa2e38c7 Mon Sep 17 00:00:00 2001
 From: Yu Kuai <yukuai1@huaweicloud.com>
 Date: Fri, 15 Mar 2024 09:17:56 +0800
-Subject: [PATCH 26/48] md/raid5: fix deadlock between md0_reclaim and
+Subject: [PATCH 26/47] md/raid5: fix deadlock between md0_reclaim and
  md0_raid5
 
 Commit 5e2cf333b7bd ("md/raid5: Wait for MD_SB_CHANGE_PENDING in
@@ -5660,10 +5660,10 @@ index d874abfc1836..27bdbe1469fb 100644
 2.44.0
 
 
-From 1ace8975b37df3ff41a7bdc566209a3630cf9ea7 Mon Sep 17 00:00:00 2001
+From 1ca7c80ce5eba32c860b0aab283bbbe1801b9bbb Mon Sep 17 00:00:00 2001
 From: Yu Kuai <yukuai3@huawei.com>
 Date: Fri, 8 Mar 2024 17:37:26 +0800
-Subject: [PATCH 27/48] raid1: fix use-after-free for original bio in
+Subject: [PATCH 27/47] raid1: fix use-after-free for original bio in
  raid1_write_request()
 
 r1_bio->bios[] is used to record new bios that will be issued to
@@ -5755,10 +5755,10 @@ index be8ac24f50b6..7b8a71ca66dd 100644
 2.44.0
 
 
-From 1ac5035726f19ea899b0d001f5e00b04704959c3 Mon Sep 17 00:00:00 2001
+From 1295cd19ec0c359a011d22d5bfe814d3fdd6fbb9 Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Thu, 24 Aug 2023 23:20:15 +0200
-Subject: [PATCH 28/48] kbuild: add generic x86_64 levels
+Subject: [PATCH 28/47] kbuild: add generic x86_64 levels
 
 This is a truncated version of graysky's patch that only introduces
 extra x86_64 generic levels.
@@ -5815,7 +5815,7 @@ index 2a7279d80460..8f9263a4bc9c 100644
  	default "5" if MWINCHIP3D || MWINCHIPC6 || MCRUSOE || MEFFICEON || MCYRIXIII || MK6 || MPENTIUMIII || MPENTIUMII || M686 || M586MMX || M586TSC || M586 || MVIAC3_2 || MGEODE_LX
  
 diff --git a/arch/x86/Makefile b/arch/x86/Makefile
-index 662d9d4033e6..826e076cd581 100644
+index 5ab93fcdd691..c98bb8415362 100644
 --- a/arch/x86/Makefile
 +++ b/arch/x86/Makefile
 @@ -158,6 +158,9 @@ else
@@ -5832,2610 +5832,10 @@ index 662d9d4033e6..826e076cd581 100644
 2.44.0
 
 
-From 387dafc0b23aa303095b687038259f50ad81085e Mon Sep 17 00:00:00 2001
-From: Oleksandr Natalenko <oleksandr@natalenko.name>
-Date: Wed, 7 Feb 2024 22:42:16 +0100
-Subject: [PATCH 29/48] drivers/ddcci: initial merge
-
-Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
----
- drivers/char/Kconfig                      |   11 +
- drivers/char/Makefile                     |    1 +
- drivers/char/ddcci.c                      | 1913 +++++++++++++++++++++
- drivers/video/backlight/Kconfig           |   11 +
- drivers/video/backlight/Makefile          |    1 +
- drivers/video/backlight/ddcci-backlight.c |  413 +++++
- include/linux/ddcci.h                     |  170 ++
- 7 files changed, 2520 insertions(+)
- create mode 100644 drivers/char/ddcci.c
- create mode 100644 drivers/video/backlight/ddcci-backlight.c
- create mode 100644 include/linux/ddcci.h
-
-diff --git a/drivers/char/Kconfig b/drivers/char/Kconfig
-index 7c8dd0abcfdf..70a33f3b5475 100644
---- a/drivers/char/Kconfig
-+++ b/drivers/char/Kconfig
-@@ -422,4 +422,15 @@ config ADI
- 	  and SSM (Silicon Secured Memory).  Intended consumers of this
- 	  driver include crash and makedumpfile.
- 
-+config DDCCI
-+	tristate "DDCCI display protocol support"
-+	depends on I2C
-+	help
-+	  Display Data Channel Command Interface is an
-+	  interface that allows the kernel to "talk"
-+	  to most displays made after 2005. Check your
-+	  display's specification to see if it has
-+	  support for this. This depends on I2C to
-+	  compile.
-+
- endmenu
-diff --git a/drivers/char/Makefile b/drivers/char/Makefile
-index e9b360cdc99a..9c1607166349 100644
---- a/drivers/char/Makefile
-+++ b/drivers/char/Makefile
-@@ -3,6 +3,7 @@
- # Makefile for the kernel character device drivers.
- #
- 
-+obj-$(CONFIG_DDCCI)				+= ddcci.o
- obj-y				+= mem.o random.o
- obj-$(CONFIG_TTY_PRINTK)	+= ttyprintk.o
- obj-y				+= misc.o
-diff --git a/drivers/char/ddcci.c b/drivers/char/ddcci.c
-new file mode 100644
-index 000000000000..61e2eaa15805
---- /dev/null
-+++ b/drivers/char/ddcci.c
-@@ -0,0 +1,1913 @@
-+/*
-+ *  DDC/CI sub-bus driver
-+ *
-+ *  Copyright (c) 2015 Christoph Grenz
-+ */
-+
-+/*
-+ * This program is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License as published by the Free
-+ * Software Foundation; either version 2 of the License, or (at your option)
-+ * any later version.
-+ */
-+
-+#define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
-+#include <linux/fcntl.h>
-+#include <linux/cdev.h>
-+#include <linux/delay.h>
-+#include <linux/device.h>
-+#include <linux/fs.h>
-+#include <linux/i2c.h>
-+#include <linux/module.h>
-+#include <linux/mutex.h>
-+#include <linux/rwsem.h>
-+#include <linux/slab.h>
-+#include <linux/uaccess.h>
-+#include <linux/version.h>
-+
-+#include <linux/ddcci.h>
-+
-+#define DDCCI_RECV_BUFFER_SIZE 130
-+#define DEVICE_NAME "ddcci"
-+#define DDCCI_MAX_CAP_CHUNKS 200
-+
-+static unsigned int delay = 60;
-+static unsigned short autoprobe_addrs[127] = {0xF0, 0xF2, 0xF4, 0xF6, 0xF8};
-+static int autoprobe_addr_count = 5;
-+
-+static bool module_initialized = false;
-+static dev_t ddcci_cdev_first;
-+static dev_t ddcci_cdev_next;
-+static dev_t ddcci_cdev_end;
-+static DEFINE_MUTEX(core_lock);
-+
-+struct bus_type ddcci_bus_type;
-+EXPORT_SYMBOL_GPL(ddcci_bus_type);
-+
-+/* Assert neccessary string array sizes  */
-+#ifndef sizeof_field
-+# define sizeof_field(t,m) FIELD_SIZEOF(t,m)
-+#endif
-+static_assert(sizeof_field(struct ddcci_device, prot) > 8);
-+static_assert(sizeof_field(struct ddcci_device, type) > 8);
-+static_assert(sizeof_field(struct ddcci_device, model) > 8);
-+static_assert(sizeof_field(struct ddcci_device, vendor) > 8);
-+static_assert(sizeof_field(struct ddcci_device, module) > 8);
-+
-+/* Internal per-i2c-client driver data */
-+struct ddcci_bus_drv_data {
-+	unsigned long quirks;
-+	struct i2c_client *i2c_dev;
-+	struct mutex lock;
-+	unsigned char recv_buffer[DDCCI_RECV_BUFFER_SIZE];
-+};
-+
-+/* Replace non-alphanumeric characters in a string (used for modalias) */
-+static void ddcci_modalias_clean(char *string, size_t n, char replacement)
-+{
-+	int i;
-+	for (i = 0; i < n; ++i) {
-+		char c = string[i];
-+		if (c == 0) {
-+			return;
-+		} else if (c < '0' || (c > '9' && c < 'A') || (c > 'Z' && c < 'a') || c > 'z') {
-+			string[i] = replacement;
-+		}
-+	}
-+}
-+
-+/* Write a message to the DDC/CI bus using i2c_smbus_write_byte() */
-+static int __ddcci_write_bytewise(struct i2c_client *client, unsigned char addr,
-+				  bool p_flag, const unsigned char * __restrict buf,
-+				  unsigned char len)
-+{
-+	int ret = 0;
-+	unsigned char outer_addr = (unsigned char)(client->addr << 1);
-+	unsigned xor = outer_addr; /* initial xor value */
-+
-+	/* Consistency checks */
-+	if (len > 127)
-+		return -EINVAL;
-+
-+	/* Special case: sender to 0x6E is always 0x51 */
-+	if (addr == DDCCI_DEFAULT_DEVICE_ADDR) {
-+		addr = DDCCI_HOST_ADDR_ODD;
-+	} else {
-+		/* When sending the odd address is used */
-+		addr = addr | 1;
-+	}
-+
-+	/* first byte: sender address */
-+	xor ^= addr;
-+	ret = i2c_smbus_write_byte(client, addr);
-+	if (ret < 0)
-+		return ret;
-+
-+	/* second byte: protocol flag and message size */
-+	xor ^= ((p_flag << 7) | len);
-+	ret = i2c_smbus_write_byte(client, (p_flag << 7)|len);
-+	if (ret < 0)
-+		return ret;
-+
-+	/* send payload */
-+	while (len--) {
-+		xor ^= (*buf);
-+		ret = i2c_smbus_write_byte(client, (*buf));
-+		if (ret < 0)
-+			return ret;
-+		buf++;
-+	}
-+
-+	/* send checksum */
-+	ret = i2c_smbus_write_byte(client, xor);
-+	return ret;
-+}
-+
-+/* Write a message to the DDC/CI bus using i2c_master_send() */
-+static int __ddcci_write_block(struct i2c_client *client, unsigned char addr,
-+			       unsigned char *sendbuf, bool p_flag,
-+			       const unsigned char *data, unsigned char len)
-+{
-+	unsigned char outer_addr = (unsigned char)(client->addr << 1);
-+	unsigned xor = outer_addr;	/* initial xor value */
-+	unsigned char *ptr = sendbuf;
-+
-+	/* Consistency checks */
-+	if (len > 127)
-+		return -EINVAL;
-+
-+	/* Special case: sender to 0x6E is always 0x51 */
-+	if (addr == DDCCI_DEFAULT_DEVICE_ADDR) {
-+		addr = DDCCI_HOST_ADDR_ODD;
-+	} else {
-+		/* When sending the odd address is used */
-+		addr = addr | 1;
-+	}
-+
-+	/* first byte: sender address */
-+	xor ^= addr;
-+	*(ptr++) = addr;
-+	/* second byte: protocol flag and message size */
-+	xor ^= ((p_flag << 7) | len);
-+	*(ptr++) = (p_flag << 7)|len;
-+	/* payload */
-+	while (len--) {
-+		xor ^= (*data);
-+		*(ptr++) = (*data);
-+		data++;
-+	}
-+	/* checksum */
-+	(*ptr) = xor;
-+
-+	/* Send it */
-+	return i2c_master_send(client, sendbuf, ptr - sendbuf + 1);
-+}
-+
-+/*
-+ * Write a message to the DDC/CI bus.
-+ *
-+ * You must hold the bus mutex when calling this function.
-+ */
-+static int ddcci_write(struct i2c_client *client, unsigned char addr,
-+		       bool p_flag, const unsigned char *data,
-+		       unsigned char len)
-+{
-+	struct ddcci_bus_drv_data *drv_data;
-+	unsigned char *sendbuf;
-+	int ret;
-+
-+	drv_data = i2c_get_clientdata(client);
-+
-+
-+	pr_debug("sending to %d:%02x:%02x: %*ph\n", client->adapter->nr,
-+		 client->addr << 1, addr, len, data);
-+	if (drv_data->quirks & DDCCI_QUIRK_WRITE_BYTEWISE) {
-+		ret = __ddcci_write_bytewise(client, addr, p_flag, data, len);
-+	} else {
-+		sendbuf = drv_data->recv_buffer;
-+		ret = __ddcci_write_block(client, addr, sendbuf, p_flag, data, len);
-+	}
-+
-+	return ret;
-+}
-+
-+/*
-+ * Read a response from the DDC/CI bus with headers directly into a buffer.
-+ * Always check for DDCCI_QUIRK_SKIP_FIRST_BYTE when using this function.
-+ * The returned length contains the whole unmodified response.
-+ * If -EMSGSIZE is returned, the buffer contains the response up to `len`.
-+ * If any other negative error code is returned, the buffer content is
-+ * unspecified.
-+ */
-+static int __ddcci_read(struct i2c_client *client, unsigned char addr,
-+			bool p_flag, unsigned long quirks, unsigned char *buf,
-+			unsigned char len)
-+{
-+	int i, payload_len, packet_length, ret;
-+	unsigned char xor = DDCCI_HOST_ADDR_EVEN;
-+
-+	/* Consistency checks */
-+	if (len < 3)
-+		return -EINVAL;
-+
-+	/* Read frame */
-+	ret = i2c_master_recv(client, buf, len);
-+	if (ret < 0)
-+		goto out_err;
-+	packet_length = ret;
-+
-+	/* Skip first byte if quirk active */
-+	if ((quirks & DDCCI_QUIRK_SKIP_FIRST_BYTE) && ret > 0 && len > 0) {
-+		ret--;
-+		len--;
-+		buf++;
-+	}
-+
-+	/* If answer too short (= incomplete) break out */
-+	if (ret < 3) {
-+		ret = -EIO;
-+		goto out_err;
-+	}
-+
-+	/* validate first byte */
-+	if (unlikely(buf[0] != addr)) {
-+		ret = (buf[0] == '\0') ? -EAGAIN : -EIO;
-+		goto out_err;
-+	}
-+
-+	/* validate second byte (protocol flag) */
-+	if (unlikely((buf[1] & 0x80) != (p_flag << 7))) {
-+		if (!p_flag || !(quirks & DDCCI_QUIRK_NO_PFLAG)) {
-+			ret = -EIO;
-+			goto out_err;
-+		}
-+	}
-+
-+	/* get and check payload length */
-+	payload_len = buf[1] & 0x7F;
-+	if (3+payload_len > packet_length)
-+		return -EBADMSG;
-+	if (3+payload_len > len)
-+		return -EMSGSIZE;
-+
-+	/* calculate checksum */
-+	for (i = 0; i < 3+payload_len; i++)
-+		xor ^= buf[i];
-+
-+	/* verify checksum */
-+	if (xor != 0) {
-+		dev_err(&client->dev, "invalid DDC/CI response, corrupted data - xor is 0x%02x, length 0x%02x\n",
-+			xor, payload_len);
-+		ret = -EBADMSG;
-+		goto out_err;
-+	}
-+
-+	/* return result */
-+	ret = payload_len+3+((quirks & DDCCI_QUIRK_SKIP_FIRST_BYTE)?1:0);
-+
-+out_err:
-+	return ret;
-+}
-+
-+/*
-+ * Read a response from the DDC/CI bus
-+ *
-+ * You must hold the bus mutex when calling this function.
-+ */
-+static int ddcci_read(struct i2c_client *client, unsigned char addr,
-+		      bool p_flag, unsigned char *buf, unsigned char len)
-+{
-+	struct ddcci_bus_drv_data *drv_data;
-+	unsigned char *recvbuf;
-+	int ret;
-+
-+	drv_data = i2c_get_clientdata(client);
-+	recvbuf = drv_data->recv_buffer;
-+
-+	/* Read frame */
-+	ret = __ddcci_read(client, addr, p_flag,
-+		drv_data->quirks, recvbuf, DDCCI_RECV_BUFFER_SIZE);
-+	if (ret < 0)
-+		return ret;
-+
-+	if (drv_data->quirks & DDCCI_QUIRK_SKIP_FIRST_BYTE)
-+		recvbuf++;
-+
-+	/* return result */
-+	if (buf) {
-+		if (ret > 3) {
-+			ret = ret-3;
-+			/* copy to caller buffer */
-+			memcpy(buf, &recvbuf[2], (ret < len) ? ret : len);
-+
-+			if (ret > len) {
-+				/* if message was truncated, return -EMSGSIZE */
-+				pr_debug("received from %d:%02x:%02x: [%u/%u] %*ph ...\n",
-+					 client->adapter->nr, client->addr << 1,
-+					 addr, ret, len, len, buf);
-+				ret = -EMSGSIZE;
-+			} else {
-+				pr_debug("received from %d:%02x:%02x: [%u/%u] %*ph\n",
-+					 client->adapter->nr, client->addr << 1,
-+					 addr, ret, len, ret, buf);
-+			}
-+		}
-+	}
-+	if (!(drv_data->quirks & DDCCI_QUIRK_WRITE_BYTEWISE)) {
-+		/* second read to clear buffers, needed on some devices */
-+		__ddcci_read(client, addr, true, drv_data->quirks, recvbuf, 1);
-+	}
-+	return ret;
-+}
-+
-+/* Request the capability string for a device and put it into buf */
-+static int ddcci_get_caps(struct i2c_client *client, unsigned char addr,
-+			  unsigned char *buf, unsigned int len)
-+{
-+	int result = 0, counter = 0, offset = 0;
-+	unsigned char cmd[3] = { DDCCI_COMMAND_CAPS, 0x00, 0x00 };
-+	unsigned char *chunkbuf = kzalloc(35, GFP_KERNEL);
-+
-+	if (!chunkbuf)
-+		return -ENOMEM;
-+
-+	do {
-+		/* Send command */
-+		result = ddcci_write(client, addr, true, cmd, sizeof(cmd));
-+		if (result < 0)
-+			goto err_free;
-+		msleep(delay);
-+		/* read result chunk */
-+		result = ddcci_read(client, addr, true, chunkbuf,
-+				    (len > 32) ? 35 : len+3);
-+		if (result < 0)
-+			goto err_free;
-+
-+		if (result > 0) {
-+			/* check chunk header */
-+			if (chunkbuf[0] != DDCCI_REPLY_CAPS) {
-+				result = -EIO;
-+				goto err_free;
-+			}
-+			if (chunkbuf[1] != cmd[1] || chunkbuf[2] != cmd[2]) {
-+				result = -EIO;
-+				goto err_free;
-+			}
-+			if (result < 3) {
-+				result = -EIO;
-+				goto err_free;
-+			}
-+			memcpy(buf, chunkbuf+3, min((unsigned int)result-3, len));
-+
-+			counter++;
-+			/* adjust offset, etc. */
-+			offset += result-3;
-+			len -= result-3;
-+			buf += result-3;
-+			cmd[1] = offset >> 8;
-+			cmd[2] = offset & 0xFF;
-+			/* Another superfluous read to make some devices happy... */
-+			ddcci_read(client, addr, true, NULL, 2);
-+		}
-+	} while (result > 3 && counter < DDCCI_MAX_CAP_CHUNKS);
-+
-+	kfree(chunkbuf);
-+	return offset+result-3;
-+err_free:
-+	kfree(chunkbuf);
-+	return result;
-+}
-+
-+/*
-+ * Request the device identification and put it into buf.
-+ *
-+ * Also detects all communication quirks and sets the corresponding flags
-+ * in the ddcci_bus_drv_data structure associated with client.
-+ *
-+ * The identification command will fail on most DDC devices, as it is optional
-+ * to support, but even the "failed" response suffices to detect quirks.
-+ */
-+static int ddcci_identify_device(struct i2c_client *client, unsigned char addr,
-+				 unsigned char *buf, unsigned char len)
-+{
-+	int i, payload_len, ret = -ENODEV;
-+	unsigned long quirks;
-+	unsigned char cmd[1] = { DDCCI_COMMAND_ID };
-+	unsigned char *buffer;
-+	unsigned char xor = DDCCI_HOST_ADDR_EVEN;
-+	struct ddcci_bus_drv_data *bus_drv_data;
-+
-+	bus_drv_data = i2c_get_clientdata(client);
-+	quirks = bus_drv_data->quirks;
-+	buffer = bus_drv_data->recv_buffer;
-+
-+	/* Send Identification command */
-+	if (!(quirks & DDCCI_QUIRK_WRITE_BYTEWISE)) {
-+		ret = __ddcci_write_block(client, addr, buffer, true, cmd, sizeof(cmd));
-+		dev_dbg(&client->dev,
-+			"[%02x:%02x] writing identification command in block mode: %d\n",
-+			client->addr << 1, addr, ret);
-+		if ((ret == -ENXIO)
-+		    && i2c_check_functionality(client->adapter,
-+					       I2C_FUNC_SMBUS_WRITE_BYTE)) {
-+			quirks |= DDCCI_QUIRK_WRITE_BYTEWISE;
-+			dev_info(&client->dev,
-+				"DDC/CI bus quirk detected: writes must be done bytewise\n");
-+			/* Some devices need writing twice after a failed blockwise write */
-+			__ddcci_write_bytewise(client, addr, true, cmd, sizeof(cmd));
-+			msleep(delay);
-+		}
-+	}
-+	if (ret < 0 && (quirks & DDCCI_QUIRK_WRITE_BYTEWISE)) {
-+		ret = __ddcci_write_bytewise(client, addr, true, cmd, sizeof(cmd));
-+		dev_dbg(&client->dev,
-+			"[%02x:%02x] writing identification command in bytewise mode: %d\n",
-+			client->addr << 1, addr, ret);
-+	}
-+	if (ret < 0)
-+		return -ENODEV;
-+
-+	/* Wait */
-+	msleep(delay);
-+
-+	/* Receive response */
-+	ret = i2c_master_recv(client, buffer, DDCCI_RECV_BUFFER_SIZE);
-+	if (ret < 0) {
-+		dev_dbg(&client->dev,
-+			"[%02x:%02x] receiving identification response resulted in errno %d\n",
-+			client->addr << 1, addr, ret);
-+		return ret;
-+	}
-+
-+	if (ret == 0) {
-+		dev_dbg(&client->dev,
-+			"[%02x:%02x] no identification response received\n",
-+			client->addr << 1, addr);
-+		return ret;
-+	}
-+
-+	/* Skip first byte if quirk already active */
-+	if (quirks & DDCCI_QUIRK_SKIP_FIRST_BYTE && ret > 1) {
-+		dev_dbg(&client->dev,
-+			"[%02x:%02x] doubled first byte quirk in effect\n",
-+			client->addr << 1, addr);
-+		ret--;
-+		buffer++;
-+	}
-+
-+	/* If answer too short (= incomplete) break out */
-+	if (ret < 3) {
-+		dev_dbg(&client->dev,
-+			"[%02x:%02x] identification response is too short (%d bytes)\n",
-+			client->addr << 1, addr, ret);
-+		return -EIO;
-+	}
-+
-+	/* validate first byte */
-+	if (buffer[0] != addr) {
-+		dev_dbg(&client->dev,
-+			"[%02x:%02x] identification response: %*ph\n",
-+			client->addr << 1, addr, (ret > 32 ? 32 : ret), buffer);
-+
-+		dev_dbg(&client->dev,
-+			"[%02x:%02x] identification response invalid (expected first byte %02x, got %02x)\n",
-+			client->addr << 1, addr, addr, buffer[0]);
-+		return -ENODEV;
-+	}
-+
-+	/* Check if first byte is doubled (QUIRK_SKIP_FIRST_BYTE) */
-+	if (!(quirks & DDCCI_QUIRK_SKIP_FIRST_BYTE)) {
-+		if (buffer[0] == buffer[1]) {
-+			quirks |= DDCCI_QUIRK_SKIP_FIRST_BYTE;
-+			dev_info(&client->dev,
-+				"DDC/CI bus quirk detected: doubled first byte on read\n");
-+			ret--;
-+			buffer++;
-+			if (ret < 3)
-+				return -EIO;
-+		}
-+	}
-+
-+	/* validate second byte (protocol flag) */
-+	if ((buffer[1] & 0x80) != 0x80 && !(quirks & DDCCI_QUIRK_NO_PFLAG)) {
-+		dev_info(&client->dev,
-+			"DDC/CI bus quirk detected: device omits protocol flag on responses\n");
-+		quirks |= DDCCI_QUIRK_NO_PFLAG;
-+	}
-+
-+	/* get and check payload length */
-+	payload_len = buffer[1] & 0x7F;
-+	if (3+payload_len > ret) {
-+		dev_dbg(&client->dev,
-+			"[%02x:%02x] identification response: %*ph ...\n",
-+			client->addr << 1, addr, ret, buffer);
-+		dev_dbg(&client->dev,
-+			"[%02x:%02x] identification response was truncated (expected %d bytes, got %d)\n",
-+			client->addr << 1, addr, 3+payload_len, ret);
-+		return -EBADMSG;
-+	}
-+
-+	dev_dbg(&client->dev,
-+		"[%02x:%02x] identification response: %*ph\n",
-+		client->addr << 1, addr, 3+payload_len, buffer);
-+
-+	/* calculate checksum */
-+	for (i = 0; i < 3+payload_len; i++)
-+		xor ^= buffer[i];
-+
-+	/* verify checksum */
-+	if (xor != 0) {
-+		dev_err(&client->dev,
-+			"[%02x:%02x] invalid DDC/CI response, corrupted data - xor is 0x%02x, length 0x%02x\n",
-+			client->addr << 1, addr, xor, payload_len);
-+		return -EBADMSG;
-+	}
-+
-+	/* save quirks */
-+	bus_drv_data->quirks = quirks;
-+
-+	/* return result */
-+	if (payload_len <= len) {
-+		ret = payload_len;
-+		memcpy(buf, &buffer[2], payload_len);
-+	} else {
-+		ret = -EMSGSIZE;
-+		memcpy(buf, &buffer[2], len);
-+	}
-+	return ret;
-+}
-+
-+/* Character device */
-+
-+/* Data structure for an open file handle */
-+struct ddcci_fp_data {
-+	struct ddcci_device *dev;
-+	bool exclusive;
-+	unsigned char buffer[129];
-+};
-+
-+/* Called when the character device is opened */
-+static int ddcci_cdev_open(struct inode *inode, struct file *filp)
-+{
-+	struct ddcci_device *dev = container_of(inode->i_cdev,
-+						struct ddcci_device, cdev);
-+	struct ddcci_fp_data *fp_data = NULL;
-+
-+	fp_data = kzalloc(sizeof(struct ddcci_fp_data), GFP_KERNEL);
-+
-+	if (!fp_data)
-+		return -ENOMEM;
-+
-+	fp_data->exclusive = filp->f_flags & O_EXCL;
-+
-+	if (fp_data->exclusive) {
-+		if (down_write_trylock(&dev->cdev_sem) == 0) {
-+			kfree(fp_data);
-+			return -EBUSY;
-+		}
-+	} else {
-+		if (down_read_trylock(&dev->cdev_sem) == 0) {
-+			kfree(fp_data);
-+			return -EBUSY;
-+		}
-+	}
-+
-+	fp_data->dev = dev;
-+	filp->private_data = fp_data;
-+
-+	return 0;
-+}
-+
-+/* Called when the character device is closed */
-+static int ddcci_cdev_close(struct inode *inode, struct file *filp)
-+{
-+	struct ddcci_fp_data *fp_data = filp->private_data;
-+	struct ddcci_device *dev = fp_data->dev;
-+
-+	if (fp_data->exclusive)
-+		up_write(&dev->cdev_sem);
-+	else
-+		up_read(&dev->cdev_sem);
-+
-+	filp->private_data = NULL;
-+	kfree(fp_data);
-+	return 0;
-+}
-+
-+/* Called when reading from the character device */
-+static ssize_t ddcci_cdev_read(struct file *filp, char __user *buffer,
-+			       size_t length, loff_t *offset)
-+{
-+	struct ddcci_fp_data *fp_data = filp->private_data;
-+	struct ddcci_device *dev = fp_data->dev;
-+	unsigned char *buf = fp_data->buffer;
-+	const bool nonblocking = (filp->f_flags & O_NONBLOCK) != 0;
-+	int ret = 0;
-+
-+	if ((filp->f_mode & FMODE_READ) == 0)
-+		return -EBADF;
-+
-+	/* Lock mutex */
-+	if (nonblocking) {
-+		if (mutex_trylock(&dev->bus_drv_data->lock))
-+			return -EAGAIN;
-+	} else {
-+		if (mutex_lock_interruptible(&dev->bus_drv_data->lock))
-+			return -ERESTARTSYS;
-+	}
-+
-+	/* Execute read */
-+	ret = ddcci_read(dev->bus_drv_data->i2c_dev, dev->inner_addr, true, buf,
-+			 length);
-+
-+	if (ret > 0) {
-+		/* Copy data from user space */
-+		if (copy_to_user(buffer, buf, ret)) {
-+			ret = -EFAULT;
-+			goto out;
-+		}
-+	}
-+
-+out:
-+	mutex_unlock(&dev->bus_drv_data->lock);
-+	return ret;
-+}
-+
-+/* Called when writing to the character device */
-+static ssize_t ddcci_cdev_write(struct file *filp, const char __user *buffer,
-+				size_t count, loff_t *offset)
-+{
-+	struct ddcci_fp_data *fp_data = filp->private_data;
-+	struct ddcci_device *dev = fp_data->dev;
-+	unsigned char *buf = fp_data->buffer;
-+	const bool nonblocking = (filp->f_flags & O_NONBLOCK) != 0;
-+	int ret = 0;
-+
-+	if ((filp->f_mode & FMODE_WRITE) == 0)
-+		return -EBADF;
-+
-+	if (count > 127)
-+		return -EINVAL;
-+
-+	/* Lock mutex */
-+	if (nonblocking) {
-+		if (mutex_trylock(&dev->bus_drv_data->lock))
-+			return -EAGAIN;
-+	} else {
-+		if (mutex_lock_interruptible(&dev->bus_drv_data->lock))
-+			return -ERESTARTSYS;
-+	}
-+
-+	if (count > 0) {
-+		/* Copy data from user space */
-+		if (copy_from_user(buf, buffer, count)) {
-+			ret = -EFAULT;
-+			goto err_out;
-+		}
-+
-+		/* Execute write */
-+		ret = ddcci_write(dev->bus_drv_data->i2c_dev, dev->inner_addr,
-+				  true, buf, count);
-+	}
-+
-+	if (ret >= 0) {
-+		msleep(delay);
-+		mutex_unlock(&dev->bus_drv_data->lock);
-+		return count;
-+	}
-+
-+err_out:
-+	mutex_unlock(&dev->bus_drv_data->lock);
-+	return ret;
-+}
-+
-+/* Called when seeking the character device */
-+static loff_t ddcci_cdev_seek(struct file *filp, loff_t offset, int anchor)
-+{
-+	return -EINVAL;
-+}
-+
-+static const struct file_operations ddcci_fops = {
-+	.owner = THIS_MODULE,
-+	.read = ddcci_cdev_read,
-+	.write = ddcci_cdev_write,
-+	.open = ddcci_cdev_open,
-+	.release = ddcci_cdev_close,
-+	.llseek = ddcci_cdev_seek
-+};
-+
-+/* Set up the character device for a DDC/CI device */
-+static int ddcci_setup_char_device(struct ddcci_device *device)
-+{
-+	int ret = -EINVAL;
-+
-+	/* Check if free minor exists */
-+	if (ddcci_cdev_next == ddcci_cdev_end) {
-+		dev_err(&device->dev, "no free major/minor\n");
-+		ret = -ENFILE;
-+		goto out;
-+	}
-+
-+	/* Initialize rwsem */
-+	init_rwsem(&device->cdev_sem);
-+
-+	/* Initialize character device node */
-+	cdev_init(&device->cdev, &ddcci_fops);
-+	device->cdev.owner = THIS_MODULE;
-+
-+	/* Publish char device */
-+	device->dev.devt = ddcci_cdev_next;
-+	ret = cdev_add(&device->cdev, ddcci_cdev_next, 1);
-+	if (ret) {
-+		device->dev.devt = 0;
-+		goto out;
-+	}
-+
-+	ddcci_cdev_next++;
-+out:
-+	return ret;
-+}
-+
-+/* sysfs attributes */
-+
-+static ssize_t ddcci_attr_capabilities_show(struct device *dev,
-+					    struct device_attribute *attr,
-+					    char *buf)
-+{
-+	struct ddcci_device *device = ddcci_verify_device(dev);
-+	ssize_t ret = -ENOENT;
-+	size_t len;
-+
-+	if (likely(device != NULL)) {
-+		len = device->capabilities_len;
-+		if (unlikely(len > PAGE_SIZE))
-+			len = PAGE_SIZE;
-+		if (len == 0) {
-+			ret = len;
-+		} else {
-+			memcpy(buf, device->capabilities, len);
-+			if (likely(len < PAGE_SIZE)) {
-+				buf[len] = '\n';
-+				ret = len+1;
-+			}
-+		}
-+	}
-+
-+	return ret;
-+}
-+
-+static ssize_t ddcci_attr_prot_show(struct device *dev,
-+				    struct device_attribute *attr, char *buf)
-+{
-+	struct ddcci_device *device = ddcci_verify_device(dev);
-+	ssize_t ret = -ENOENT;
-+	size_t len;
-+
-+	if (likely(device != NULL)) {
-+		len = strnlen(device->prot, sizeof(device->prot));
-+		strncpy(buf, device->prot, PAGE_SIZE);
-+		if (len == 0) {
-+			ret = len;
-+		} else if (likely(len < PAGE_SIZE)) {
-+			buf[len] = '\n';
-+			ret = len+1;
-+		} else {
-+			ret = PAGE_SIZE;
-+		}
-+	}
-+	return ret;
-+}
-+
-+static ssize_t ddcci_attr_type_show(struct device *dev,
-+				    struct device_attribute *attr, char *buf)
-+{
-+	struct ddcci_device *device = ddcci_verify_device(dev);
-+	ssize_t ret = -ENOENT;
-+	size_t len;
-+
-+	if (likely(device != NULL)) {
-+		len = strnlen(device->type, sizeof(device->type));
-+		strncpy(buf, device->type, PAGE_SIZE);
-+		if (len == 0) {
-+			ret = len;
-+		} else if (likely(len < PAGE_SIZE)) {
-+			buf[len] = '\n';
-+			ret = len+1;
-+		} else {
-+			ret = PAGE_SIZE;
-+		}
-+	}
-+	return ret;
-+}
-+
-+static ssize_t ddcci_attr_model_show(struct device *dev,
-+				     struct device_attribute *attr, char *buf)
-+{
-+	struct ddcci_device *device = ddcci_verify_device(dev);
-+	ssize_t ret = -ENOENT;
-+	size_t len;
-+
-+	if (likely(device != NULL)) {
-+		len = strnlen(device->model, sizeof(device->model));
-+		strncpy(buf, device->model, PAGE_SIZE);
-+		if (len == 0) {
-+			ret = len;
-+		} else if (likely(len < PAGE_SIZE)) {
-+			buf[len] = '\n';
-+			ret = len+1;
-+		} else {
-+			ret = PAGE_SIZE;
-+		}
-+	}
-+	return ret;
-+}
-+
-+static ssize_t ddcci_attr_vendor_show(struct device *dev,
-+				      struct device_attribute *attr, char *buf)
-+{
-+	struct ddcci_device *device = ddcci_verify_device(dev);
-+	ssize_t ret = -ENOENT;
-+	size_t len;
-+
-+	if (likely(device != NULL)) {
-+		len = strnlen(device->vendor, sizeof(device->vendor));
-+		strncpy(buf, device->vendor, PAGE_SIZE);
-+		if (len == 0) {
-+			ret = len;
-+		} else if (likely(len < PAGE_SIZE)) {
-+			buf[len] = '\n';
-+			ret = len+1;
-+		} else {
-+			ret = PAGE_SIZE;
-+		}
-+	}
-+	return ret;
-+}
-+
-+static ssize_t ddcci_attr_module_show(struct device *dev,
-+				      struct device_attribute *attr, char *buf)
-+{
-+	struct ddcci_device *device = ddcci_verify_device(dev);
-+	ssize_t ret = -ENOENT;
-+	size_t len;
-+
-+	if (likely(device != NULL)) {
-+		len = strnlen(device->module, sizeof(device->module));
-+		strncpy(buf, device->module, PAGE_SIZE);
-+		if (len == 0) {
-+			ret = len;
-+		} else if (likely(len < PAGE_SIZE)) {
-+			buf[len] = '\n';
-+			ret = len+1;
-+		} else {
-+			ret = PAGE_SIZE;
-+		}
-+	}
-+	return ret;
-+}
-+
-+static ssize_t ddcci_attr_serial_show(struct device *dev,
-+				      struct device_attribute *attr, char *buf)
-+{
-+	struct ddcci_device *device = ddcci_verify_device(dev);
-+	ssize_t ret = -ENOENT;
-+
-+	if (likely(device != NULL))
-+		ret = scnprintf(buf, PAGE_SIZE, "%d\n", device->device_number);
-+
-+	return ret;
-+}
-+
-+static ssize_t ddcci_attr_modalias_show(struct device *dev,
-+				      struct device_attribute *attr, char *buf)
-+{
-+	struct ddcci_device *device = ddcci_verify_device(dev);
-+	ssize_t ret = -ENOENT;
-+	char model[ARRAY_SIZE(device->model)];
-+	char vendor[ARRAY_SIZE(device->model)];
-+	char module[ARRAY_SIZE(device->model)];
-+
-+	if (likely(device != NULL)) {
-+		memcpy(model, device->model, sizeof(model));
-+		memcpy(vendor, device->vendor, sizeof(vendor));
-+		memcpy(module, device->module, sizeof(module));
-+		ddcci_modalias_clean(model, sizeof(model), '_');
-+		ddcci_modalias_clean(vendor, sizeof(vendor), '_');
-+		ddcci_modalias_clean(module, sizeof(module), '_');
-+
-+		ret = scnprintf(buf, PAGE_SIZE, "%s%s-%s-%s-%s-%s\n",
-+			DDCCI_MODULE_PREFIX,
-+			device->prot,
-+			device->type,
-+			model,
-+			vendor,
-+			module
-+		);
-+	}
-+	return ret;
-+}
-+
-+static DEVICE_ATTR(capabilities, S_IRUGO, ddcci_attr_capabilities_show, NULL);
-+static DEVICE_ATTR(idProt, S_IRUGO, ddcci_attr_prot_show, NULL);
-+static DEVICE_ATTR(idType, S_IRUGO, ddcci_attr_type_show, NULL);
-+static DEVICE_ATTR(idModel, S_IRUGO, ddcci_attr_model_show, NULL);
-+static DEVICE_ATTR(idVendor, S_IRUGO, ddcci_attr_vendor_show, NULL);
-+static DEVICE_ATTR(idModule, S_IRUGO, ddcci_attr_module_show, NULL);
-+static DEVICE_ATTR(idSerial, S_IRUGO, ddcci_attr_serial_show, NULL);
-+static DEVICE_ATTR(modalias, S_IRUGO, ddcci_attr_modalias_show, NULL);
-+
-+static struct attribute *ddcci_char_device_attrs[] = {
-+	&dev_attr_capabilities.attr,
-+	&dev_attr_idProt.attr,
-+	&dev_attr_idType.attr,
-+	&dev_attr_idModel.attr,
-+	&dev_attr_idVendor.attr,
-+	&dev_attr_idModule.attr,
-+	&dev_attr_idSerial.attr,
-+	&dev_attr_modalias.attr,
-+	NULL,
-+};
-+ATTRIBUTE_GROUPS(ddcci_char_device);
-+
-+/* DDC/CI bus */
-+
-+static int ddcci_device_uevent(CSTRUCT device *dev, struct kobj_uevent_env *env)
-+{
-+	struct ddcci_device	*device = to_ddcci_device(dev);
-+	char model[ARRAY_SIZE(device->model)];
-+	char vendor[ARRAY_SIZE(device->vendor)];
-+	char module[ARRAY_SIZE(device->module)];
-+
-+	memcpy(model, device->model, sizeof(model));
-+	memcpy(vendor, device->vendor, sizeof(vendor));
-+	memcpy(module, device->module, sizeof(module));
-+	ddcci_modalias_clean(model, sizeof(model), '_');
-+	ddcci_modalias_clean(vendor, sizeof(vendor), '_');
-+	ddcci_modalias_clean(module, sizeof(module), '_');
-+
-+	if (add_uevent_var(env, "MODALIAS=%s%s-%s-%s-%s-%s",
-+			   DDCCI_MODULE_PREFIX,
-+			   device->prot,
-+			   device->type,
-+			   model,
-+			   vendor,
-+			   module
-+		))
-+		return -ENOMEM;
-+
-+	if (device->prot[0])
-+		if (add_uevent_var(env, "DDCCI_PROT=%s", device->prot))
-+			return -ENOMEM;
-+
-+	if (device->type[0])
-+		if (add_uevent_var(env, "DDCCI_TYPE=%s", device->type))
-+			return -ENOMEM;
-+
-+	if (device->model[0])
-+		if (add_uevent_var(env, "DDCCI_MODEL=%s", device->model))
-+			return -ENOMEM;
-+
-+	if (device->vendor[0]) {
-+		if (add_uevent_var(env, "DDCCI_VENDOR=%s", device->vendor))
-+			return -ENOMEM;
-+
-+		if (add_uevent_var(env, "DDCCI_MODULE=%s", device->module))
-+			return -ENOMEM;
-+
-+		if (add_uevent_var(env, "DDCCI_UNIQ=%d", device->device_number))
-+			return -ENOMEM;
-+	}
-+
-+	return 0;
-+}
-+
-+static void ddcci_device_release(struct device *dev)
-+{
-+	struct ddcci_device *device = to_ddcci_device(dev);
-+	struct ddcci_driver *driver;
-+
-+	/* Notify driver */
-+	if (dev->driver) {
-+		driver = to_ddcci_driver(dev->driver);
-+		if (driver->remove)
-+			driver->remove(device);
-+	}
-+
-+	/* Teardown chardev */
-+	if (dev->devt) {
-+		mutex_lock(&core_lock);
-+		if (device->cdev.dev == ddcci_cdev_next-1)
-+			ddcci_cdev_next--;
-+		cdev_del(&device->cdev);
-+		mutex_unlock(&core_lock);
-+	}
-+
-+	/* Free capability string */
-+	if (device->capabilities) {
-+		device->capabilities_len = 0;
-+		kfree(device->capabilities);
-+	}
-+	/* Free device */
-+	kfree(device);
-+}
-+
-+static char *ddcci_devnode(CSTRUCT device *dev,
-+			 umode_t *mode, kuid_t *uid, kgid_t *gid)
-+{
-+	struct ddcci_device *device;
-+
-+	device = to_ddcci_device(dev);
-+	return kasprintf(GFP_KERNEL, "bus/ddcci/%d/display",
-+			 device->i2c_client->adapter->nr);
-+}
-+
-+static char *ddcci_dependent_devnode(CSTRUCT device *dev,
-+			 umode_t *mode, kuid_t *uid, kgid_t *gid)
-+{
-+	struct ddcci_device *device;
-+
-+	device = to_ddcci_device(dev);
-+	if (device->flags & DDCCI_FLAG_EXTERNAL) {
-+		if (device->outer_addr == device->inner_addr)
-+			return kasprintf(GFP_KERNEL, "bus/ddcci/%d/e%02x",
-+					 device->i2c_client->adapter->nr,
-+					 device->outer_addr);
-+		else
-+			return kasprintf(GFP_KERNEL, "bus/ddcci/%d/e%02x%02x",
-+					 device->i2c_client->adapter->nr,
-+					 device->outer_addr, device->inner_addr);
-+	} else {
-+		return kasprintf(GFP_KERNEL, "bus/ddcci/%d/i%02x",
-+				 device->i2c_client->adapter->nr,
-+				 device->inner_addr);
-+	}
-+}
-+
-+/* Device type for main DDC/CI devices*/
-+static struct device_type ddcci_device_type = {
-+	.name	= "ddcci-device",
-+	.uevent		= ddcci_device_uevent,
-+	.groups		= ddcci_char_device_groups,
-+	.release	= ddcci_device_release,
-+	.devnode	= ddcci_devnode
-+};
-+
-+/* Device type for dependent DDC/CI devices*/
-+static struct device_type ddcci_dependent_type = {
-+	.name	= "ddcci-dependent-device",
-+	.uevent		= ddcci_device_uevent,
-+	.groups		= ddcci_char_device_groups,
-+	.release	= ddcci_device_release,
-+	.devnode	= ddcci_dependent_devnode
-+};
-+
-+/**
-+ * ddcci_verify_device - return parameter as ddcci_device, or NULL
-+ * @dev: device, probably from some driver model iterator
-+ */
-+struct ddcci_device *ddcci_verify_device(CSTRUCT device *dev)
-+{
-+	if (unlikely(!dev))
-+		return NULL;
-+	return (dev->type == &ddcci_device_type
-+		|| dev->type == &ddcci_dependent_type)
-+			? to_ddcci_device(dev)
-+			: NULL;
-+}
-+EXPORT_SYMBOL(ddcci_verify_device);
-+
-+/**
-+ * ddcci_quirks - Get quirks for DDC/CI device
-+ * @dev: Target DDC/CI device
-+ */
-+unsigned long ddcci_quirks(struct ddcci_device *dev)
-+{
-+	if (unlikely(WARN_ON(!dev)))
-+		return ~0L;
-+	if (unlikely(WARN_ON(!dev->bus_drv_data)))
-+		return ~0L;
-+	return dev->bus_drv_data->quirks;
-+}
-+EXPORT_SYMBOL(ddcci_quirks);
-+
-+/**
-+ * ddcci_register_driver - register DDC/CI driver
-+ * @owner: the owning module
-+ * @driver: the driver to register
-+ */
-+int ddcci_register_driver(struct module *owner, struct ddcci_driver *driver)
-+{
-+	int ret;
-+
-+	/* Can't register until after driver model init */
-+	if (unlikely(WARN_ON(!smp_load_acquire(&module_initialized))))
-+		return -EAGAIN;
-+
-+	pr_debug("registering driver [%s]\n", driver->driver.name);
-+
-+	/* add the driver to the list of ddcci drivers in the driver core */
-+	driver->driver.owner = owner;
-+	driver->driver.bus = &ddcci_bus_type;
-+
-+	/* When registration returns, the driver core
-+	 * will have called probe() for all matching-but-unbound devices.
-+	 */
-+	ret = driver_register(&driver->driver);
-+	if (ret)
-+		return ret;
-+
-+	pr_debug("driver [%s] registered\n", driver->driver.name);
-+
-+	return 0;
-+}
-+EXPORT_SYMBOL(ddcci_register_driver);
-+
-+/**
-+ * ddcci_del_driver - unregister DDC/CI driver
-+ * @driver: the driver being unregistered
-+ */
-+void ddcci_del_driver(struct ddcci_driver *driver)
-+{
-+	driver_unregister(&driver->driver);
-+	pr_debug("driver [%s] unregistered\n", driver->driver.name);
-+}
-+EXPORT_SYMBOL(ddcci_del_driver);
-+
-+/**
-+ * ddcci_device_write - Write a message to a DDC/CI device
-+ * @dev: Target DDC/CI device
-+ * @p_flag: Protocol flag, true for standard control messages
-+ * @data: Data that will be written to the device
-+ * @length: How many bytes to write
-+ *
-+ * Writes the message to the device and sleeps (see module parameter 'delay')
-+ */
-+int ddcci_device_write(struct ddcci_device *dev, bool p_flag,
-+		       unsigned char *data, unsigned char length)
-+{
-+	int ret;
-+
-+	if (mutex_lock_interruptible(&dev->bus_drv_data->lock))
-+		return -EAGAIN;
-+
-+	ret = ddcci_write(dev->bus_drv_data->i2c_dev, dev->inner_addr, p_flag, data, length);
-+	msleep(delay);
-+	mutex_unlock(&dev->bus_drv_data->lock);
-+	return ret;
-+}
-+EXPORT_SYMBOL(ddcci_device_write);
-+
-+/**
-+ * ddcci_device_read - Read a response from a DDC/CI device
-+ * @dev: Target DDC/CI device
-+ * @p_flag: Protocol flag, must match the corresponding write
-+ * @buffer: Where to store data read from the device
-+ * @length: Buffer size
-+ */
-+int ddcci_device_read(struct ddcci_device *dev, bool p_flag,
-+		      unsigned char *buffer, unsigned char length)
-+{
-+	int ret;
-+
-+	if (mutex_lock_interruptible(&dev->bus_drv_data->lock))
-+		return -EAGAIN;
-+
-+	ret = ddcci_read(dev->bus_drv_data->i2c_dev, dev->inner_addr, p_flag, buffer, length);
-+	mutex_unlock(&dev->bus_drv_data->lock);
-+	return ret;
-+}
-+EXPORT_SYMBOL(ddcci_device_read);
-+
-+/**
-+ * ddcci_device_writeread - Write a message to a device and read the response
-+ * @dev: Target DDC/CI device
-+ * @p_flag: Protocol flag, true for standard control messages
-+ * @buffer: Buffer used for write and read
-+ * @length: How many bytes to write
-+ * @maxlength: Buffer size on read
-+ *
-+ * Writing, sleeping and reading are done without releasing the DDC/CI bus.
-+ * This provides atomicity in respect to other DDC/CI accesses on the same bus.
-+ */
-+int ddcci_device_writeread(struct ddcci_device *dev, bool p_flag,
-+			   unsigned char *buffer, unsigned char length,
-+			   unsigned char maxlength)
-+{
-+	int ret;
-+
-+	if (mutex_lock_interruptible(&dev->bus_drv_data->lock))
-+		return -EAGAIN;
-+
-+	ret = ddcci_write(dev->bus_drv_data->i2c_dev, dev->inner_addr, p_flag, buffer, length);
-+	if (ret < 0)
-+		goto err;
-+	msleep(delay);
-+	ret = ddcci_read(dev->bus_drv_data->i2c_dev, dev->inner_addr, p_flag, buffer, maxlength);
-+err:
-+	mutex_unlock(&dev->bus_drv_data->lock);
-+	return ret;
-+}
-+EXPORT_SYMBOL(ddcci_device_writeread);
-+
-+#define IS_ANY_ID(x) (((x)[0] == '\xFF') && ((x)[7] == '\xFF'))
-+
-+/* Check if any device id in the array matches the device and return the matching id */
-+static const struct ddcci_device_id *ddcci_match_id(const struct ddcci_device_id *id,
-+						    const struct ddcci_device *device)
-+{
-+	while (id->prot[0] || id->type[0] || id->model[0] || id->vendor[0] || id->module[0]) {
-+		if ((IS_ANY_ID(id->prot) || (strcmp(device->prot, id->prot) == 0))
-+		 && (IS_ANY_ID(id->type) || (strcmp(device->type, id->type) == 0))
-+		 && (IS_ANY_ID(id->model) || (strcmp(device->model, id->model) == 0))
-+		 && (IS_ANY_ID(id->vendor) || (strcmp(device->vendor, id->vendor) == 0))
-+		 && (IS_ANY_ID(id->module) || (strcmp(device->module, id->module) == 0))) {
-+			return id;
-+		}
-+		id++;
-+	}
-+	return NULL;
-+}
-+
-+static int ddcci_device_match(struct device *dev, struct device_driver *drv)
-+{
-+	struct ddcci_device	*device = ddcci_verify_device(dev);
-+	struct ddcci_driver	*driver;
-+
-+	if (!device)
-+		return 0;
-+
-+	driver = to_ddcci_driver(drv);
-+	/* match on an id table if there is one */
-+	if (driver->id_table)
-+		return ddcci_match_id(driver->id_table, device) != NULL;
-+
-+	return 0;
-+}
-+
-+static int ddcci_device_probe(struct device *dev)
-+{
-+	struct ddcci_device	*device = ddcci_verify_device(dev);
-+	struct ddcci_driver	*driver;
-+	const struct ddcci_device_id *id;
-+	int ret = 0;
-+
-+	if (!device)
-+		return -EINVAL;
-+	driver = to_ddcci_driver(dev->driver);
-+
-+	id = ddcci_match_id(driver->id_table, device);
-+	if (!id)
-+		return -ENODEV;
-+
-+	if (driver->probe)
-+		ret = driver->probe(device, id);
-+
-+	return ret;
-+}
-+
-+static int ddcci_device_remove(struct device *dev)
-+{
-+	struct ddcci_device	*device = ddcci_verify_device(dev);
-+	struct ddcci_driver	*driver;
-+	int ret = 0;
-+
-+	if (!device)
-+		return -EINVAL;
-+	driver = to_ddcci_driver(dev->driver);
-+
-+	if (driver->remove)
-+		ret = driver->remove(device);
-+
-+	return ret;
-+}
-+
-+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 15, 0)
-+static void ddcci_device_remove_void(struct device *dev)
-+{
-+	ddcci_device_remove(dev);
-+}
-+#endif
-+
-+/**
-+ * DDCCI bus type structure
-+ */
-+struct bus_type ddcci_bus_type = {
-+	.name		= "ddcci",
-+	.match		= ddcci_device_match,
-+	.probe		= ddcci_device_probe,
-+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 15, 0)
-+	.remove		= ddcci_device_remove_void
-+#else
-+	.remove		= ddcci_device_remove
-+#endif
-+};
-+
-+/* Main I2C driver */
-+
-+/* Get a pointer to the closing parenthesis */
-+static char *ddcci_capstr_tok(const char *s, int depth)
-+{
-+	const char *ptr = s;
-+	char *end;
-+
-+	if (s == NULL || s[0] == '\0')
-+		return NULL;
-+
-+	while ((end = strpbrk(ptr, "()"))) {
-+		if (!end || depth == INT_MAX)
-+			return NULL;
-+		if (*end == '(')
-+			depth++;
-+		else if (depth > 0)
-+			depth--;
-+		else
-+			break;
-+		ptr = end+1;
-+	}
-+	return end;
-+}
-+
-+/**
-+ * ddcci_find_capstr_item - Search capability string for a tag
-+ * @capabilities: Capability string to search
-+ * @tag: Tag to find
-+ * @length: Buffer for the length of the found tag value (optional)
-+ *
-+ * Return a pointer to the start of the tag value (directly after the '(') on
-+ * success and write the length of the value (excluding the ')') into `length`.
-+ *
-+ * If the tag is not found or another error occurs, an ERR_PTR is returned
-+ * and `length` stays untouched.
-+ */
-+const char *ddcci_find_capstr_item(const char * capabilities,
-+				   const char * __restrict tag,
-+				   size_t *length)
-+{
-+	const char *src = capabilities, *ptr;
-+	ptrdiff_t len;
-+	int taglen = strnlen(tag, 1024);
-+
-+	/* Check length of requested tag */
-+	if (unlikely(taglen <= 0 || taglen > 1023))
-+		return ERR_PTR(-EINVAL);
-+
-+	/* Find tag */
-+	while (src && (strncmp(src+1, tag, taglen) != 0 || src[1+taglen] != '('))
-+		src = ddcci_capstr_tok(src+1, -1);
-+	if (!src || src[0] == '\0')
-+		return ERR_PTR(-ENOENT);
-+
-+	/* Locate end of value */
-+	src += taglen+2;
-+	ptr = ddcci_capstr_tok(src, 0);
-+	if (unlikely(!ptr))
-+		return ERR_PTR(-EOVERFLOW);
-+
-+	/* Check length of tag data */
-+	len = ptr-src;
-+	if (unlikely(len < 0 || len > 65535))
-+		return ERR_PTR(-EMSGSIZE);
-+
-+	/* Return pointer and length */
-+	if (likely(length != NULL))
-+		*length = (size_t)len;
-+	return src;
-+}
-+EXPORT_SYMBOL(ddcci_find_capstr_item);
-+
-+/* Search the capability string for a tag and copy the value to dest */
-+static int ddcci_cpy_capstr_item(char *dest, const char *src,
-+				  const char * __restrict tag, size_t maxlen)
-+{
-+	const char *ptr;
-+	size_t len;
-+
-+	/* Find tag */
-+	ptr = ddcci_find_capstr_item(src, tag, &len);
-+	if (IS_ERR(ptr)) {
-+		return PTR_ERR(ptr);
-+	}
-+
-+	/* Copy value */
-+	memcpy(dest, ptr, min(len, maxlen));
-+	return 0;
-+}
-+
-+/* Fill fields in device by parsing the capability string */
-+static int ddcci_parse_capstring(struct ddcci_device *device)
-+{
-+	const char *capstr = device->capabilities;
-+	int ret = 0;
-+
-+	if (!capstr)
-+		return -EINVAL;
-+
-+	/* capability string start with a paren */
-+	if (capstr[0] != '(')
-+		return -EINVAL;
-+
-+	/* get prot(...) */
-+	ret = ddcci_cpy_capstr_item(device->prot, capstr, "prot", sizeof(device->prot)-1);
-+	if (ret) {
-+		if (ret == -ENOENT) {
-+			dev_warn(&device->dev, "malformed capability string: no protocol tag");
-+			memset(device->prot, 0, sizeof(device->prot)-1);
-+		} else {
-+			return ret;
-+		}
-+	}
-+
-+	/* get type(...) */
-+	ret = ddcci_cpy_capstr_item(device->type, capstr, "type", sizeof(device->type)-1);
-+	if (ret) {
-+		if (ret == -ENOENT) {
-+			dev_warn(&device->dev, "malformed capability string: no type tag");
-+			memset(device->type, 0, sizeof(device->type)-1);
-+		} else {
-+			return ret;
-+		}
-+	}
-+
-+	/* and then model(...) */
-+	ret = ddcci_cpy_capstr_item(device->model, capstr, "model", sizeof(device->model)-1);
-+	if (ret) {
-+		if (ret == -ENOENT) {
-+			dev_warn(&device->dev, "malformed capability string: no model tag");
-+			memset(device->model, 0, sizeof(device->model)-1);
-+		} else {
-+			return ret;
-+		}
-+	}
-+
-+	/* if there is no protocol tag */
-+	if (!device->prot[0]) {
-+		/* and no type tag: give up. */
-+		if (!device->type[0])
-+			return -ENOENT;
-+
-+		/* Assume protocol "monitor" if type is "LCD" or "CRT" */
-+		if (strncasecmp(device->type, "LCD", sizeof(device->type)-1) == 0
-+		 || strncasecmp(device->type, "CRT", sizeof(device->type)-1) == 0) {
-+			memcpy(device->prot, "monitor", 7);
-+		}
-+	}
-+
-+	/* skip the rest for now */
-+
-+	return 0;
-+}
-+
-+/* Probe for a device on an inner address and create a ddcci_device for it */
-+static int ddcci_detect_device(struct i2c_client *client, unsigned char addr,
-+			       int dependent)
-+{
-+	int ret;
-+	unsigned char outer_addr = client->addr << 1;
-+	unsigned char *buffer = NULL;
-+	struct ddcci_bus_drv_data *drv_data = i2c_get_clientdata(client);
-+	struct ddcci_device *device = NULL;
-+
-+	mutex_lock(&drv_data->lock);
-+
-+	/* Allocate buffer big enough for any capability string */
-+	buffer = kmalloc(16384, GFP_KERNEL);
-+	if (!buffer) {
-+		ret = -ENOMEM;
-+		goto err_end;
-+	}
-+
-+	/* Allocate device struct */
-+	device = kzalloc(sizeof(struct ddcci_device), GFP_KERNEL);
-+	if (!device) {
-+		ret = -ENOMEM;
-+		goto err_end;
-+	}
-+
-+	/* Initialize device */
-+	device_initialize(&device->dev);
-+	device->dev.parent = &client->dev;
-+	device->dev.bus = &ddcci_bus_type;
-+	device->outer_addr = outer_addr;
-+	device->inner_addr = addr;
-+	device->bus_drv_data = drv_data;
-+	device->i2c_client = client;
-+
-+	if (!dependent) {
-+		device->dev.type = &ddcci_device_type;
-+		ret = dev_set_name(&device->dev, "ddcci%d", client->adapter->nr);
-+	} else if (outer_addr == dependent) {
-+		/* Internal dependent device */
-+		device->dev.type = &ddcci_dependent_type;
-+		device->flags = DDCCI_FLAG_DEPENDENT;
-+		ret = dev_set_name(&device->dev, "ddcci%di%02x", client->adapter->nr, addr);
-+	} else if (outer_addr == addr) {
-+		/* External dependent device */
-+		device->dev.type = &ddcci_dependent_type;
-+		device->flags = DDCCI_FLAG_DEPENDENT | DDCCI_FLAG_EXTERNAL;
-+		ret = dev_set_name(&device->dev, "ddcci%de%02x", client->adapter->nr, addr);
-+	} else {
-+		/* Dependent device of external dependent device
-+		   Just in case something like this exists */
-+		device->dev.type = &ddcci_dependent_type;
-+		device->flags = DDCCI_FLAG_DEPENDENT | DDCCI_FLAG_EXTERNAL;
-+		ret = dev_set_name(&device->dev, "ddcci%de%02x%02x", client->adapter->nr, outer_addr, addr);
-+	}
-+
-+	if (ret)
-+		goto err_free;
-+
-+	/* Read identification and check for quirks */
-+	ret = ddcci_identify_device(client, addr, buffer, 29);
-+	if (ret < 0) {
-+		if (!dependent && (ret == -EBADMSG || ret == -EMSGSIZE)) {
-+			dev_warn(&device->dev, "DDC/CI main device sent broken response on identification. Trying to detect solely based on capability information.\n");
-+		} else {
-+			goto err_free;
-+		}
-+	}
-+
-+	if (ret == 29 && buffer[0] == DDCCI_REPLY_ID) {
-+		memcpy(device->vendor, &buffer[7], 8);
-+		memcpy(device->module, &buffer[17], 8);
-+		device->device_number = be32_to_cpu(*(__force __be32 *)&buffer[18]);
-+	}
-+
-+	/* Read capabilities */
-+	ret = ddcci_get_caps(client, addr, buffer, 16384);
-+	if (ret > 0) {
-+		/* Fixup unparenthesized capability strings, but only if the first
-+		   character is an ascii lower case letter.
-+		   This should still allow an early exit for completely garbled
-+		   data but helps detecting devices where only the parentheses are
-+		   missing, as the second char must be the first character of a
-+		   keyword. */
-+		if (ret > 2 && buffer[0] >= 'a' && buffer[0] <= 'z') {
-+			dev_err(&device->dev, "DDC/CI device quirk detected: unparenthesized capability string\n");
-+			device->capabilities = kzalloc(ret+3, GFP_KERNEL);
-+			if (!device->capabilities) {
-+				ret = -ENOMEM;
-+				goto err_free;
-+			}
-+			device->capabilities_len = ret+2;
-+			memcpy(&(device->capabilities[1]), buffer, ret);
-+			device->capabilities[0] = '(';
-+			device->capabilities[ret+1] = ')';
-+		} else {
-+			/* Standard case: simply copy the received string */
-+			device->capabilities = kzalloc(ret+1, GFP_KERNEL);
-+			if (!device->capabilities) {
-+				ret = -ENOMEM;
-+				goto err_free;
-+			}
-+			device->capabilities_len = ret;
-+			memcpy(device->capabilities, buffer, ret);
-+		}
-+
-+		ret = ddcci_parse_capstring(device);
-+		if (ret) {
-+			dev_err(&device->dev, "malformed capability string: \"%s\" errno %d\n", device->capabilities, ret);
-+			ret = -EINVAL;
-+			goto err_free;
-+		}
-+	}
-+
-+	/* Found a device if either identification or capabilities succeeded */
-+	if (!device->capabilities && device->vendor[0] == '\0') {
-+		dev_dbg(&client->dev,
-+			"[%02x:%02x] got neither valid identification nor capability data\n",
-+			client->addr << 1, addr);
-+		ret = -ENODEV;
-+		goto err_free;
-+	}
-+
-+	/* Setup chardev */
-+	mutex_lock(&core_lock);
-+	ret = ddcci_setup_char_device(device);
-+	mutex_unlock(&core_lock);
-+	if (ret)
-+		goto err_free;
-+
-+	/* Release mutex and add device to the tree */
-+	mutex_unlock(&drv_data->lock);
-+	pr_debug("found device at %d:%02x:%02x\n", client->adapter->nr, outer_addr, addr);
-+	ret = device_add(&device->dev);
-+	if (ret)
-+		goto err_free;
-+
-+	goto end;
-+err_free:
-+	put_device(&device->dev);
-+err_end:
-+	mutex_unlock(&drv_data->lock);
-+end:
-+	kfree(buffer);
-+	return ret;
-+}
-+
-+/* I2C detect function: check if a main or external dependent device exists */
-+static int ddcci_detect(struct i2c_client *client, struct i2c_board_info *info)
-+{
-+	int ret;
-+	unsigned char outer_addr;
-+	unsigned char inner_addr;
-+	unsigned char buf[32];
-+	unsigned char cmd_id[1] = { DDCCI_COMMAND_ID };
-+	unsigned char cmd_caps[3] = { DDCCI_COMMAND_CAPS, 0x00, 0x00};
-+	unsigned char *cmd;
-+	unsigned int cmd_len;
-+
-+	/* Check for i2c_master_* functionality */
-+	if (!i2c_check_functionality(client->adapter, I2C_FUNC_I2C)) {
-+		pr_debug("i2c adapter %d unsuitable: no i2c_master functionality\n", client->adapter->nr);
-+		return -ENODEV;
-+	}
-+
-+	/* send Capabilities Request (for main) or Identification Request command (for dependent devices) */
-+	outer_addr = client->addr << 1;
-+	inner_addr = (outer_addr == DDCCI_DEFAULT_DEVICE_ADDR) ? DDCCI_HOST_ADDR_ODD : outer_addr | 1;
-+	cmd = (outer_addr == DDCCI_DEFAULT_DEVICE_ADDR) ? cmd_caps : cmd_id;
-+	cmd_len = (outer_addr == DDCCI_DEFAULT_DEVICE_ADDR) ? sizeof(cmd_caps) : sizeof(cmd_id);
-+	pr_debug("detecting %d:%02x\n", client->adapter->nr, outer_addr);
-+
-+	ret = __ddcci_write_block(client, inner_addr, buf, true, cmd, cmd_len);
-+
-+	if (ret == -ENXIO || ret == -EIO) {
-+		if (!i2c_check_functionality(client->adapter, I2C_FUNC_SMBUS_WRITE_BYTE)) {
-+			pr_debug("i2c write failed with ENXIO or EIO but bytewise writing is not supported\n");
-+			return -ENODEV;
-+		}
-+		pr_debug("i2c write failed with ENXIO or EIO, trying bytewise writing\n");
-+		ret = __ddcci_write_bytewise(client, inner_addr, true, cmd, cmd_len);
-+		if (ret == 0) {
-+			msleep(delay);
-+			ret = __ddcci_write_bytewise(client, inner_addr, true, cmd, cmd_len);
-+		}
-+	}
-+
-+	if (ret < 0)
-+		return -ENODEV;
-+
-+	/* wait for device */
-+	msleep(delay);
-+	/* receive answer */
-+	ret = i2c_master_recv(client, buf, 32);
-+	if (ret < 3) {
-+		pr_debug("detection failed: no answer\n");
-+		return -ENODEV;
-+	}
-+
-+	/* check response starts with outer addr */
-+	if (buf[0] != outer_addr) {
-+		pr_debug("detection failed: invalid %s response (%02x != %02x)\n", (cmd == cmd_id) ? "identification" : "capabilities", buf[0], outer_addr);
-+		pr_debug("received message was %*ph \n", ret, buf);
-+		return -ENODEV;
-+	}
-+
-+	pr_debug("detected %d:%02x\n", client->adapter->nr, outer_addr);
-+
-+	/* set device type */
-+	strscpy(info->type, (outer_addr == DDCCI_DEFAULT_DEVICE_ADDR) ? "ddcci" : "ddcci-dependent", I2C_NAME_SIZE);
-+
-+	return 0;
-+}
-+
-+/* I2C probe function */
-+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 3, 0)
-+static int ddcci_probe(struct i2c_client *client)
-+{
-+	const struct i2c_device_id *id = i2c_client_get_device_id(client);
-+#else
-+static int ddcci_probe(struct i2c_client *client, const struct i2c_device_id *id)
-+{
-+#endif
-+	int i, ret = -ENODEV, tmp;
-+	unsigned char main_addr, addr;
-+	struct ddcci_bus_drv_data *drv_data;
-+
-+	/* Initialize driver data structure */
-+	drv_data = devm_kzalloc(&client->dev, sizeof(struct ddcci_bus_drv_data), GFP_KERNEL);
-+	if (!drv_data)
-+		return -ENOMEM;
-+	drv_data->i2c_dev = client;
-+	mutex_init(&drv_data->lock);
-+
-+	/* Set i2c client data */
-+	i2c_set_clientdata(client, drv_data);
-+
-+	if (id->driver_data == 0) {
-+		/* Core device, probe at 0x6E */
-+		main_addr = DDCCI_DEFAULT_DEVICE_ADDR;
-+		dev_dbg(&client->dev, "probing core device [%02x]\n",
-+			client->addr << 1);
-+		ret = ddcci_detect_device(client, main_addr, 0);
-+		if (ret) {
-+			dev_info(&client->dev, "core device [%02x] probe failed: %d\n",
-+				 client->addr << 1, ret);
-+			if (ret == -EIO)
-+				ret = -ENODEV;
-+			goto err_free;
-+		}
-+
-+		/* Detect internal dependent devices */
-+		dev_dbg(&client->dev, "probing internal dependent devices\n");
-+		for (i = 0; i < autoprobe_addr_count; ++i) {
-+			addr = (unsigned short)autoprobe_addrs[i];
-+			if ((addr & 1) == 0 && addr != main_addr) {
-+				tmp = ddcci_detect_device(client, addr, main_addr);
-+				if (tmp < 0 && tmp != -ENODEV) {
-+					dev_info(&client->dev, "internal dependent device [%02x:%02x] probe failed: %d\n",
-+						 client->addr << 1, addr, ret);
-+				}
-+			}
-+		}
-+	} else if (id->driver_data == 1) {
-+		/* External dependent device */
-+		main_addr = client->addr << 1;
-+		dev_dbg(&client->dev, "probing external dependent device [%02x]\n", main_addr);
-+		ret = ddcci_detect_device(client, main_addr, -1);
-+		if (ret) {
-+			dev_info(&client->dev, "external dependent device [%02x] probe failed: %d\n",
-+				 main_addr, ret);
-+			if (ret == -EIO)
-+				ret = -ENODEV;
-+			goto err_free;
-+		}
-+	} else {
-+		dev_warn(&client->dev,
-+			 "probe() called with invalid i2c device id\n");
-+		ret = -EINVAL;
-+	}
-+
-+	goto end;
-+err_free:
-+	devm_kfree(&client->dev, drv_data);
-+end:
-+	return ret;
-+}
-+
-+/*
-+ * Callback for bus_find_device() used in ddcci_remove()
-+ *
-+ * Find next device on i2c_client not flagged with
-+ * DDCCI_FLAG_REMOVED and flag it.
-+ */
-+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,3,0)
-+static int ddcci_remove_helper(struct device *dev, const void *p)
-+#else
-+static int ddcci_remove_helper(struct device *dev, void *p)
-+#endif
-+{
-+	struct ddcci_device *device;
-+
-+	device = ddcci_verify_device(dev);
-+	if (!device || device->flags & DDCCI_FLAG_REMOVED)
-+		return 0;
-+
-+	if (!p || (dev->parent == p)) {
-+		device->flags |= DDCCI_FLAG_REMOVED;
-+		wmb();
-+		return 1;
-+	}
-+
-+	return 0;
-+}
-+
-+/* I2C driver remove callback: unregister all subdevices */
-+static int ddcci_remove(struct i2c_client *client)
-+{
-+	struct ddcci_bus_drv_data *drv_data = i2c_get_clientdata(client);
-+	struct device *dev;
-+
-+	mutex_lock(&drv_data->lock);
-+	while (1) {
-+		dev = bus_find_device(&ddcci_bus_type, NULL, client,
-+				      ddcci_remove_helper);
-+		if (!dev)
-+			break;
-+		device_unregister(dev);
-+		put_device(dev);
-+	}
-+	mutex_unlock(&drv_data->lock);
-+	return 0;
-+}
-+
-+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 1, 0)
-+static void ddcci_remove_void(struct i2c_client *client)
-+{
-+	ddcci_remove(client);
-+}
-+#endif
-+
-+/*
-+ * I2C driver device identification table.
-+ */
-+static const struct i2c_device_id ddcci_idtable[] = {
-+	{ "ddcci", 0 },
-+	{ "ddcci-dependent", 1 },
-+	{}
-+};
-+MODULE_DEVICE_TABLE(i2c, ddcci_idtable);
-+
-+/*
-+ * I2C driver description structure
-+ */
-+static struct i2c_driver ddcci_driver = {
-+	.driver = {
-+		.name	= "ddcci",
-+		.owner	= THIS_MODULE,
-+	},
-+
-+	.id_table	= ddcci_idtable,
-+	.probe		= ddcci_probe,
-+	#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 1, 0)
-+	.remove		= ddcci_remove_void,
-+	#else
-+	.remove		= ddcci_remove,
-+	#endif
-+	.detect		= ddcci_detect,
-+	.address_list	= I2C_ADDRS(
-+		DDCCI_DEFAULT_DEVICE_ADDR>>1
-+	),
-+};
-+
-+/*
-+ * Module initialization function. Called when the module is inserted or
-+ * (if builtin) at boot time.
-+ */
-+static int __init ddcci_module_init(void)
-+{
-+	int ret;
-+
-+	pr_debug("initializing ddcci driver\n");
-+	/* Allocate a device number region for the character devices */
-+	ret = alloc_chrdev_region(&ddcci_cdev_first, 0, 128, DEVICE_NAME);
-+	if (ret < 0) {
-+		pr_err("failed to register device region: error %d\n", ret);
-+		goto err_chrdevreg;
-+	}
-+	ddcci_cdev_next = ddcci_cdev_first;
-+	ddcci_cdev_end = MKDEV(MAJOR(ddcci_cdev_first), MINOR(ddcci_cdev_first)+128);
-+
-+	/* Register bus */
-+	ret = bus_register(&ddcci_bus_type);
-+	if (ret) {
-+		pr_err("failed to register bus 'ddcci'\n");
-+		goto err_busreg;
-+	}
-+
-+	/* Register I2C driver */
-+	ret = i2c_add_driver(&ddcci_driver);
-+	if (ret) {
-+		pr_err("failed to register i2c driver\n");
-+		goto err_drvreg;
-+	}
-+
-+	pr_debug("ddcci driver initialized\n");
-+	smp_store_release(&module_initialized, true);
-+
-+	return 0;
-+
-+err_drvreg:
-+	bus_unregister(&ddcci_bus_type);
-+err_busreg:
-+	unregister_chrdev_region(ddcci_cdev_first, 128);
-+err_chrdevreg:
-+	return ret;
-+}
-+
-+/*
-+ * Module clean-up function. Called when the module is removed.
-+ */
-+static void __exit ddcci_module_exit(void)
-+{
-+	struct device *dev;
-+	smp_store_release(&module_initialized, false);
-+
-+	while (1) {
-+		dev = bus_find_device(&ddcci_bus_type, NULL, NULL, ddcci_remove_helper);
-+		if (!dev)
-+			break;
-+		device_unregister(dev);
-+		put_device(dev);
-+	}
-+
-+	i2c_del_driver(&ddcci_driver);
-+	bus_unregister(&ddcci_bus_type);
-+	unregister_chrdev_region(ddcci_cdev_first, 128);
-+}
-+
-+/* Let the kernel know the calls for module init and exit */
-+module_init(ddcci_module_init);
-+module_exit(ddcci_module_exit);
-+
-+/* Module parameter description */
-+module_param(delay, uint, S_IRUGO|S_IWUSR);
-+MODULE_PARM_DESC(delay, "default delay after bus writes (in ms, default 60)");
-+module_param_array(autoprobe_addrs, ushort, &autoprobe_addr_count, S_IRUGO|S_IWUSR);
-+MODULE_PARM_DESC(autoprobe_addrs, "internal dependent device addresses to autoprobe");
-+
-+/* Module description */
-+MODULE_AUTHOR("Christoph Grenz");
-+MODULE_DESCRIPTION("DDC/CI bus driver");
-+MODULE_VERSION("0.4.4");
-+MODULE_LICENSE("GPL");
-diff --git a/drivers/video/backlight/Kconfig b/drivers/video/backlight/Kconfig
-index 230bca07b09d..6fb6088a465d 100644
---- a/drivers/video/backlight/Kconfig
-+++ b/drivers/video/backlight/Kconfig
-@@ -297,6 +297,17 @@ config BACKLIGHT_QCOM_WLED
- 	  If you have the Qualcomm PMIC, say Y to enable a driver for the
- 	  WLED block. Currently it supports PM8941 and PMI8998.
- 
-+config BACKLIGHT_DDCCI
-+	tristate "DDCCI Backlight Driver"
-+	depends on DDCCI
-+	help
-+	  If you have a DDC/CI supporing monitor, say Y to enable a driver
-+	  to control its backlight using DDC/CI. This could be useful if
-+	  your monitor does not include a backlight driver. For this to be
-+	  useful you need to enable DDCCI support which can be found in
-+	  Device Drivers -> Character devices and that further depends on
-+	  I2C.
-+
- config BACKLIGHT_RT4831
- 	tristate "Richtek RT4831 Backlight Driver"
- 	depends on MFD_RT4831
-diff --git a/drivers/video/backlight/Makefile b/drivers/video/backlight/Makefile
-index 8d2cb252042d..9c2fda6ae1cf 100644
---- a/drivers/video/backlight/Makefile
-+++ b/drivers/video/backlight/Makefile
-@@ -59,3 +59,4 @@ obj-$(CONFIG_BACKLIGHT_WM831X)		+= wm831x_bl.o
- obj-$(CONFIG_BACKLIGHT_ARCXCNN) 	+= arcxcnn_bl.o
- obj-$(CONFIG_BACKLIGHT_RAVE_SP)		+= rave-sp-backlight.o
- obj-$(CONFIG_BACKLIGHT_LED)		+= led_bl.o
-+obj-$(CONFIG_BACKLIGHT_DDCCI)		+= ddcci-backlight.o
-diff --git a/drivers/video/backlight/ddcci-backlight.c b/drivers/video/backlight/ddcci-backlight.c
-new file mode 100644
-index 000000000000..11de2aa311bc
---- /dev/null
-+++ b/drivers/video/backlight/ddcci-backlight.c
-@@ -0,0 +1,413 @@
-+/*
-+ *  DDC/CI monitor backlight driver
-+ *
-+ *  Copyright (c) 2015 Christoph Grenz
-+ */
-+
-+/*
-+ * This program is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License as published by the Free
-+ * Software Foundation; either version 2 of the License, or (at your option)
-+ * any later version.
-+ */
-+
-+#define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
-+#include <linux/backlight.h>
-+#include <linux/module.h>
-+#include <linux/fb.h>
-+#include <linux/sysfs.h>
-+
-+#include <linux/ddcci.h>
-+
-+
-+#define DDCCI_COMMAND_READ	0x01	/* read ctrl value */
-+#define DDCCI_REPLY_READ	0x02	/* read ctrl value reply */
-+#define DDCCI_COMMAND_WRITE	0x03	/* write ctrl value */
-+#define DDCCI_COMMAND_SAVE	0x0c	/* save current settings */
-+
-+#define DDCCI_MONITOR_LUMINANCE	0x10
-+#define DDCCI_MONITOR_BACKLIGHT	0x13
-+#define DDCCI_MONITOR_BL_WHITE		0x6B
-+
-+static bool convenience_symlink = true;
-+
-+struct ddcci_monitor_drv_data {
-+	struct ddcci_device *device;
-+	struct backlight_device *bl_dev;
-+	struct device *fb_dev;
-+	unsigned char used_vcp;
-+};
-+
-+static int ddcci_monitor_writectrl(struct ddcci_device *device,
-+				   unsigned char ctrl, unsigned short value)
-+{
-+	unsigned char buf[4];
-+	int ret;
-+
-+	buf[0] = DDCCI_COMMAND_WRITE;
-+	buf[1] = ctrl;
-+	buf[2] = (value >> 8);
-+	buf[3] = (value & 255);
-+
-+	ret = ddcci_device_write(device, true, buf, sizeof(buf));
-+
-+	return ret;
-+}
-+
-+static int ddcci_monitor_readctrl(struct ddcci_device *device,
-+				  unsigned char ctrl, unsigned short *value,
-+				  unsigned short *maximum)
-+{
-+	int ret;
-+	unsigned char buf[10];
-+
-+	buf[0] = DDCCI_COMMAND_READ;
-+	buf[1] = ctrl;
-+
-+	ret = ddcci_device_writeread(device, true, buf, 2, sizeof(buf));
-+	if (ret < 0)
-+		return ret;
-+
-+	if (ret == 0)
-+		return -ENOTSUPP;
-+
-+	if (ret == 8 && buf[0] == DDCCI_REPLY_READ && buf[2] == ctrl) {
-+		if (value)
-+			*value = buf[6] * 256 + buf[7];
-+
-+		if (maximum)
-+			*maximum = buf[4] * 256 + buf[5];
-+
-+		if (buf[1] == 1)
-+			return -ENOTSUPP;
-+		if (buf[1] != 0)
-+			return -EIO;
-+		return 0;
-+	}
-+
-+	return -EIO;
-+}
-+
-+static int ddcci_backlight_check_fb(struct backlight_device *bl,
-+				   struct fb_info *info)
-+{
-+	struct ddcci_monitor_drv_data *drv_data = bl_get_data(bl);
-+
-+	return drv_data->fb_dev == NULL || drv_data->fb_dev == info->device;
-+}
-+
-+static int ddcci_backlight_update_status(struct backlight_device *bl)
-+{
-+	struct ddcci_monitor_drv_data *drv_data = bl_get_data(bl);
-+	int brightness = bl->props.brightness;
-+	int ret;
-+
-+	if (bl->props.power != FB_BLANK_UNBLANK ||
-+	    bl->props.state & BL_CORE_FBBLANK)
-+		brightness = 0;
-+
-+	ret = ddcci_monitor_writectrl(drv_data->device, drv_data->used_vcp,
-+				      brightness);
-+	if (ret > 0)
-+		ret = 0;
-+	return ret;
-+}
-+
-+static int ddcci_backlight_get_brightness(struct backlight_device *bl)
-+{
-+	unsigned short value = 0, maxval = 0;
-+	int ret;
-+	struct ddcci_monitor_drv_data *drv_data = bl_get_data(bl);
-+
-+	ret = ddcci_monitor_readctrl(drv_data->device, drv_data->used_vcp,
-+				     &value, &maxval);
-+	if (ret < 0)
-+		return ret;
-+
-+	bl->props.brightness = value;
-+	bl->props.max_brightness = maxval;
-+	ret = value;
-+
-+	return ret;
-+}
-+
-+static const struct backlight_ops ddcci_backlight_ops = {
-+	.options	= 0,
-+	.update_status	= ddcci_backlight_update_status,
-+	.get_brightness = ddcci_backlight_get_brightness,
-+	.check_fb	= ddcci_backlight_check_fb,
-+};
-+
-+static const char *ddcci_monitor_vcp_name(unsigned char vcp)
-+{
-+	switch (vcp) {
-+		case DDCCI_MONITOR_BL_WHITE:
-+			return "backlight";
-+		case DDCCI_MONITOR_LUMINANCE:
-+			return "luminance";
-+		default:
-+			return "???";
-+	}
-+}
-+
-+static const char *ddcci_monitor_next_vcp_item(const char *ptr)
-+{
-+	int depth = 0;
-+
-+	/* Sanity check */
-+	if (unlikely(ptr == NULL || ptr[0] == '\0'))
-+		return NULL;
-+
-+	/* Find next white space outside of parentheses */
-+	while ((ptr = strpbrk(ptr, " ()"))) {
-+		if (!ptr || depth == INT_MAX) {
-+			return NULL;
-+		} else if (*ptr == '(') {
-+			depth++;
-+		} else if (depth > 0) {
-+			if (*ptr == ')')
-+				depth--;
-+		} else {
-+			break;
-+		}
-+		++ptr;
-+	}
-+
-+	/* Skip over whitespace */
-+	ptr = skip_spaces(ptr);
-+
-+	/* Check if we're now at the end of the list */
-+	if (unlikely(*ptr == '\0' || *ptr == ')'))
-+		return NULL;
-+
-+	return ptr;
-+}
-+
-+static bool ddcci_monitor_find_vcp(unsigned char vcp, const char *s)
-+{
-+	const char *ptr = s;
-+	char vcp_hex[3];
-+
-+	/* Sanity check */
-+	if (unlikely(s == NULL || s[0] == '\0'))
-+		return false;
-+
-+	/* Create hex representation of VCP */
-+	if (unlikely(snprintf(vcp_hex, 3, "%02hhX", vcp) != 2)) {
-+		pr_err("snprintf failed to convert to hex. This should not happen.\n");
-+		return false;
-+	}
-+
-+	/* Search for it */
-+	do {
-+		if (strncasecmp(vcp_hex, ptr, 2) == 0) {
-+			if (ptr[2] == ' ' || ptr[2] == '(' || ptr[2] == ')') {
-+				return true;
-+			}
-+		}
-+	} while ((ptr = ddcci_monitor_next_vcp_item(ptr)));
-+
-+	return false;
-+}
-+
-+static int ddcci_backlight_create_symlink(struct ddcci_device *ddcci_dev)
-+{
-+	int i, result;
-+	struct device *dev = &ddcci_dev->dev;
-+	struct kernfs_node *dirent;
-+	for (i = 0; i < 3; ++i) {
-+		dev = dev->parent;
-+		if (!dev) {
-+			dev_dbg(&ddcci_dev->dev, "failed to create convenience symlink: ancestor device not found\n");
-+			return -ENOENT;
-+		}
-+	}
-+	dirent = sysfs_get_dirent(dev->kobj.sd, "ddcci_backlight");
-+	if (dirent) {
-+		sysfs_put(dirent);
-+		dev_dbg(&ddcci_dev->dev, "failed to create convenience symlink: %s/ddcci_backlight already exists\n", dev_name(dev));
-+		return -EEXIST;
-+	}
-+
-+	result = sysfs_create_link(&dev->kobj, &ddcci_dev->dev.kobj, "ddcci_backlight");
-+	if (result == 0) {
-+		dev_dbg(&ddcci_dev->dev, "created symlink %s/ddcci_backlight\n", dev_name(dev));
-+	} else {
-+		dev_info(&ddcci_dev->dev, "failed to create convenience symlink: %d\n", result);
-+	}
-+	return result;
-+}
-+
-+static int ddcci_backlight_remove_symlink(struct ddcci_device *ddcci_dev)
-+{
-+	int i;
-+	struct device *dev = &ddcci_dev->dev;
-+	struct kernfs_node *dirent;
-+	for (i = 0; i < 3; ++i) {
-+		dev = dev->parent;
-+		if (!dev)
-+			return -ENOENT;
-+	}
-+	dirent = sysfs_get_dirent(dev->kobj.sd, "ddcci_backlight");
-+	if (!dirent) {
-+		return -ENOENT;
-+	}
-+
-+	if ((dirent->flags & KERNFS_LINK) == 0) {
-+		sysfs_put(dirent);
-+		dev_dbg(&ddcci_dev->dev, "won't remove %s/ddcci_backlight: not a symlink\n", dev_name(dev));
-+		return -EINVAL;
-+	}
-+
-+	if (dirent->symlink.target_kn != ddcci_dev->dev.kobj.sd) {
-+		sysfs_put(dirent);
-+		dev_dbg(&ddcci_dev->dev, "won't remove %s/ddcci_backlight: we are not the link target\n", dev_name(dev));
-+		return -EINVAL;
-+	}
-+
-+	sysfs_put(dirent);
-+
-+	sysfs_remove_link(&dev->kobj, "ddcci_backlight");
-+	dev_dbg(&ddcci_dev->dev, "removed symlink %s/ddcci_backlight\n", dev_name(dev));
-+	return 0;
-+}
-+
-+static int ddcci_monitor_probe(struct ddcci_device *dev,
-+			       const struct ddcci_device_id *id)
-+{
-+	struct ddcci_monitor_drv_data *drv_data;
-+	struct backlight_properties props;
-+	struct backlight_device *bl = NULL;
-+	int ret = 0;
-+	bool support_luminance, support_bl_white;
-+	unsigned short brightness = 0, max_brightness = 0;
-+	const char *vcps;
-+
-+	dev_dbg(&dev->dev, "probing monitor backlight device\n");
-+
-+	/* Get VCP list */
-+	vcps = ddcci_find_capstr_item(dev->capabilities, "vcp", NULL);
-+	if (IS_ERR(vcps)) {
-+		dev_info(&dev->dev,
-+			 "monitor doesn't provide a list of supported controls.\n");
-+		support_bl_white = support_luminance = true;
-+	} else {
-+		/* Check VCP list for supported VCPs */
-+		support_bl_white = ddcci_monitor_find_vcp(DDCCI_MONITOR_BL_WHITE, vcps);
-+		support_luminance = ddcci_monitor_find_vcp(DDCCI_MONITOR_LUMINANCE, vcps);
-+		/* Fallback to trying if no support is found */
-+		if (!support_bl_white && !support_luminance) {
-+			dev_info(&dev->dev,
-+				 "monitor doesn't announce support for backlight or luminance controls.\n");
-+			support_bl_white = support_luminance = true;
-+		}
-+	}
-+
-+	/* Initialize driver data structure */
-+	drv_data = devm_kzalloc(&dev->dev, sizeof(struct ddcci_monitor_drv_data),
-+				GFP_KERNEL);
-+	if (!drv_data)
-+		return -ENOMEM;
-+	drv_data->device = dev;
-+
-+	if (support_bl_white) {
-+		/* Try getting backlight level */
-+		dev_dbg(&dev->dev,
-+			"trying to access \"backlight level white\" control\n");
-+		ret = ddcci_monitor_readctrl(drv_data->device, DDCCI_MONITOR_BL_WHITE,
-+						&brightness, &max_brightness);
-+		if (ret < 0) {
-+			if (ret == -ENOTSUPP)
-+				dev_info(&dev->dev,
-+					"monitor does not support reading backlight level\n");
-+			else
-+				goto err_free;
-+		} else {
-+			drv_data->used_vcp = DDCCI_MONITOR_BL_WHITE;
-+		}
-+	}
-+
-+	if (support_luminance && !drv_data->used_vcp) {
-+		/* Try getting luminance */
-+		dev_dbg(&dev->dev,
-+			"trying to access \"luminance\" control\n");
-+		ret = ddcci_monitor_readctrl(drv_data->device, DDCCI_MONITOR_LUMINANCE,
-+					     &brightness, &max_brightness);
-+		if (ret < 0) {
-+			if (ret == -ENOTSUPP)
-+				dev_info(&dev->dev,
-+					"monitor does not support reading luminance\n");
-+			else
-+				goto err_free;
-+		} else {
-+			drv_data->used_vcp = DDCCI_MONITOR_LUMINANCE;
-+		}
-+		drv_data->used_vcp = DDCCI_MONITOR_LUMINANCE;
-+	}
-+
-+	if (!drv_data->used_vcp)
-+		goto err_free;
-+
-+	/* Create brightness device */
-+	memset(&props, 0, sizeof(props));
-+	props.type = BACKLIGHT_RAW;
-+	props.max_brightness = max_brightness;
-+	props.brightness = brightness;
-+	bl = devm_backlight_device_register(&dev->dev, dev_name(&dev->dev),
-+					    &dev->dev, drv_data,
-+					    &ddcci_backlight_ops, &props);
-+	drv_data->bl_dev = bl;
-+	if (IS_ERR(bl)) {
-+		dev_err(&dev->dev, "failed to register backlight\n");
-+		return PTR_ERR(bl);
-+	}
-+	dev_info(&dev->dev, "registered %s as backlight device %s\n",
-+		 ddcci_monitor_vcp_name(drv_data->used_vcp),
-+		 dev_name(&dev->dev));
-+
-+	if (convenience_symlink) {
-+		ddcci_backlight_create_symlink(dev);
-+	}
-+
-+	goto end;
-+err_free:
-+	devm_kfree(&dev->dev, drv_data);
-+end:
-+	return ret;
-+}
-+
-+static int ddcci_monitor_remove(struct ddcci_device *dev)
-+{
-+	dev_dbg(&dev->dev, "removing device\n");
-+	ddcci_backlight_remove_symlink(dev);
-+	return 0;
-+}
-+
-+static struct ddcci_device_id ddcci_monitor_idtable[] = {
-+	{ "monitor", DDCCI_ANY_ID, DDCCI_ANY_ID, DDCCI_ANY_ID, DDCCI_ANY_ID, 0 },
-+	{}
-+};
-+
-+static struct ddcci_driver ddcci_backlight_driver = {
-+	.driver = {
-+		.name	= "ddcci-backlight",
-+		.owner	= THIS_MODULE,
-+	},
-+
-+	.id_table	= ddcci_monitor_idtable,
-+	.probe		= ddcci_monitor_probe,
-+	.remove		= ddcci_monitor_remove,
-+};
-+
-+module_ddcci_driver(ddcci_backlight_driver);
-+
-+/* Module parameter description */
-+module_param(convenience_symlink, bool, S_IRUGO|S_IWUSR);
-+MODULE_PARM_DESC(convenience_symlink, "add convenience symlink \"ddcci_backlight\" to ancestor device in sysfs (default true)");
-+
-+MODULE_AUTHOR("Christoph Grenz");
-+MODULE_DESCRIPTION("DDC/CI generic monitor backlight driver");
-+MODULE_VERSION("0.4.4");
-+MODULE_LICENSE("GPL");
-+
-+MODULE_ALIAS("ddcci:monitor-*-*-*-*");
-diff --git a/include/linux/ddcci.h b/include/linux/ddcci.h
-new file mode 100644
-index 000000000000..f847c2279880
---- /dev/null
-+++ b/include/linux/ddcci.h
-@@ -0,0 +1,170 @@
-+/*
-+ *  DDC/CI bus driver
-+ *
-+ *  Copyright (c) 2015 Christoph Grenz
-+ */
-+
-+/*
-+ * This program is free software; you can redistribute it and/or modify it
-+ * under the terms of the GNU General Public License as published by the Free
-+ * Software Foundation; either version 2 of the License, or (at your option)
-+ * any later version.
-+ */
-+
-+#ifndef _DDCCI_H
-+#define _DDCCI_H
-+
-+#include <linux/mod_devicetable.h>
-+#include <linux/device.h>
-+#include <linux/cdev.h>
-+#include <linux/version.h>
-+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 2, 0)
-+#define CSTRUCT const struct
-+#else
-+#define CSTRUCT struct
-+#endif
-+
-+#define DDCCI_MODULE_PREFIX "ddcci:"
-+
-+/* Special addresses */
-+
-+/* default device address (even) */
-+#define DDCCI_DEFAULT_DEVICE_ADDR	0x6E
-+/* receiving host address for communication with default device address */
-+#define DDCCI_HOST_ADDR_EVEN	0x50
-+/* sending host address for communication with default device address */
-+#define DDCCI_HOST_ADDR_ODD	0x51
-+
-+/* Command codes */
-+
-+/* Identification Request */
-+#define DDCCI_COMMAND_ID	0xf1
-+/* Identification Reply */
-+#define DDCCI_REPLY_ID	0xe1
-+/* Capabilities Request */
-+#define DDCCI_COMMAND_CAPS	0xf3
-+/* Capabilities Reply */
-+#define DDCCI_REPLY_CAPS	0xe3
-+
-+/* Quirks */
-+
-+/* Device always responds with unset protocol flag */
-+#define DDCCI_QUIRK_NO_PFLAG BIT(1)
-+/* Device needs writing one byte at a time  */
-+#define DDCCI_QUIRK_WRITE_BYTEWISE BIT(2)
-+/* Device repeats first byte on read */
-+#define DDCCI_QUIRK_SKIP_FIRST_BYTE BIT(3)
-+
-+/* Flags */
-+
-+#define DDCCI_FLAG_REMOVED BIT(1)
-+#define DDCCI_FLAG_DEPENDENT BIT(2)
-+#define DDCCI_FLAG_EXTERNAL BIT(3)
-+
-+extern struct bus_type ddcci_bus_type;
-+
-+struct ddcci_bus_drv_data;
-+
-+/* struct ddcci_device_id - identifies DDC/CI devices for probing */
-+struct ddcci_device_id {
-+	char prot[9];
-+	char type[9];
-+	char model[9];
-+	char vendor[9];
-+	char module[9];
-+	kernel_ulong_t driver_data;	/* Data private to the driver */
-+};
-+#define DDCCI_ANY_ID "\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF"
-+
-+/**
-+ * struct ddcci_device - represent an DDC/CI device
-+ * @outer_addr: Outer device address (I2C address << 1).
-+ * @inner_addr: Inner device address.
-+ * @flags: Device flags.
-+ * @capabilities: Device capability string.
-+ * @capabilities_len: Length of capability string.
-+ * @i2c_client: Parent I2C device.
-+ * @bus_drv_data: Driver internal data structure.
-+ * @dev: Driver model device node for the slave.
-+ * @cdev: Character device structure
-+ * @cdev_sem: RW semaphore for exclusive access on character device.
-+ * @prot: Device class ("protocol", from capability string)
-+ * @type: Device subclass ("type", from capability string)
-+ * @model: Device model (from capability string)
-+ * @vendor: Device vendor (from identification command response)
-+ * @module: Device module (from identification command response)
-+ * @device_number: Device serial (from identification command response)
-+ */
-+struct ddcci_device {
-+	unsigned short outer_addr;
-+	unsigned short inner_addr;
-+	int flags;
-+	char *capabilities;
-+	size_t capabilities_len;
-+	struct i2c_client *i2c_client;
-+	struct ddcci_bus_drv_data *bus_drv_data;
-+	struct device dev;
-+	struct cdev cdev;
-+	struct rw_semaphore cdev_sem;
-+	char prot[9];
-+	char type[9];
-+	char model[9];
-+	char vendor[9];
-+	char module[9];
-+	int device_number;
-+};
-+#define to_ddcci_device(d) container_of(d, struct ddcci_device, dev)
-+
-+/**
-+ * struct ddcci_driver - represent an DDC/CI device driver
-+ * @probe: Callback for device binding
-+ * @remove: Callback for device unbinding
-+ * @driver: Device driver model driver
-+ * @id_table: List of DDC/CI devices supported by this driver
-+ *
-+ * The driver.owner field should be set to the module owner of this driver.
-+ * The driver.name field should be set to the name of this driver.
-+ */
-+struct ddcci_driver {
-+	int (*probe)(struct ddcci_device *, const struct ddcci_device_id *);
-+	int (*remove)(struct ddcci_device *);
-+	struct device_driver driver;
-+	struct ddcci_device_id *id_table;
-+};
-+#define to_ddcci_driver(d) container_of(d, struct ddcci_driver, driver)
-+
-+int ddcci_register_driver(struct module *owner, struct ddcci_driver *driver);
-+#define ddcci_add_driver(driver) \
-+	ddcci_register_driver(THIS_MODULE, driver)
-+void ddcci_del_driver(struct ddcci_driver *driver);
-+
-+struct ddcci_device *ddcci_verify_device(CSTRUCT device *dev);
-+
-+#define module_ddcci_driver(__ddcci_driver) \
-+	module_driver(__ddcci_driver, ddcci_add_driver, \
-+			ddcci_del_driver)
-+
-+int ddcci_device_write(struct ddcci_device *, bool p_flag, unsigned char *data,
-+		       unsigned char length);
-+int ddcci_device_read(struct ddcci_device *, bool p_flag, unsigned char *buffer,
-+		      unsigned char length);
-+int ddcci_device_writeread(struct ddcci_device *, bool p_flag,
-+			   unsigned char *buffer, unsigned char length,
-+			   unsigned char maxlength);
-+
-+static inline void *ddcci_get_drvdata(const struct ddcci_device *dev)
-+{
-+	return dev_get_drvdata(&dev->dev);
-+}
-+
-+static inline void ddcci_set_drvdata(struct ddcci_device *dev, void *data)
-+{
-+	dev_set_drvdata(&dev->dev, data);
-+}
-+
-+unsigned long ddcci_quirks(struct ddcci_device *dev);
-+
-+const char *ddcci_find_capstr_item(const char *capabilities, const char *tag,
-+				   size_t *length);
-+
-+#endif
--- 
-2.44.0
-
-
-From 5ff62d0796ef6a49d640f1e2391a5d9a33b11f99 Mon Sep 17 00:00:00 2001
+From 07c305f8871e866731c52ba1ef0fc7cde116fd09 Mon Sep 17 00:00:00 2001
 From: "Jan Alexander Steffens (heftig)" <jan.steffens@gmail.com>
 Date: Mon, 16 Sep 2019 04:53:20 +0200
-Subject: [PATCH 30/48] ZEN: Add sysctl and CONFIG to disallow unprivileged
+Subject: [PATCH 29/47] ZEN: Add sysctl and CONFIG to disallow unprivileged
  CLONE_NEWUSER
 
 Our default behavior continues to match the vanilla kernel.
@@ -8587,10 +5987,10 @@ index 0b0b95418b16..c4b835b91fc0 100644
 2.44.0
 
 
-From 7bdf18db766f3ae29878de99d12dda71c3ac59e2 Mon Sep 17 00:00:00 2001
+From b88c3b29e462d8cddef7818d4cb9e514c7732874 Mon Sep 17 00:00:00 2001
 From: Javier Martinez Canillas <javierm@redhat.com>
 Date: Thu, 19 May 2022 14:40:07 +0200
-Subject: [PATCH 31/48] drivers/firmware: skip simpledrm if
+Subject: [PATCH 30/47] drivers/firmware: skip simpledrm if
  nvidia-drm.modeset=1 is set
 
 The Nvidia proprietary driver has some bugs that leads to issues if used
@@ -8678,10 +6078,10 @@ index 880ffcb50088..9da05ab3c29c 100644
 2.44.0
 
 
-From 21748c0fbfd55a67474603837c577df52e3a882f Mon Sep 17 00:00:00 2001
+From 299d06c3c5454aafad8b728865e2805a75822b4b Mon Sep 17 00:00:00 2001
 From: "Jan Alexander Steffens (heftig)" <heftig@archlinux.org>
 Date: Sat, 13 Jan 2024 15:29:25 +0100
-Subject: [PATCH 32/48] arch/Kconfig: Default to maximum amount of ASLR bits
+Subject: [PATCH 31/47] arch/Kconfig: Default to maximum amount of ASLR bits
 
 To mitigate https://zolutal.github.io/aslrnt/; do this with a patch to
 avoid having to enable `CONFIG_EXPERT`.
@@ -8715,236 +6115,10 @@ index 9f066785bb71..1e37a1c96120 100644
 2.44.0
 
 
-From a71e6e0211371e22c81b182ec29d568360743e66 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Ville=20Syrj=C3=A4l=C3=A4?= <ville.syrjala@linux.intel.com>
-Date: Tue, 5 Mar 2024 10:36:59 +0200
-Subject: [PATCH 33/48] drm/i915/dsi: Go back to the previous
- INIT_OTP/DISPLAY_ON order, mostly
-MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-
-Reinstate commit 88b065943cb5 ("drm/i915/dsi: Do display on
-sequence later on icl+"), for the most part. Turns out some
-machines (eg. Chuwi Minibook X) really do need that updated order.
-It is also the order the Windows driver uses.
-
-However we can't just undo the revert since that would again
-break Lenovo 82TQ. After staring at the VBT sequences for both
-machines I've concluded that the Lenovo 82TQ sequences look
-somewhat broken:
- - INIT_OTP is not present at all
- - what should be in INIT_OTP is found in DISPLAY_ON
- - what should be in DISPLAY_ON is found in BACKLIGHT_ON
-   (along with the actual backlight stuff)
-
-The Chuwi Minibook X on the other hand has a full complement
-of sequences in its VBT.
-
-So let's try to deal with the broken sequences in the
-Lenovo 82TQ VBT by simply swapping the (non-existent)
-INIT_OTP sequence with the DISPLAY_ON sequence. Thus we
-execute DISPLAY_ON when intending to execute INIT_OTP,
-and execute nothing at all when intending to execute
-DISPLAY_ON. That should be 100% equivalent to the
-revert, for such broken VBTs.
-
-Cc: stable@vger.kernel.org
-Fixes: dc524d05974f ("Revert "drm/i915/dsi: Do display on sequence later on icl+"")
-References: https://gitlab.freedesktop.org/drm/intel/-/issues/10071
-Closes: https://gitlab.freedesktop.org/drm/intel/-/issues/10334
-Signed-off-by: Ville Syrjälä <ville.syrjala@linux.intel.com>
-Link: https://patchwork.freedesktop.org/patch/msgid/20240305083659.8396-1-ville.syrjala@linux.intel.com
-Acked-by: Jani Nikula <jani.nikula@intel.com>
----
- drivers/gpu/drm/i915/display/icl_dsi.c    |  3 +-
- drivers/gpu/drm/i915/display/intel_bios.c | 43 +++++++++++++++++++----
- 2 files changed, 39 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/gpu/drm/i915/display/icl_dsi.c b/drivers/gpu/drm/i915/display/icl_dsi.c
-index eda4a8b88590..ac456a2275db 100644
---- a/drivers/gpu/drm/i915/display/icl_dsi.c
-+++ b/drivers/gpu/drm/i915/display/icl_dsi.c
-@@ -1155,7 +1155,6 @@ static void gen11_dsi_powerup_panel(struct intel_encoder *encoder)
- 	}
- 
- 	intel_dsi_vbt_exec_sequence(intel_dsi, MIPI_SEQ_INIT_OTP);
--	intel_dsi_vbt_exec_sequence(intel_dsi, MIPI_SEQ_DISPLAY_ON);
- 
- 	/* ensure all panel commands dispatched before enabling transcoder */
- 	wait_for_cmds_dispatched_to_panel(encoder);
-@@ -1256,6 +1255,8 @@ static void gen11_dsi_enable(struct intel_atomic_state *state,
- 	/* step6d: enable dsi transcoder */
- 	gen11_dsi_enable_transcoder(encoder);
- 
-+	intel_dsi_vbt_exec_sequence(intel_dsi, MIPI_SEQ_DISPLAY_ON);
-+
- 	/* step7: enable backlight */
- 	intel_backlight_enable(crtc_state, conn_state);
- 	intel_dsi_vbt_exec_sequence(intel_dsi, MIPI_SEQ_BACKLIGHT_ON);
-diff --git a/drivers/gpu/drm/i915/display/intel_bios.c b/drivers/gpu/drm/i915/display/intel_bios.c
-index fe52c06271ef..9328601e4e9f 100644
---- a/drivers/gpu/drm/i915/display/intel_bios.c
-+++ b/drivers/gpu/drm/i915/display/intel_bios.c
-@@ -1955,16 +1955,12 @@ static int get_init_otp_deassert_fragment_len(struct drm_i915_private *i915,
-  * these devices we split the init OTP sequence into a deassert sequence and
-  * the actual init OTP part.
-  */
--static void fixup_mipi_sequences(struct drm_i915_private *i915,
--				 struct intel_panel *panel)
-+static void vlv_fixup_mipi_sequences(struct drm_i915_private *i915,
-+				     struct intel_panel *panel)
- {
- 	u8 *init_otp;
- 	int len;
- 
--	/* Limit this to VLV for now. */
--	if (!IS_VALLEYVIEW(i915))
--		return;
--
- 	/* Limit this to v1 vid-mode sequences */
- 	if (panel->vbt.dsi.config->is_cmd_mode ||
- 	    panel->vbt.dsi.seq_version != 1)
-@@ -2000,6 +1996,41 @@ static void fixup_mipi_sequences(struct drm_i915_private *i915,
- 	panel->vbt.dsi.sequence[MIPI_SEQ_INIT_OTP] = init_otp + len - 1;
- }
- 
-+/*
-+ * Some machines (eg. Lenovo 82TQ) appear to have broken
-+ * VBT sequences:
-+ * - INIT_OTP is not present at all
-+ * - what should be in INIT_OTP is in DISPLAY_ON
-+ * - what should be in DISPLAY_ON is in BACKLIGHT_ON
-+ *   (along with the actual backlight stuff)
-+ *
-+ * To make those work we simply swap DISPLAY_ON and INIT_OTP.
-+ *
-+ * TODO: Do we need to limit this to specific machines,
-+ *       or examine the contents of the sequences to
-+ *       avoid false positives?
-+ */
-+static void icl_fixup_mipi_sequences(struct drm_i915_private *i915,
-+				     struct intel_panel *panel)
-+{
-+	if (!panel->vbt.dsi.sequence[MIPI_SEQ_INIT_OTP] &&
-+	    panel->vbt.dsi.sequence[MIPI_SEQ_DISPLAY_ON]) {
-+		drm_dbg_kms(&i915->drm, "Broken VBT: Swapping INIT_OTP and DISPLAY_ON sequences\n");
-+
-+		swap(panel->vbt.dsi.sequence[MIPI_SEQ_INIT_OTP],
-+		     panel->vbt.dsi.sequence[MIPI_SEQ_DISPLAY_ON]);
-+	}
-+}
-+
-+static void fixup_mipi_sequences(struct drm_i915_private *i915,
-+				 struct intel_panel *panel)
-+{
-+	if (DISPLAY_VER(i915) >= 11)
-+		icl_fixup_mipi_sequences(i915, panel);
-+	else if (IS_VALLEYVIEW(i915))
-+		vlv_fixup_mipi_sequences(i915, panel);
-+}
-+
- static void
- parse_mipi_sequence(struct drm_i915_private *i915,
- 		    struct intel_panel *panel)
--- 
-2.44.0
-
-
-From c0f2d526884a9d28937a4df7d78452344f0d2929 Mon Sep 17 00:00:00 2001
-From: Tavian Barnes <tavianator@tavianator.com>
-Date: Fri, 15 Mar 2024 21:14:29 -0400
-Subject: [PATCH 34/48] btrfs: Fix race in read_extent_buffer_pages()
-
-To prevent concurrent reads for the same extent buffer,
-read_extent_buffer_pages() performs these checks:
-
-    /* (1) */
-    if (test_bit(EXTENT_BUFFER_UPTODATE, &eb->bflags))
-        return 0;
-
-    /* (2) */
-    if (test_and_set_bit(EXTENT_BUFFER_READING, &eb->bflags))
-        goto done;
-
-At this point, it seems safe to start the actual read operation. Once
-that completes, end_bbio_meta_read() does
-
-    /* (3) */
-    set_extent_buffer_uptodate(eb);
-
-    /* (4) */
-    clear_bit(EXTENT_BUFFER_READING, &eb->bflags);
-
-Normally, this is enough to ensure only one read happens, and all other
-callers wait for it to finish before returning.  Unfortunately, there is
-a racey interleaving:
-
-    Thread A | Thread B | Thread C
-    ---------+----------+---------
-       (1)   |          |
-             |    (1)   |
-       (2)   |          |
-       (3)   |          |
-       (4)   |          |
-             |    (2)   |
-             |          |    (1)
-
-When this happens, thread B kicks of an unnecessary read. Worse, thread
-C will see UPTODATE set and return immediately, while the read from
-thread B is still in progress.  This race could result in tree-checker
-errors like this as the extent buffer is concurrently modified:
-
-    BTRFS critical (device dm-0): corrupted node, root=256
-    block=8550954455682405139 owner mismatch, have 11858205567642294356
-    expect [256, 18446744073709551360]
-
-Fix it by testing UPTODATE again after setting the READING bit, and if
-it's been set, skip the unnecessary read.
-
-Fixes: d7172f52e993 ("btrfs: use per-buffer locking for extent_buffer reading")
-Link: https://lore.kernel.org/linux-btrfs/CAHk-=whNdMaN9ntZ47XRKP6DBes2E5w7fi-0U3H2+PS18p+Pzw@mail.gmail.com/
-Link: https://lore.kernel.org/linux-btrfs/f51a6d5d7432455a6a858d51b49ecac183e0bbc9.1706312914.git.wqu@suse.com/
-Link: https://lore.kernel.org/linux-btrfs/c7241ea4-fcc6-48d2-98c8-b5ea790d6c89@gmx.com/
-Signed-off-by: Tavian Barnes <tavianator@tavianator.com>
-Reviewed-by: Qu Wenruo <wqu@suse.com>
-Reviewed-by: Christoph Hellwig <hch@lst.de>
----
- fs/btrfs/extent_io.c | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
-
-diff --git a/fs/btrfs/extent_io.c b/fs/btrfs/extent_io.c
-index 7441245b1ceb..61594eaf1f89 100644
---- a/fs/btrfs/extent_io.c
-+++ b/fs/btrfs/extent_io.c
-@@ -4333,6 +4333,19 @@ int read_extent_buffer_pages(struct extent_buffer *eb, int wait, int mirror_num,
- 	if (test_and_set_bit(EXTENT_BUFFER_READING, &eb->bflags))
- 		goto done;
- 
-+	/*
-+	 * Between the initial test_bit(EXTENT_BUFFER_UPTODATE) and the above
-+	 * test_and_set_bit(EXTENT_BUFFER_READING), someone else could have
-+	 * started and finished reading the same eb.  In this case, UPTODATE
-+	 * will now be set, and we shouldn't read it in again.
-+	 */
-+	if (unlikely(test_bit(EXTENT_BUFFER_UPTODATE, &eb->bflags))) {
-+		clear_bit(EXTENT_BUFFER_READING, &eb->bflags);
-+		smp_mb__after_atomic();
-+		wake_up_bit(&eb->bflags, EXTENT_BUFFER_READING);
-+		return 0;
-+	}
-+
- 	clear_bit(EXTENT_BUFFER_READ_ERR, &eb->bflags);
- 	eb->read_mirror = 0;
- 	check_buffer_tree_ref(eb);
--- 
-2.44.0
-
-
-From 34b6f6fe706c8aa77cb1ee63e6b22c82e4033f62 Mon Sep 17 00:00:00 2001
+From 054bd8675f9c5eae76b4d30d2fa34a97799f6b6e Mon Sep 17 00:00:00 2001
 From: Tavian Barnes <tavianator@tavianator.com>
 Date: Mon, 18 Mar 2024 09:56:53 -0400
-Subject: [PATCH 35/48] btrfs: New helper to clear EXTENT_BUFFER_READING
+Subject: [PATCH 32/47] btrfs: New helper to clear EXTENT_BUFFER_READING
 
 We are clearing the bit and waking up any waiters in two different
 places.  Factor that code out into a static helper function.
@@ -8999,10 +6173,10 @@ index 61594eaf1f89..46173dcfde4f 100644
 2.44.0
 
 
-From 5f7016e5528bfefbf7818547cc13a82cf754e540 Mon Sep 17 00:00:00 2001
+From 461e7c0777a0c992f36aa90feda94ed1cbba1bed Mon Sep 17 00:00:00 2001
 From: Tavian Barnes <tavianator@tavianator.com>
 Date: Mon, 18 Mar 2024 09:56:54 -0400
-Subject: [PATCH 36/48] btrfs: WARN if EXTENT_BUFFER_UPTODATE is set while
+Subject: [PATCH 33/47] btrfs: WARN if EXTENT_BUFFER_UPTODATE is set while
  reading
 
 We recently tracked down a race condition that triggered a read for an
@@ -9042,10 +6216,51 @@ index 46173dcfde4f..0024ea20bfc4 100644
 2.44.0
 
 
-From faeca2f585d573e2a455198ffbbec6c11c531050 Mon Sep 17 00:00:00 2001
+From 2004a8bdc4a4930b333b0275df5e52e07c1faaf4 Mon Sep 17 00:00:00 2001
+From: Jesper Dangaard Brouer <hawk@kernel.org>
+Date: Wed, 27 Mar 2024 13:14:56 +0100
+Subject: [PATCH 34/47] xen-netfront: Add missing skb_mark_for_recycle
+
+Notice that skb_mark_for_recycle() is introduced later than fixes tag in
+6a5bcd84e886 ("page_pool: Allow drivers to hint on SKB recycling").
+
+It is believed that fixes tag were missing a call to page_pool_release_page()
+between v5.9 to v5.14, after which is should have used skb_mark_for_recycle().
+Since v6.6 the call page_pool_release_page() were removed (in 535b9c61bdef
+("net: page_pool: hide page_pool_release_page()") and remaining callers
+converted (in commit 6bfef2ec0172 ("Merge branch
+'net-page_pool-remove-page_pool_release_page'")).
+
+This leak became visible in v6.8 via commit dba1b8a7ab68 ("mm/page_pool: catch
+page_pool memory leaks").
+
+Fixes: 6c5aa6fc4def ("xen networking: add basic XDP support for xen-netfront")
+Reported-by: Arthur Borsboom <arthurborsboom@gmail.com>
+Signed-off-by: Jesper Dangaard Brouer <hawk@kernel.org>
+---
+ drivers/net/xen-netfront.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/net/xen-netfront.c b/drivers/net/xen-netfront.c
+index ad29f370034e..8d2aee88526c 100644
+--- a/drivers/net/xen-netfront.c
++++ b/drivers/net/xen-netfront.c
+@@ -285,6 +285,7 @@ static struct sk_buff *xennet_alloc_one_rx_buffer(struct netfront_queue *queue)
+ 		return NULL;
+ 	}
+ 	skb_add_rx_frag(skb, 0, page, 0, 0, PAGE_SIZE);
++	skb_mark_for_recycle(skb);
+ 
+ 	/* Align ip header to a 16 bytes boundary */
+ 	skb_reserve(skb, NET_IP_ALIGN);
+-- 
+2.44.0
+
+
+From fe021c6a127a49c84c56ce904ebc9cc29616f3c2 Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Mon, 13 Nov 2023 08:50:41 +0100
-Subject: [PATCH 37/48] mm: expose per-process KSM control via syscalls
+Subject: [PATCH 35/47] mm: expose per-process KSM control via syscalls
 
 d7597f59d1d3 added a new API to enable per-process KSM control. It
 however uses prctl, which doesn't allow controlling KSM from outside of
@@ -9320,10 +6535,10 @@ index 75f00965ab15..c46daa8bda1e 100644
  /*
   * 32 bit systems traditionally used different
 diff --git a/kernel/sys.c b/kernel/sys.c
-index f8e543f1e38a..a02487c059f3 100644
+index 8bb106a56b3a..34b78c8e7bc6 100644
 --- a/kernel/sys.c
 +++ b/kernel/sys.c
-@@ -2764,6 +2764,153 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
+@@ -2767,6 +2767,153 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
  	return error;
  }
  
@@ -9495,10 +6710,738 @@ index faad00cce269..c7c9eb656468 100644
 2.44.0
 
 
-From 042b255fd20b39c6c1e841379a8792ca960c6ee4 Mon Sep 17 00:00:00 2001
+From c87b01ba6081be63763eb2c8ce2f83eb3fbf5024 Mon Sep 17 00:00:00 2001
+From: Ricardo Ribalda <ribalda@chromium.org>
+Date: Sat, 23 Mar 2024 10:48:02 +0000
+Subject: [PATCH 36/47] media: uvcvideo: Support timestamp lists of any size
+
+The tail of the list lives at the position before the head. This is
+mathematically noted as:
+```
+(head-1) mod size.
+```
+Unfortunately C, does not have a modulus operator, but a remainder
+operator (%).
+The reminder operation has a different result than the modulus if
+(head -1) is a negative number and size is not a power of two.
+
+Adding size to (head-1) allows the code to run with any value of size.
+
+This does not change the current behaviour of the driver, as the size is
+always a power of two, but avoid tedious debugging if we ever change its
+size.
+
+Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
+Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
+---
+ drivers/media/usb/uvc/uvc_video.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
+index 7cbf4692bd87..659c9e9880a9 100644
+--- a/drivers/media/usb/uvc/uvc_video.c
++++ b/drivers/media/usb/uvc/uvc_video.c
+@@ -732,7 +732,7 @@ void uvc_video_clock_update(struct uvc_streaming *stream,
+ 		goto done;
+ 
+ 	first = &clock->samples[clock->head];
+-	last = &clock->samples[(clock->head - 1) % clock->size];
++	last = &clock->samples[(clock->head - 1 + clock->size) % clock->size];
+ 
+ 	/* First step, PTS to SOF conversion. */
+ 	delta_stc = buf->pts - (1UL << 31);
+-- 
+2.44.0
+
+
+From 787c065e310a0a2144c549645a157186269d36a8 Mon Sep 17 00:00:00 2001
+From: Ricardo Ribalda <ribalda@chromium.org>
+Date: Sat, 23 Mar 2024 10:48:03 +0000
+Subject: [PATCH 37/47] media: uvcvideo: Ignore empty TS packets
+
+Some SunplusIT cameras took a borderline interpretation of the UVC 1.5
+standard, and fill the PTS and SCR fields with invalid data if the
+package does not contain data.
+
+"STC must be captured when the first video data of a video frame is put
+on the USB bus."
+
+Some SunplusIT devices send, e.g.,
+
+buffer: 0xa7755c00 len 000012 header:0x8c stc 00000000 sof 0000 pts 00000000
+buffer: 0xa7755c00 len 000012 header:0x8c stc 00000000 sof 0000 pts 00000000
+buffer: 0xa7755c00 len 000668 header:0x8c stc 73779dba sof 070c pts 7376d37a
+
+While the UVC specification meant that the first two packets shouldn't
+have had the SCR bit set in the header.
+
+This borderline/buggy interpretation has been implemented in a variety
+of devices, from directly SunplusIT and from other OEMs that rebrand
+SunplusIT products. So quirking based on VID:PID will be problematic.
+
+All the affected modules have the following extension unit:
+VideoControl Interface Descriptor:
+  guidExtensionCode         {82066163-7050-ab49-b8cc-b3855e8d221d}
+
+But the vendor plans to use that GUID in the future and fix the bug,
+this means that we should use heuristic to figure out the broken
+packets.
+
+This patch takes care of this.
+
+lsusb of one of the affected cameras:
+
+Bus 001 Device 003: ID 1bcf:2a01 Sunplus Innovation Technology Inc.
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.01
+  bDeviceClass          239 Miscellaneous Device
+  bDeviceSubClass         2 ?
+  bDeviceProtocol         1 Interface Association
+  bMaxPacketSize0        64
+  idVendor           0x1bcf Sunplus Innovation Technology Inc.
+  idProduct          0x2a01
+  bcdDevice            0.02
+  iManufacturer           1 SunplusIT Inc
+  iProduct                2 HanChen Wise Camera
+  iSerial                 3 01.00.00
+  bNumConfigurations      1
+
+Tested-by: HungNien Chen <hn.chen@sunplusit.com>
+Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
+---
+ drivers/media/usb/uvc/uvc_video.c | 31 ++++++++++++++++++++++++++++++-
+ 1 file changed, 30 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
+index 659c9e9880a9..b2e70fcf4eb4 100644
+--- a/drivers/media/usb/uvc/uvc_video.c
++++ b/drivers/media/usb/uvc/uvc_video.c
+@@ -478,6 +478,7 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
+ 	ktime_t time;
+ 	u16 host_sof;
+ 	u16 dev_sof;
++	u32 dev_stc;
+ 
+ 	switch (data[1] & (UVC_STREAM_PTS | UVC_STREAM_SCR)) {
+ 	case UVC_STREAM_PTS | UVC_STREAM_SCR:
+@@ -526,6 +527,34 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
+ 	if (dev_sof == stream->clock.last_sof)
+ 		return;
+ 
++	dev_stc = get_unaligned_le32(&data[header_size - 6]);
++
++	/*
++	 * STC (Source Time Clock) is the clock used by the camera. The UVC 1.5
++	 * standard states that it "must be captured when the first video data
++	 * of a video frame is put on the USB bus". This is generally understood
++	 * as requiring devices to clear the payload header's SCR bit before
++	 * the first packet containing video data.
++	 *
++	 * Most vendors follow that interpretation, but some (namely SunplusIT
++	 * on some devices) always set the `UVC_STREAM_SCR` bit, fill the SCR
++	 * field with 0's,and expect that the driver only processes the SCR if
++	 * there is data in the packet.
++	 *
++	 * Ignore all the hardware timestamp information if we haven't received
++	 * any data for this frame yet, the packet contains no data, and both
++	 * STC and SOF are zero. This heuristics should be safe on compliant
++	 * devices. This should be safe with compliant devices, as in the very
++	 * unlikely case where a UVC 1.1 device would send timing information
++	 * only before the first packet containing data, and both STC and SOF
++	 * happen to be zero for a particular frame, we would only miss one
++	 * clock sample from many and the clock recovery algorithm wouldn't
++	 * suffer from this condition.
++	 */
++	if (buf && buf->bytesused == 0 && len == header_size &&
++	    dev_stc == 0 && dev_sof == 0)
++		return;
++
+ 	stream->clock.last_sof = dev_sof;
+ 
+ 	host_sof = usb_get_current_frame_number(stream->dev->udev);
+@@ -564,7 +593,7 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
+ 	spin_lock_irqsave(&stream->clock.lock, flags);
+ 
+ 	sample = &stream->clock.samples[stream->clock.head];
+-	sample->dev_stc = get_unaligned_le32(&data[header_size - 6]);
++	sample->dev_stc = dev_stc;
+ 	sample->dev_sof = dev_sof;
+ 	sample->host_sof = host_sof;
+ 	sample->host_time = time;
+-- 
+2.44.0
+
+
+From d5decb66296513fae8ec67d2bcf581ace8bf9d14 Mon Sep 17 00:00:00 2001
+From: Ricardo Ribalda <ribalda@chromium.org>
+Date: Sat, 23 Mar 2024 10:48:04 +0000
+Subject: [PATCH 38/47] media: uvcvideo: Quirk for invalid dev_sof in Logitech
+ C922
+
+Logitech C922 internal SOF does not increases at a stable rate of 1kHz.
+This causes that the device_sof and the host_sof run at different rates,
+breaking the clock domain conversion algorithm. Eg:
+
+30 (6) [-] none 30 614400 B 21.245557 21.395214 34.133 fps ts mono/SoE
+31 (7) [-] none 31 614400 B 21.275327 21.427246 33.591 fps ts mono/SoE
+32 (0) [-] none 32 614400 B 21.304739 21.459256 34.000 fps ts mono/SoE
+33 (1) [-] none 33 614400 B 21.334324 21.495274 33.801 fps ts mono/SoE
+* 34 (2) [-] none 34 614400 B 21.529237 21.527297 5.130 fps ts mono/SoE
+* 35 (3) [-] none 35 614400 B 21.649416 21.559306 8.321 fps ts mono/SoE
+36 (4) [-] none 36 614400 B 21.678789 21.595320 34.045 fps ts mono/SoE
+...
+99 (3) [-] none 99 614400 B 23.542226 23.696352 33.541 fps ts mono/SoE
+100 (4) [-] none 100 614400 B 23.571578 23.728404 34.069 fps ts mono/SoE
+101 (5) [-] none 101 614400 B 23.601425 23.760420 33.504 fps ts mono/SoE
+* 102 (6) [-] none 102 614400 B 23.798324 23.796428 5.079 fps ts mono/SoE
+* 103 (7) [-] none 103 614400 B 23.916271 23.828450 8.478 fps ts mono/SoE
+104 (0) [-] none 104 614400 B 23.945720 23.860479 33.957 fps ts mono/SoE
+
+Instead of disabling completely the hardware timestamping for such
+hardware we take the assumption that the packet handling jitter is
+under 2ms and use the host_sof as dev_sof.
+
+We can think of the UVC hardware clock as a system with a coarse clock
+(the SOF) and a fine clock (the PTS). The coarse clock can be replaced
+with a clock on the same frequency, if the jitter of such clock is
+smaller than its sampling rate. That way we can save some of the
+precision of the fine clock.
+
+To probe this point we have run three experiments on the Logitech C922.
+On that experiment we run the camera at 33fps and we analyse the
+difference in msec between a frame and its predecessor. If we display
+the histogram of that value, a thinner histogram will mean a better
+meassurement. The results for:
+- original hw timestamp: https://ibb.co/D1HJJ4x
+- pure software timestamp: https://ibb.co/QC9MgVK
+- modified hw timestamp: https://ibb.co/8s9dBdk
+
+This bug in the camera firmware has been confirmed by the vendor.
+
+lsusb -v
+
+Bus 001 Device 044: ID 046d:085c Logitech, Inc. C922 Pro Stream Webcam
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass          239 Miscellaneous Device
+  bDeviceSubClass         2
+  bDeviceProtocol         1 Interface Association
+  bMaxPacketSize0        64
+  idVendor           0x046d Logitech, Inc.
+  idProduct          0x085c C922 Pro Stream Webcam
+  bcdDevice            0.16
+  iManufacturer           0
+  iProduct                2 C922 Pro Stream Webcam
+  iSerial                 1 80B912DF
+  bNumConfigurations      1
+
+Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
+Reviewed-by: Ricardo Ribalda <ribalda@chromium.org>
+Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
+Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
+---
+ drivers/media/usb/uvc/uvc_driver.c |  9 +++++++++
+ drivers/media/usb/uvc/uvc_video.c  | 11 +++++++++++
+ drivers/media/usb/uvc/uvcvideo.h   |  1 +
+ 3 files changed, 21 insertions(+)
+
+diff --git a/drivers/media/usb/uvc/uvc_driver.c b/drivers/media/usb/uvc/uvc_driver.c
+index bbd90123a4e7..723e6d5680c2 100644
+--- a/drivers/media/usb/uvc/uvc_driver.c
++++ b/drivers/media/usb/uvc/uvc_driver.c
+@@ -2574,6 +2574,15 @@ static const struct usb_device_id uvc_ids[] = {
+ 	  .bInterfaceSubClass	= 1,
+ 	  .bInterfaceProtocol	= 0,
+ 	  .driver_info		= UVC_INFO_QUIRK(UVC_QUIRK_RESTORE_CTRLS_ON_INIT) },
++	/* Logitech HD Pro Webcam C922 */
++	{ .match_flags		= USB_DEVICE_ID_MATCH_DEVICE
++				| USB_DEVICE_ID_MATCH_INT_INFO,
++	  .idVendor		= 0x046d,
++	  .idProduct		= 0x085c,
++	  .bInterfaceClass	= USB_CLASS_VIDEO,
++	  .bInterfaceSubClass	= 1,
++	  .bInterfaceProtocol	= 0,
++	  .driver_info		= UVC_INFO_QUIRK(UVC_QUIRK_INVALID_DEVICE_SOF) },
+ 	/* Chicony CNF7129 (Asus EEE 100HE) */
+ 	{ .match_flags		= USB_DEVICE_ID_MATCH_DEVICE
+ 				| USB_DEVICE_ID_MATCH_INT_INFO,
+diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
+index b2e70fcf4eb4..d6ca383f643e 100644
+--- a/drivers/media/usb/uvc/uvc_video.c
++++ b/drivers/media/usb/uvc/uvc_video.c
+@@ -558,6 +558,17 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
+ 	stream->clock.last_sof = dev_sof;
+ 
+ 	host_sof = usb_get_current_frame_number(stream->dev->udev);
++
++	/*
++	 * On some devices, like the Logitech C922, the device SOF does not run
++	 * at a stable rate of 1kHz. For those devices use the host SOF instead.
++	 * In the tests performed so far, this improves the timestamp precision.
++	 * This is probably explained by a small packet handling jitter from the
++	 * host, but the exact reason hasn't been fully determined.
++	 */
++	if (stream->dev->quirks & UVC_QUIRK_INVALID_DEVICE_SOF)
++		dev_sof = host_sof;
++
+ 	time = uvc_video_get_time();
+ 
+ 	/*
+diff --git a/drivers/media/usb/uvc/uvcvideo.h b/drivers/media/usb/uvc/uvcvideo.h
+index 6fb0a78b1b00..cb9dd50bba8a 100644
+--- a/drivers/media/usb/uvc/uvcvideo.h
++++ b/drivers/media/usb/uvc/uvcvideo.h
+@@ -73,6 +73,7 @@
+ #define UVC_QUIRK_FORCE_Y8		0x00000800
+ #define UVC_QUIRK_FORCE_BPP		0x00001000
+ #define UVC_QUIRK_WAKE_AUTOSUSPEND	0x00002000
++#define UVC_QUIRK_INVALID_DEVICE_SOF	0x00004000
+ 
+ /* Format flags */
+ #define UVC_FMT_FLAG_COMPRESSED		0x00000001
+-- 
+2.44.0
+
+
+From c42a49c7cfcf7bd81f4807bfc1cd03fe150303f3 Mon Sep 17 00:00:00 2001
+From: Ricardo Ribalda <ribalda@chromium.org>
+Date: Sat, 23 Mar 2024 10:48:05 +0000
+Subject: [PATCH 39/47] media: uvcvideo: Allow hw clock updates with buffers
+ not full
+
+With UVC 1.5 we get as little as one clock sample per frame. Which means
+that it takes 32 frames to move from the software timestamp to the
+hardware timestamp method.
+
+This results in abrupt changes in the timestamping after 32 frames (~1
+second), resulting in noticeable artifacts when used for encoding.
+
+With this patch we modify the update algorithm to work with whatever
+amount of values are available.
+
+Tested-by: HungNien Chen <hn.chen@sunplusit.com>
+Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
+---
+ drivers/media/usb/uvc/uvc_video.c | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
+index d6ca383f643e..af25b9f1b53f 100644
+--- a/drivers/media/usb/uvc/uvc_video.c
++++ b/drivers/media/usb/uvc/uvc_video.c
+@@ -768,10 +768,10 @@ void uvc_video_clock_update(struct uvc_streaming *stream,
+ 
+ 	spin_lock_irqsave(&clock->lock, flags);
+ 
+-	if (clock->count < clock->size)
++	if (clock->count < 2)
+ 		goto done;
+ 
+-	first = &clock->samples[clock->head];
++	first = &clock->samples[(clock->head - clock->count + clock->size) % clock->size];
+ 	last = &clock->samples[(clock->head - 1 + clock->size) % clock->size];
+ 
+ 	/* First step, PTS to SOF conversion. */
+@@ -786,6 +786,18 @@ void uvc_video_clock_update(struct uvc_streaming *stream,
+ 	if (y2 < y1)
+ 		y2 += 2048 << 16;
+ 
++	/*
++	 * Have at least 1/4 of a second of timestamps before we
++	 * try to do any calculation. Otherwise we do not have enough
++	 * precision. This value was determined by running Android CTS
++	 * on different devices.
++	 *
++	 * dev_sof runs at 1KHz, and we have a fixed point precision of
++	 * 16 bits.
++	 */
++	if ((y2 - y1) < ((1000 / 4) << 16))
++		goto done;
++
+ 	y = (u64)(y2 - y1) * (1ULL << 31) + (u64)y1 * (u64)x2
+ 	  - (u64)y2 * (u64)x1;
+ 	y = div_u64(y, x2 - x1);
+-- 
+2.44.0
+
+
+From ad1f9a0e09aa1b01909f07ebad5afa507e52d6a2 Mon Sep 17 00:00:00 2001
+From: Ricardo Ribalda <ribalda@chromium.org>
+Date: Sat, 23 Mar 2024 10:48:06 +0000
+Subject: [PATCH 40/47] media: uvcvideo: Refactor clock circular buffer
+
+Isolate all the changes related to the clock circular buffer to its own
+function, that way we can make changes easier to the buffer logic.
+
+Also simplify the lock, by removing the circular buffer clock handling
+from uvc_video_clock_decode().
+
+And now that we are at it, unify the API of the clock functions.
+
+Tested-by: HungNien Chen <hn.chen@sunplusit.com>
+Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
+---
+ drivers/media/usb/uvc/uvc_video.c | 83 ++++++++++++++-----------------
+ 1 file changed, 36 insertions(+), 47 deletions(-)
+
+diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
+index af25b9f1b53f..5df8f61d39cd 100644
+--- a/drivers/media/usb/uvc/uvc_video.c
++++ b/drivers/media/usb/uvc/uvc_video.c
+@@ -466,19 +466,28 @@ static inline ktime_t uvc_video_get_time(void)
+ 		return ktime_get_real();
+ }
+ 
++static void uvc_video_clock_add_sample(struct uvc_clock *clock,
++				       const struct uvc_clock_sample *sample)
++{
++	unsigned long flags;
++
++	spin_lock_irqsave(&clock->lock, flags);
++
++	clock->samples[clock->head] = *sample;
++	clock->head = (clock->head + 1) % clock->size;
++	clock->count = min(clock->count + 1, clock->size);
++
++	spin_unlock_irqrestore(&clock->lock, flags);
++}
++
+ static void
+ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
+ 		       const u8 *data, int len)
+ {
+-	struct uvc_clock_sample *sample;
++	struct uvc_clock_sample sample;
+ 	unsigned int header_size;
+ 	bool has_pts = false;
+ 	bool has_scr = false;
+-	unsigned long flags;
+-	ktime_t time;
+-	u16 host_sof;
+-	u16 dev_sof;
+-	u32 dev_stc;
+ 
+ 	switch (data[1] & (UVC_STREAM_PTS | UVC_STREAM_SCR)) {
+ 	case UVC_STREAM_PTS | UVC_STREAM_SCR:
+@@ -523,11 +532,11 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
+ 	 * all the data packets of the same frame contains the same SOF. In that
+ 	 * case only the first one will match the host_sof.
+ 	 */
+-	dev_sof = get_unaligned_le16(&data[header_size - 2]);
+-	if (dev_sof == stream->clock.last_sof)
++	sample.dev_sof = get_unaligned_le16(&data[header_size - 2]);
++	if (sample.dev_sof == stream->clock.last_sof)
+ 		return;
+ 
+-	dev_stc = get_unaligned_le32(&data[header_size - 6]);
++	sample.dev_stc = get_unaligned_le32(&data[header_size - 6]);
+ 
+ 	/*
+ 	 * STC (Source Time Clock) is the clock used by the camera. The UVC 1.5
+@@ -552,12 +561,10 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
+ 	 * suffer from this condition.
+ 	 */
+ 	if (buf && buf->bytesused == 0 && len == header_size &&
+-	    dev_stc == 0 && dev_sof == 0)
++	    sample.dev_stc == 0 && sample.dev_sof == 0)
+ 		return;
+ 
+-	stream->clock.last_sof = dev_sof;
+-
+-	host_sof = usb_get_current_frame_number(stream->dev->udev);
++	sample.host_sof = usb_get_current_frame_number(stream->dev->udev);
+ 
+ 	/*
+ 	 * On some devices, like the Logitech C922, the device SOF does not run
+@@ -567,9 +574,9 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
+ 	 * host, but the exact reason hasn't been fully determined.
+ 	 */
+ 	if (stream->dev->quirks & UVC_QUIRK_INVALID_DEVICE_SOF)
+-		dev_sof = host_sof;
++		sample.dev_sof = sample.host_sof;
+ 
+-	time = uvc_video_get_time();
++	sample.host_time = uvc_video_get_time();
+ 
+ 	/*
+ 	 * The UVC specification allows device implementations that can't obtain
+@@ -592,46 +599,28 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
+ 	 * the 8 LSBs of the delta are kept.
+ 	 */
+ 	if (stream->clock.sof_offset == (u16)-1) {
+-		u16 delta_sof = (host_sof - dev_sof) & 255;
++		u16 delta_sof = (sample.host_sof - sample.dev_sof) & 255;
+ 		if (delta_sof >= 10)
+ 			stream->clock.sof_offset = delta_sof;
+ 		else
+ 			stream->clock.sof_offset = 0;
+ 	}
+ 
+-	dev_sof = (dev_sof + stream->clock.sof_offset) & 2047;
+-
+-	spin_lock_irqsave(&stream->clock.lock, flags);
+-
+-	sample = &stream->clock.samples[stream->clock.head];
+-	sample->dev_stc = dev_stc;
+-	sample->dev_sof = dev_sof;
+-	sample->host_sof = host_sof;
+-	sample->host_time = time;
+-
+-	/* Update the sliding window head and count. */
+-	stream->clock.head = (stream->clock.head + 1) % stream->clock.size;
+-
+-	if (stream->clock.count < stream->clock.size)
+-		stream->clock.count++;
+-
+-	spin_unlock_irqrestore(&stream->clock.lock, flags);
++	sample.dev_sof = (sample.dev_sof + stream->clock.sof_offset) & 2047;
++	uvc_video_clock_add_sample(&stream->clock, &sample);
++	stream->clock.last_sof = sample.dev_sof;
+ }
+ 
+-static void uvc_video_clock_reset(struct uvc_streaming *stream)
++static void uvc_video_clock_reset(struct uvc_clock *clock)
+ {
+-	struct uvc_clock *clock = &stream->clock;
+-
+ 	clock->head = 0;
+ 	clock->count = 0;
+ 	clock->last_sof = -1;
+ 	clock->sof_offset = -1;
+ }
+ 
+-static int uvc_video_clock_init(struct uvc_streaming *stream)
++static int uvc_video_clock_init(struct uvc_clock *clock)
+ {
+-	struct uvc_clock *clock = &stream->clock;
+-
+ 	spin_lock_init(&clock->lock);
+ 	clock->size = 32;
+ 
+@@ -640,15 +629,15 @@ static int uvc_video_clock_init(struct uvc_streaming *stream)
+ 	if (clock->samples == NULL)
+ 		return -ENOMEM;
+ 
+-	uvc_video_clock_reset(stream);
++	uvc_video_clock_reset(clock);
+ 
+ 	return 0;
+ }
+ 
+-static void uvc_video_clock_cleanup(struct uvc_streaming *stream)
++static void uvc_video_clock_cleanup(struct uvc_clock *clock)
+ {
+-	kfree(stream->clock.samples);
+-	stream->clock.samples = NULL;
++	kfree(clock->samples);
++	clock->samples = NULL;
+ }
+ 
+ /*
+@@ -2123,7 +2112,7 @@ int uvc_video_resume(struct uvc_streaming *stream, int reset)
+ 
+ 	stream->frozen = 0;
+ 
+-	uvc_video_clock_reset(stream);
++	uvc_video_clock_reset(&stream->clock);
+ 
+ 	if (!uvc_queue_streaming(&stream->queue))
+ 		return 0;
+@@ -2272,7 +2261,7 @@ int uvc_video_start_streaming(struct uvc_streaming *stream)
+ {
+ 	int ret;
+ 
+-	ret = uvc_video_clock_init(stream);
++	ret = uvc_video_clock_init(&stream->clock);
+ 	if (ret < 0)
+ 		return ret;
+ 
+@@ -2290,7 +2279,7 @@ int uvc_video_start_streaming(struct uvc_streaming *stream)
+ error_video:
+ 	usb_set_interface(stream->dev->udev, stream->intfnum, 0);
+ error_commit:
+-	uvc_video_clock_cleanup(stream);
++	uvc_video_clock_cleanup(&stream->clock);
+ 
+ 	return ret;
+ }
+@@ -2318,5 +2307,5 @@ void uvc_video_stop_streaming(struct uvc_streaming *stream)
+ 		usb_clear_halt(stream->dev->udev, pipe);
+ 	}
+ 
+-	uvc_video_clock_cleanup(stream);
++	uvc_video_clock_cleanup(&stream->clock);
+ }
+-- 
+2.44.0
+
+
+From 1678138bc5e56b6b303b7bba31c69aed6273d840 Mon Sep 17 00:00:00 2001
+From: Ricardo Ribalda <ribalda@chromium.org>
+Date: Sat, 23 Mar 2024 10:48:07 +0000
+Subject: [PATCH 41/47] media: uvcvideo: Fix hw timestamp handling for slow FPS
+
+In UVC 1.5 we get a single clock value per frame. With the current
+buffer size of 32, FPS slowers than 32 might roll-over twice.
+
+The current code cannot handle two roll-over and provide invalid
+timestamps.
+
+Remove all the samples from the circular buffer that are more than two
+rollovers old, so the algorithm always provides good timestamps.
+
+Note that we are removing values that are more than one second old,
+which means that there is enough distance between the two points that
+we use for the interpolation to provide good values.
+
+Tested-by: HungNien Chen <hn.chen@sunplusit.com>
+Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
+Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
+---
+ drivers/media/usb/uvc/uvc_video.c | 24 ++++++++++++++++++++++++
+ drivers/media/usb/uvc/uvcvideo.h  |  1 +
+ 2 files changed, 25 insertions(+)
+
+diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
+index 5df8f61d39cd..900b57afac93 100644
+--- a/drivers/media/usb/uvc/uvc_video.c
++++ b/drivers/media/usb/uvc/uvc_video.c
+@@ -471,8 +471,31 @@ static void uvc_video_clock_add_sample(struct uvc_clock *clock,
+ {
+ 	unsigned long flags;
+ 
++	/*
++	 * If we write new data on the position where we had the last
++	 * overflow, remove the overflow pointer. There is no overflow
++	 * on the whole circular buffer.
++	 */
++	if (clock->head == clock->last_sof_overflow)
++		clock->last_sof_overflow = -1;
++
+ 	spin_lock_irqsave(&clock->lock, flags);
+ 
++	/* Handle overflows */
++	if (clock->count > 0 && clock->last_sof > sample->dev_sof) {
++		/*
++		 * Remove data from the circular buffer that is older than the
++		 * last overflow. We only support one overflow per circular
++		 * buffer.
++		 */
++		if (clock->last_sof_overflow != -1) {
++			clock->count = (clock->head - clock->last_sof_overflow
++					+ clock->count) % clock->count;
++		}
++		clock->last_sof_overflow = clock->head;
++	}
++
++	/* Add sample */
+ 	clock->samples[clock->head] = *sample;
+ 	clock->head = (clock->head + 1) % clock->size;
+ 	clock->count = min(clock->count + 1, clock->size);
+@@ -616,6 +639,7 @@ static void uvc_video_clock_reset(struct uvc_clock *clock)
+ 	clock->head = 0;
+ 	clock->count = 0;
+ 	clock->last_sof = -1;
++	clock->last_sof_overflow = -1;
+ 	clock->sof_offset = -1;
+ }
+ 
+diff --git a/drivers/media/usb/uvc/uvcvideo.h b/drivers/media/usb/uvc/uvcvideo.h
+index cb9dd50bba8a..fb9f9771131a 100644
+--- a/drivers/media/usb/uvc/uvcvideo.h
++++ b/drivers/media/usb/uvc/uvcvideo.h
+@@ -499,6 +499,7 @@ struct uvc_streaming {
+ 		unsigned int head;
+ 		unsigned int count;
+ 		unsigned int size;
++		unsigned int last_sof_overflow;
+ 
+ 		u16 last_sof;
+ 		u16 sof_offset;
+-- 
+2.44.0
+
+
+From dccb96e40aff63d49306310747bf442f9c6603bd Mon Sep 17 00:00:00 2001
+From: Oleksandr Natalenko <oleksandr@natalenko.name>
+Date: Mon, 25 Mar 2024 15:26:11 +0100
+Subject: [PATCH 42/47] media/uvcvideo: add quirk for invalid dev_sof in
+ Logitech C920
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Similarly to Logitech C922, C920 seems to also suffer from a firmware
+bug that breaks hardware timestamping.
+
+Add a quirk for this camera model too.
+
+Before applying the quirk:
+
+```
+100 (4) [-] none 100 200717 B 212.919114 213.079004 33.727 fps ts mono/SoE
+101 (5) [-] none 101 200889 B 213.003703 213.114996 11.822 fps ts mono/SoE
+102 (6) [-] none 102 200926 B 213.035571 213.146999 31.379 fps ts mono/SoE
+103 (7) [-] none 103 200839 B 213.067424 213.179003 31.394 fps ts mono/SoE
+104 (0) [-] none 104 200692 B 213.293180 213.214991 4.430 fps ts mono/SoE
+105 (1) [-] none 105 200937 B 213.322374 213.247001 34.254 fps ts mono/SoE
+106 (2) [-] none 106 201013 B 213.352228 213.279005 33.496 fps ts mono/SoE
+…
+```
+
+After applying the quirk:
+
+```
+154 (2) [-] none 154 192417 B 42.199823 42.207788 27.779 fps ts mono/SoE
+155 (3) [-] none 155 192040 B 42.231834 42.239791 31.239 fps ts mono/SoE
+156 (4) [-] none 156 192213 B 42.263823 42.271822 31.261 fps ts mono/SoE
+157 (5) [-] none 157 191981 B 42.299824 42.303827 27.777 fps ts mono/SoE
+158 (6) [-] none 158 191953 B 42.331835 42.339811 31.239 fps ts mono/SoE
+159 (7) [-] none 159 191904 B 42.363824 42.371813 31.261 fps ts mono/SoE
+160 (0) [-] none 160 192210 B 42.399834 42.407801 27.770 fps ts mono/SoE
+```
+
+Link: https://lore.kernel.org/lkml/5764213.DvuYhMxLoT@natalenko.name/
+Reviewed-by: Ricardo Ribalda <ribalda@chromium.org>
+Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
+---
+ drivers/media/usb/uvc/uvc_driver.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/media/usb/uvc/uvc_driver.c b/drivers/media/usb/uvc/uvc_driver.c
+index 723e6d5680c2..444d7089885e 100644
+--- a/drivers/media/usb/uvc/uvc_driver.c
++++ b/drivers/media/usb/uvc/uvc_driver.c
+@@ -2573,7 +2573,8 @@ static const struct usb_device_id uvc_ids[] = {
+ 	  .bInterfaceClass	= USB_CLASS_VIDEO,
+ 	  .bInterfaceSubClass	= 1,
+ 	  .bInterfaceProtocol	= 0,
+-	  .driver_info		= UVC_INFO_QUIRK(UVC_QUIRK_RESTORE_CTRLS_ON_INIT) },
++	  .driver_info		= UVC_INFO_QUIRK(UVC_QUIRK_RESTORE_CTRLS_ON_INIT
++					       | UVC_QUIRK_INVALID_DEVICE_SOF) },
+ 	/* Logitech HD Pro Webcam C922 */
+ 	{ .match_flags		= USB_DEVICE_ID_MATCH_DEVICE
+ 				| USB_DEVICE_ID_MATCH_INT_INFO,
+-- 
+2.44.0
+
+
+From ad604aecb27f564b77a193d89311c127cc16ecea Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Sun, 24 Mar 2024 22:31:11 +0100
-Subject: [PATCH 38/48] media: v4l2-core: add v4l2loopback driver
+Subject: [PATCH 43/47] media: v4l2-core: add v4l2loopback driver
 
 Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
 ---
@@ -13289,37 +11232,10 @@ index 000000000000..d855a3796554
 2.44.0
 
 
-From 40e0f5fe75f780c6dc90bb24e01f1ff42d47ebed Mon Sep 17 00:00:00 2001
-From: Oleksandr Natalenko <oleksandr@natalenko.name>
-Date: Sun, 24 Mar 2024 22:33:28 +0100
-Subject: [PATCH 39/48] pf-6.9: bump to v6.9-pf0
-
-Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
----
- Makefile | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/Makefile b/Makefile
-index 763b6792d3d5..49722dea5915 100644
---- a/Makefile
-+++ b/Makefile
-@@ -2,7 +2,7 @@
- VERSION = 6
- PATCHLEVEL = 9
- SUBLEVEL = 0
--EXTRAVERSION = -rc1
-+EXTRAVERSION = -pf0
- NAME = Hurr durr I'ma ninja sloth
- 
- # *DOCUMENTATION*
--- 
-2.44.0
-
-
-From b913c0bc2548ebe95fcb48c0bc73b2146eb93a13 Mon Sep 17 00:00:00 2001
+From d652d7c6c4a6744177521a3d037b7aeeb9fd79cd Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Wed, 27 Mar 2024 08:51:17 +0100
-Subject: [PATCH 40/48] zstd: import upstream v1.5.6
+Subject: [PATCH 44/47] zstd: import upstream v1.5.6
 
 Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
 ---
@@ -31966,10 +29882,10 @@ index f4ed952ed485..7d31518e9d5a 100644
 2.44.0
 
 
-From dbe51a772881369da60a805777881e859f02843e Mon Sep 17 00:00:00 2001
+From 24031f3c2a54a7cd2dca4e57e28f84026b841ecb Mon Sep 17 00:00:00 2001
 From: Kees Cook <keescook@chromium.org>
 Date: Mon, 22 Jan 2024 16:27:56 -0800
-Subject: [PATCH 41/48] lib: zstd: Refactor intentional wrap-around test
+Subject: [PATCH 45/47] lib: zstd: Refactor intentional wrap-around test
 
 In an effort to separate intentional arithmetic wrap-around from
 unexpected wrap-around, we need to refactor places that depend on this
@@ -32030,730 +29946,226 @@ index b2bfa2b16859..c9cbc45f6ed9 100644
 2.44.0
 
 
-From 1c3c4eb0572c4f1b87b16e24c0a20e6ad284c90e Mon Sep 17 00:00:00 2001
-From: Ricardo Ribalda <ribalda@chromium.org>
-Date: Sat, 23 Mar 2024 10:48:02 +0000
-Subject: [PATCH 42/48] media: uvcvideo: Support timestamp lists of any size
+From dc584d0300aca275bcdd8f1c0e0b99c06eb71922 Mon Sep 17 00:00:00 2001
+From: Oleksandr Natalenko <oleksandr@natalenko.name>
+Date: Mon, 1 Apr 2024 00:03:16 +0200
+Subject: [PATCH 46/47] pf-6.9: bump to v6.9-pf0
 
-The tail of the list lives at the position before the head. This is
-mathematically noted as:
-```
-(head-1) mod size.
-```
-Unfortunately C, does not have a modulus operator, but a remainder
-operator (%).
-The reminder operation has a different result than the modulus if
-(head -1) is a negative number and size is not a power of two.
-
-Adding size to (head-1) allows the code to run with any value of size.
-
-This does not change the current behaviour of the driver, as the size is
-always a power of two, but avoid tedious debugging if we ever change its
-size.
-
-Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
-Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
+Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
 ---
- drivers/media/usb/uvc/uvc_video.c | 2 +-
+ Makefile | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
-index 7cbf4692bd87..659c9e9880a9 100644
---- a/drivers/media/usb/uvc/uvc_video.c
-+++ b/drivers/media/usb/uvc/uvc_video.c
-@@ -732,7 +732,7 @@ void uvc_video_clock_update(struct uvc_streaming *stream,
- 		goto done;
+diff --git a/Makefile b/Makefile
+index 4bef6323c47d..49722dea5915 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,7 +2,7 @@
+ VERSION = 6
+ PATCHLEVEL = 9
+ SUBLEVEL = 0
+-EXTRAVERSION = -rc2
++EXTRAVERSION = -pf0
+ NAME = Hurr durr I'ma ninja sloth
  
- 	first = &clock->samples[clock->head];
--	last = &clock->samples[(clock->head - 1) % clock->size];
-+	last = &clock->samples[(clock->head - 1 + clock->size) % clock->size];
- 
- 	/* First step, PTS to SOF conversion. */
- 	delta_stc = buf->pts - (1UL << 31);
+ # *DOCUMENTATION*
 -- 
 2.44.0
 
 
-From 0547fd8e425f79f83ad2b9303daf1ceffcf3fda7 Mon Sep 17 00:00:00 2001
-From: Ricardo Ribalda <ribalda@chromium.org>
-Date: Sat, 23 Mar 2024 10:48:03 +0000
-Subject: [PATCH 43/48] media: uvcvideo: Ignore empty TS packets
-
-Some SunplusIT cameras took a borderline interpretation of the UVC 1.5
-standard, and fill the PTS and SCR fields with invalid data if the
-package does not contain data.
-
-"STC must be captured when the first video data of a video frame is put
-on the USB bus."
-
-Some SunplusIT devices send, e.g.,
-
-buffer: 0xa7755c00 len 000012 header:0x8c stc 00000000 sof 0000 pts 00000000
-buffer: 0xa7755c00 len 000012 header:0x8c stc 00000000 sof 0000 pts 00000000
-buffer: 0xa7755c00 len 000668 header:0x8c stc 73779dba sof 070c pts 7376d37a
-
-While the UVC specification meant that the first two packets shouldn't
-have had the SCR bit set in the header.
-
-This borderline/buggy interpretation has been implemented in a variety
-of devices, from directly SunplusIT and from other OEMs that rebrand
-SunplusIT products. So quirking based on VID:PID will be problematic.
-
-All the affected modules have the following extension unit:
-VideoControl Interface Descriptor:
-  guidExtensionCode         {82066163-7050-ab49-b8cc-b3855e8d221d}
-
-But the vendor plans to use that GUID in the future and fix the bug,
-this means that we should use heuristic to figure out the broken
-packets.
-
-This patch takes care of this.
-
-lsusb of one of the affected cameras:
-
-Bus 001 Device 003: ID 1bcf:2a01 Sunplus Innovation Technology Inc.
-Device Descriptor:
-  bLength                18
-  bDescriptorType         1
-  bcdUSB               2.01
-  bDeviceClass          239 Miscellaneous Device
-  bDeviceSubClass         2 ?
-  bDeviceProtocol         1 Interface Association
-  bMaxPacketSize0        64
-  idVendor           0x1bcf Sunplus Innovation Technology Inc.
-  idProduct          0x2a01
-  bcdDevice            0.02
-  iManufacturer           1 SunplusIT Inc
-  iProduct                2 HanChen Wise Camera
-  iSerial                 3 01.00.00
-  bNumConfigurations      1
-
-Tested-by: HungNien Chen <hn.chen@sunplusit.com>
-Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
----
- drivers/media/usb/uvc/uvc_video.c | 31 ++++++++++++++++++++++++++++++-
- 1 file changed, 30 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
-index 659c9e9880a9..b2e70fcf4eb4 100644
---- a/drivers/media/usb/uvc/uvc_video.c
-+++ b/drivers/media/usb/uvc/uvc_video.c
-@@ -478,6 +478,7 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
- 	ktime_t time;
- 	u16 host_sof;
- 	u16 dev_sof;
-+	u32 dev_stc;
- 
- 	switch (data[1] & (UVC_STREAM_PTS | UVC_STREAM_SCR)) {
- 	case UVC_STREAM_PTS | UVC_STREAM_SCR:
-@@ -526,6 +527,34 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
- 	if (dev_sof == stream->clock.last_sof)
- 		return;
- 
-+	dev_stc = get_unaligned_le32(&data[header_size - 6]);
-+
-+	/*
-+	 * STC (Source Time Clock) is the clock used by the camera. The UVC 1.5
-+	 * standard states that it "must be captured when the first video data
-+	 * of a video frame is put on the USB bus". This is generally understood
-+	 * as requiring devices to clear the payload header's SCR bit before
-+	 * the first packet containing video data.
-+	 *
-+	 * Most vendors follow that interpretation, but some (namely SunplusIT
-+	 * on some devices) always set the `UVC_STREAM_SCR` bit, fill the SCR
-+	 * field with 0's,and expect that the driver only processes the SCR if
-+	 * there is data in the packet.
-+	 *
-+	 * Ignore all the hardware timestamp information if we haven't received
-+	 * any data for this frame yet, the packet contains no data, and both
-+	 * STC and SOF are zero. This heuristics should be safe on compliant
-+	 * devices. This should be safe with compliant devices, as in the very
-+	 * unlikely case where a UVC 1.1 device would send timing information
-+	 * only before the first packet containing data, and both STC and SOF
-+	 * happen to be zero for a particular frame, we would only miss one
-+	 * clock sample from many and the clock recovery algorithm wouldn't
-+	 * suffer from this condition.
-+	 */
-+	if (buf && buf->bytesused == 0 && len == header_size &&
-+	    dev_stc == 0 && dev_sof == 0)
-+		return;
-+
- 	stream->clock.last_sof = dev_sof;
- 
- 	host_sof = usb_get_current_frame_number(stream->dev->udev);
-@@ -564,7 +593,7 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
- 	spin_lock_irqsave(&stream->clock.lock, flags);
- 
- 	sample = &stream->clock.samples[stream->clock.head];
--	sample->dev_stc = get_unaligned_le32(&data[header_size - 6]);
-+	sample->dev_stc = dev_stc;
- 	sample->dev_sof = dev_sof;
- 	sample->host_sof = host_sof;
- 	sample->host_time = time;
--- 
-2.44.0
-
-
-From 5780f92434e38e2d6c691c7ecc43fe595583b091 Mon Sep 17 00:00:00 2001
-From: Ricardo Ribalda <ribalda@chromium.org>
-Date: Sat, 23 Mar 2024 10:48:04 +0000
-Subject: [PATCH 44/48] media: uvcvideo: Quirk for invalid dev_sof in Logitech
- C922
-
-Logitech C922 internal SOF does not increases at a stable rate of 1kHz.
-This causes that the device_sof and the host_sof run at different rates,
-breaking the clock domain conversion algorithm. Eg:
-
-30 (6) [-] none 30 614400 B 21.245557 21.395214 34.133 fps ts mono/SoE
-31 (7) [-] none 31 614400 B 21.275327 21.427246 33.591 fps ts mono/SoE
-32 (0) [-] none 32 614400 B 21.304739 21.459256 34.000 fps ts mono/SoE
-33 (1) [-] none 33 614400 B 21.334324 21.495274 33.801 fps ts mono/SoE
-* 34 (2) [-] none 34 614400 B 21.529237 21.527297 5.130 fps ts mono/SoE
-* 35 (3) [-] none 35 614400 B 21.649416 21.559306 8.321 fps ts mono/SoE
-36 (4) [-] none 36 614400 B 21.678789 21.595320 34.045 fps ts mono/SoE
-...
-99 (3) [-] none 99 614400 B 23.542226 23.696352 33.541 fps ts mono/SoE
-100 (4) [-] none 100 614400 B 23.571578 23.728404 34.069 fps ts mono/SoE
-101 (5) [-] none 101 614400 B 23.601425 23.760420 33.504 fps ts mono/SoE
-* 102 (6) [-] none 102 614400 B 23.798324 23.796428 5.079 fps ts mono/SoE
-* 103 (7) [-] none 103 614400 B 23.916271 23.828450 8.478 fps ts mono/SoE
-104 (0) [-] none 104 614400 B 23.945720 23.860479 33.957 fps ts mono/SoE
-
-Instead of disabling completely the hardware timestamping for such
-hardware we take the assumption that the packet handling jitter is
-under 2ms and use the host_sof as dev_sof.
-
-We can think of the UVC hardware clock as a system with a coarse clock
-(the SOF) and a fine clock (the PTS). The coarse clock can be replaced
-with a clock on the same frequency, if the jitter of such clock is
-smaller than its sampling rate. That way we can save some of the
-precision of the fine clock.
-
-To probe this point we have run three experiments on the Logitech C922.
-On that experiment we run the camera at 33fps and we analyse the
-difference in msec between a frame and its predecessor. If we display
-the histogram of that value, a thinner histogram will mean a better
-meassurement. The results for:
-- original hw timestamp: https://ibb.co/D1HJJ4x
-- pure software timestamp: https://ibb.co/QC9MgVK
-- modified hw timestamp: https://ibb.co/8s9dBdk
-
-This bug in the camera firmware has been confirmed by the vendor.
-
-lsusb -v
-
-Bus 001 Device 044: ID 046d:085c Logitech, Inc. C922 Pro Stream Webcam
-Device Descriptor:
-  bLength                18
-  bDescriptorType         1
-  bcdUSB               2.00
-  bDeviceClass          239 Miscellaneous Device
-  bDeviceSubClass         2
-  bDeviceProtocol         1 Interface Association
-  bMaxPacketSize0        64
-  idVendor           0x046d Logitech, Inc.
-  idProduct          0x085c C922 Pro Stream Webcam
-  bcdDevice            0.16
-  iManufacturer           0
-  iProduct                2 C922 Pro Stream Webcam
-  iSerial                 1 80B912DF
-  bNumConfigurations      1
-
-Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
-Reviewed-by: Ricardo Ribalda <ribalda@chromium.org>
-Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
-Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
----
- drivers/media/usb/uvc/uvc_driver.c |  9 +++++++++
- drivers/media/usb/uvc/uvc_video.c  | 11 +++++++++++
- drivers/media/usb/uvc/uvcvideo.h   |  1 +
- 3 files changed, 21 insertions(+)
-
-diff --git a/drivers/media/usb/uvc/uvc_driver.c b/drivers/media/usb/uvc/uvc_driver.c
-index bbd90123a4e7..723e6d5680c2 100644
---- a/drivers/media/usb/uvc/uvc_driver.c
-+++ b/drivers/media/usb/uvc/uvc_driver.c
-@@ -2574,6 +2574,15 @@ static const struct usb_device_id uvc_ids[] = {
- 	  .bInterfaceSubClass	= 1,
- 	  .bInterfaceProtocol	= 0,
- 	  .driver_info		= UVC_INFO_QUIRK(UVC_QUIRK_RESTORE_CTRLS_ON_INIT) },
-+	/* Logitech HD Pro Webcam C922 */
-+	{ .match_flags		= USB_DEVICE_ID_MATCH_DEVICE
-+				| USB_DEVICE_ID_MATCH_INT_INFO,
-+	  .idVendor		= 0x046d,
-+	  .idProduct		= 0x085c,
-+	  .bInterfaceClass	= USB_CLASS_VIDEO,
-+	  .bInterfaceSubClass	= 1,
-+	  .bInterfaceProtocol	= 0,
-+	  .driver_info		= UVC_INFO_QUIRK(UVC_QUIRK_INVALID_DEVICE_SOF) },
- 	/* Chicony CNF7129 (Asus EEE 100HE) */
- 	{ .match_flags		= USB_DEVICE_ID_MATCH_DEVICE
- 				| USB_DEVICE_ID_MATCH_INT_INFO,
-diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
-index b2e70fcf4eb4..d6ca383f643e 100644
---- a/drivers/media/usb/uvc/uvc_video.c
-+++ b/drivers/media/usb/uvc/uvc_video.c
-@@ -558,6 +558,17 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
- 	stream->clock.last_sof = dev_sof;
- 
- 	host_sof = usb_get_current_frame_number(stream->dev->udev);
-+
-+	/*
-+	 * On some devices, like the Logitech C922, the device SOF does not run
-+	 * at a stable rate of 1kHz. For those devices use the host SOF instead.
-+	 * In the tests performed so far, this improves the timestamp precision.
-+	 * This is probably explained by a small packet handling jitter from the
-+	 * host, but the exact reason hasn't been fully determined.
-+	 */
-+	if (stream->dev->quirks & UVC_QUIRK_INVALID_DEVICE_SOF)
-+		dev_sof = host_sof;
-+
- 	time = uvc_video_get_time();
- 
- 	/*
-diff --git a/drivers/media/usb/uvc/uvcvideo.h b/drivers/media/usb/uvc/uvcvideo.h
-index 6fb0a78b1b00..cb9dd50bba8a 100644
---- a/drivers/media/usb/uvc/uvcvideo.h
-+++ b/drivers/media/usb/uvc/uvcvideo.h
-@@ -73,6 +73,7 @@
- #define UVC_QUIRK_FORCE_Y8		0x00000800
- #define UVC_QUIRK_FORCE_BPP		0x00001000
- #define UVC_QUIRK_WAKE_AUTOSUSPEND	0x00002000
-+#define UVC_QUIRK_INVALID_DEVICE_SOF	0x00004000
- 
- /* Format flags */
- #define UVC_FMT_FLAG_COMPRESSED		0x00000001
--- 
-2.44.0
-
-
-From 088d82175aaeb0c137b3a189489d7ea2ce6535cf Mon Sep 17 00:00:00 2001
-From: Ricardo Ribalda <ribalda@chromium.org>
-Date: Sat, 23 Mar 2024 10:48:05 +0000
-Subject: [PATCH 45/48] media: uvcvideo: Allow hw clock updates with buffers
- not full
-
-With UVC 1.5 we get as little as one clock sample per frame. Which means
-that it takes 32 frames to move from the software timestamp to the
-hardware timestamp method.
-
-This results in abrupt changes in the timestamping after 32 frames (~1
-second), resulting in noticeable artifacts when used for encoding.
-
-With this patch we modify the update algorithm to work with whatever
-amount of values are available.
-
-Tested-by: HungNien Chen <hn.chen@sunplusit.com>
-Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
----
- drivers/media/usb/uvc/uvc_video.c | 16 ++++++++++++++--
- 1 file changed, 14 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
-index d6ca383f643e..af25b9f1b53f 100644
---- a/drivers/media/usb/uvc/uvc_video.c
-+++ b/drivers/media/usb/uvc/uvc_video.c
-@@ -768,10 +768,10 @@ void uvc_video_clock_update(struct uvc_streaming *stream,
- 
- 	spin_lock_irqsave(&clock->lock, flags);
- 
--	if (clock->count < clock->size)
-+	if (clock->count < 2)
- 		goto done;
- 
--	first = &clock->samples[clock->head];
-+	first = &clock->samples[(clock->head - clock->count + clock->size) % clock->size];
- 	last = &clock->samples[(clock->head - 1 + clock->size) % clock->size];
- 
- 	/* First step, PTS to SOF conversion. */
-@@ -786,6 +786,18 @@ void uvc_video_clock_update(struct uvc_streaming *stream,
- 	if (y2 < y1)
- 		y2 += 2048 << 16;
- 
-+	/*
-+	 * Have at least 1/4 of a second of timestamps before we
-+	 * try to do any calculation. Otherwise we do not have enough
-+	 * precision. This value was determined by running Android CTS
-+	 * on different devices.
-+	 *
-+	 * dev_sof runs at 1KHz, and we have a fixed point precision of
-+	 * 16 bits.
-+	 */
-+	if ((y2 - y1) < ((1000 / 4) << 16))
-+		goto done;
-+
- 	y = (u64)(y2 - y1) * (1ULL << 31) + (u64)y1 * (u64)x2
- 	  - (u64)y2 * (u64)x1;
- 	y = div_u64(y, x2 - x1);
--- 
-2.44.0
-
-
-From 62df98eab1d576b08b97d7a075a396d312f405cd Mon Sep 17 00:00:00 2001
-From: Ricardo Ribalda <ribalda@chromium.org>
-Date: Sat, 23 Mar 2024 10:48:06 +0000
-Subject: [PATCH 46/48] media: uvcvideo: Refactor clock circular buffer
-
-Isolate all the changes related to the clock circular buffer to its own
-function, that way we can make changes easier to the buffer logic.
-
-Also simplify the lock, by removing the circular buffer clock handling
-from uvc_video_clock_decode().
-
-And now that we are at it, unify the API of the clock functions.
-
-Tested-by: HungNien Chen <hn.chen@sunplusit.com>
-Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
----
- drivers/media/usb/uvc/uvc_video.c | 83 ++++++++++++++-----------------
- 1 file changed, 36 insertions(+), 47 deletions(-)
-
-diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
-index af25b9f1b53f..5df8f61d39cd 100644
---- a/drivers/media/usb/uvc/uvc_video.c
-+++ b/drivers/media/usb/uvc/uvc_video.c
-@@ -466,19 +466,28 @@ static inline ktime_t uvc_video_get_time(void)
- 		return ktime_get_real();
- }
- 
-+static void uvc_video_clock_add_sample(struct uvc_clock *clock,
-+				       const struct uvc_clock_sample *sample)
-+{
-+	unsigned long flags;
-+
-+	spin_lock_irqsave(&clock->lock, flags);
-+
-+	clock->samples[clock->head] = *sample;
-+	clock->head = (clock->head + 1) % clock->size;
-+	clock->count = min(clock->count + 1, clock->size);
-+
-+	spin_unlock_irqrestore(&clock->lock, flags);
-+}
-+
- static void
- uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
- 		       const u8 *data, int len)
- {
--	struct uvc_clock_sample *sample;
-+	struct uvc_clock_sample sample;
- 	unsigned int header_size;
- 	bool has_pts = false;
- 	bool has_scr = false;
--	unsigned long flags;
--	ktime_t time;
--	u16 host_sof;
--	u16 dev_sof;
--	u32 dev_stc;
- 
- 	switch (data[1] & (UVC_STREAM_PTS | UVC_STREAM_SCR)) {
- 	case UVC_STREAM_PTS | UVC_STREAM_SCR:
-@@ -523,11 +532,11 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
- 	 * all the data packets of the same frame contains the same SOF. In that
- 	 * case only the first one will match the host_sof.
- 	 */
--	dev_sof = get_unaligned_le16(&data[header_size - 2]);
--	if (dev_sof == stream->clock.last_sof)
-+	sample.dev_sof = get_unaligned_le16(&data[header_size - 2]);
-+	if (sample.dev_sof == stream->clock.last_sof)
- 		return;
- 
--	dev_stc = get_unaligned_le32(&data[header_size - 6]);
-+	sample.dev_stc = get_unaligned_le32(&data[header_size - 6]);
- 
- 	/*
- 	 * STC (Source Time Clock) is the clock used by the camera. The UVC 1.5
-@@ -552,12 +561,10 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
- 	 * suffer from this condition.
- 	 */
- 	if (buf && buf->bytesused == 0 && len == header_size &&
--	    dev_stc == 0 && dev_sof == 0)
-+	    sample.dev_stc == 0 && sample.dev_sof == 0)
- 		return;
- 
--	stream->clock.last_sof = dev_sof;
--
--	host_sof = usb_get_current_frame_number(stream->dev->udev);
-+	sample.host_sof = usb_get_current_frame_number(stream->dev->udev);
- 
- 	/*
- 	 * On some devices, like the Logitech C922, the device SOF does not run
-@@ -567,9 +574,9 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
- 	 * host, but the exact reason hasn't been fully determined.
- 	 */
- 	if (stream->dev->quirks & UVC_QUIRK_INVALID_DEVICE_SOF)
--		dev_sof = host_sof;
-+		sample.dev_sof = sample.host_sof;
- 
--	time = uvc_video_get_time();
-+	sample.host_time = uvc_video_get_time();
- 
- 	/*
- 	 * The UVC specification allows device implementations that can't obtain
-@@ -592,46 +599,28 @@ uvc_video_clock_decode(struct uvc_streaming *stream, struct uvc_buffer *buf,
- 	 * the 8 LSBs of the delta are kept.
- 	 */
- 	if (stream->clock.sof_offset == (u16)-1) {
--		u16 delta_sof = (host_sof - dev_sof) & 255;
-+		u16 delta_sof = (sample.host_sof - sample.dev_sof) & 255;
- 		if (delta_sof >= 10)
- 			stream->clock.sof_offset = delta_sof;
- 		else
- 			stream->clock.sof_offset = 0;
- 	}
- 
--	dev_sof = (dev_sof + stream->clock.sof_offset) & 2047;
--
--	spin_lock_irqsave(&stream->clock.lock, flags);
--
--	sample = &stream->clock.samples[stream->clock.head];
--	sample->dev_stc = dev_stc;
--	sample->dev_sof = dev_sof;
--	sample->host_sof = host_sof;
--	sample->host_time = time;
--
--	/* Update the sliding window head and count. */
--	stream->clock.head = (stream->clock.head + 1) % stream->clock.size;
--
--	if (stream->clock.count < stream->clock.size)
--		stream->clock.count++;
--
--	spin_unlock_irqrestore(&stream->clock.lock, flags);
-+	sample.dev_sof = (sample.dev_sof + stream->clock.sof_offset) & 2047;
-+	uvc_video_clock_add_sample(&stream->clock, &sample);
-+	stream->clock.last_sof = sample.dev_sof;
- }
- 
--static void uvc_video_clock_reset(struct uvc_streaming *stream)
-+static void uvc_video_clock_reset(struct uvc_clock *clock)
- {
--	struct uvc_clock *clock = &stream->clock;
--
- 	clock->head = 0;
- 	clock->count = 0;
- 	clock->last_sof = -1;
- 	clock->sof_offset = -1;
- }
- 
--static int uvc_video_clock_init(struct uvc_streaming *stream)
-+static int uvc_video_clock_init(struct uvc_clock *clock)
- {
--	struct uvc_clock *clock = &stream->clock;
--
- 	spin_lock_init(&clock->lock);
- 	clock->size = 32;
- 
-@@ -640,15 +629,15 @@ static int uvc_video_clock_init(struct uvc_streaming *stream)
- 	if (clock->samples == NULL)
- 		return -ENOMEM;
- 
--	uvc_video_clock_reset(stream);
-+	uvc_video_clock_reset(clock);
- 
- 	return 0;
- }
- 
--static void uvc_video_clock_cleanup(struct uvc_streaming *stream)
-+static void uvc_video_clock_cleanup(struct uvc_clock *clock)
- {
--	kfree(stream->clock.samples);
--	stream->clock.samples = NULL;
-+	kfree(clock->samples);
-+	clock->samples = NULL;
- }
- 
- /*
-@@ -2123,7 +2112,7 @@ int uvc_video_resume(struct uvc_streaming *stream, int reset)
- 
- 	stream->frozen = 0;
- 
--	uvc_video_clock_reset(stream);
-+	uvc_video_clock_reset(&stream->clock);
- 
- 	if (!uvc_queue_streaming(&stream->queue))
- 		return 0;
-@@ -2272,7 +2261,7 @@ int uvc_video_start_streaming(struct uvc_streaming *stream)
- {
- 	int ret;
- 
--	ret = uvc_video_clock_init(stream);
-+	ret = uvc_video_clock_init(&stream->clock);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -2290,7 +2279,7 @@ int uvc_video_start_streaming(struct uvc_streaming *stream)
- error_video:
- 	usb_set_interface(stream->dev->udev, stream->intfnum, 0);
- error_commit:
--	uvc_video_clock_cleanup(stream);
-+	uvc_video_clock_cleanup(&stream->clock);
- 
- 	return ret;
- }
-@@ -2318,5 +2307,5 @@ void uvc_video_stop_streaming(struct uvc_streaming *stream)
- 		usb_clear_halt(stream->dev->udev, pipe);
- 	}
- 
--	uvc_video_clock_cleanup(stream);
-+	uvc_video_clock_cleanup(&stream->clock);
- }
--- 
-2.44.0
-
-
-From 8f4760d124d1ec99a761775912c4621edc262ff0 Mon Sep 17 00:00:00 2001
-From: Ricardo Ribalda <ribalda@chromium.org>
-Date: Sat, 23 Mar 2024 10:48:07 +0000
-Subject: [PATCH 47/48] media: uvcvideo: Fix hw timestamp handling for slow FPS
-
-In UVC 1.5 we get a single clock value per frame. With the current
-buffer size of 32, FPS slowers than 32 might roll-over twice.
-
-The current code cannot handle two roll-over and provide invalid
-timestamps.
-
-Remove all the samples from the circular buffer that are more than two
-rollovers old, so the algorithm always provides good timestamps.
-
-Note that we are removing values that are more than one second old,
-which means that there is enough distance between the two points that
-we use for the interpolation to provide good values.
-
-Tested-by: HungNien Chen <hn.chen@sunplusit.com>
-Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
-Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
----
- drivers/media/usb/uvc/uvc_video.c | 24 ++++++++++++++++++++++++
- drivers/media/usb/uvc/uvcvideo.h  |  1 +
- 2 files changed, 25 insertions(+)
-
-diff --git a/drivers/media/usb/uvc/uvc_video.c b/drivers/media/usb/uvc/uvc_video.c
-index 5df8f61d39cd..900b57afac93 100644
---- a/drivers/media/usb/uvc/uvc_video.c
-+++ b/drivers/media/usb/uvc/uvc_video.c
-@@ -471,8 +471,31 @@ static void uvc_video_clock_add_sample(struct uvc_clock *clock,
- {
- 	unsigned long flags;
- 
-+	/*
-+	 * If we write new data on the position where we had the last
-+	 * overflow, remove the overflow pointer. There is no overflow
-+	 * on the whole circular buffer.
-+	 */
-+	if (clock->head == clock->last_sof_overflow)
-+		clock->last_sof_overflow = -1;
-+
- 	spin_lock_irqsave(&clock->lock, flags);
- 
-+	/* Handle overflows */
-+	if (clock->count > 0 && clock->last_sof > sample->dev_sof) {
-+		/*
-+		 * Remove data from the circular buffer that is older than the
-+		 * last overflow. We only support one overflow per circular
-+		 * buffer.
-+		 */
-+		if (clock->last_sof_overflow != -1) {
-+			clock->count = (clock->head - clock->last_sof_overflow
-+					+ clock->count) % clock->count;
-+		}
-+		clock->last_sof_overflow = clock->head;
-+	}
-+
-+	/* Add sample */
- 	clock->samples[clock->head] = *sample;
- 	clock->head = (clock->head + 1) % clock->size;
- 	clock->count = min(clock->count + 1, clock->size);
-@@ -616,6 +639,7 @@ static void uvc_video_clock_reset(struct uvc_clock *clock)
- 	clock->head = 0;
- 	clock->count = 0;
- 	clock->last_sof = -1;
-+	clock->last_sof_overflow = -1;
- 	clock->sof_offset = -1;
- }
- 
-diff --git a/drivers/media/usb/uvc/uvcvideo.h b/drivers/media/usb/uvc/uvcvideo.h
-index cb9dd50bba8a..fb9f9771131a 100644
---- a/drivers/media/usb/uvc/uvcvideo.h
-+++ b/drivers/media/usb/uvc/uvcvideo.h
-@@ -499,6 +499,7 @@ struct uvc_streaming {
- 		unsigned int head;
- 		unsigned int count;
- 		unsigned int size;
-+		unsigned int last_sof_overflow;
- 
- 		u16 last_sof;
- 		u16 sof_offset;
--- 
-2.44.0
-
-
-From 44e058340a091ffcfa75fefad91dae431f788986 Mon Sep 17 00:00:00 2001
-From: Oleksandr Natalenko <oleksandr@natalenko.name>
-Date: Mon, 25 Mar 2024 15:26:11 +0100
-Subject: [PATCH 48/48] media/uvcvideo: add quirk for invalid dev_sof in
- Logitech C920
+From afb648659c0c6b0e738dbeaeed525612eeee61ba Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Christian=20K=C3=B6nig?= <ckoenig.leichtzumerken@gmail.com>
+Date: Thu, 21 Mar 2024 13:43:11 +0100
+Subject: [PATCH 47/47] drm/amdgpu: once more fix the call oder in
+ amdgpu_ttm_move()
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
-Similarly to Logitech C922, C920 seems to also suffer from a firmware
-bug that breaks hardware timestamping.
+This reverts drm/amdgpu: fix ftrace event amdgpu_bo_move always move
+on same heap. The basic problem here is that after the move the old
+location is simply not available any more.
 
-Add a quirk for this camera model too.
+Some fixes were suggested, but essentially we should call the move
+notification before actually moving things because only this way we have
+the correct order for DMA-buf and VM move notifications as well.
 
-Before applying the quirk:
+Also rework the statistic handling so that we don't update the eviction
+counter before the move.
 
-```
-100 (4) [-] none 100 200717 B 212.919114 213.079004 33.727 fps ts mono/SoE
-101 (5) [-] none 101 200889 B 213.003703 213.114996 11.822 fps ts mono/SoE
-102 (6) [-] none 102 200926 B 213.035571 213.146999 31.379 fps ts mono/SoE
-103 (7) [-] none 103 200839 B 213.067424 213.179003 31.394 fps ts mono/SoE
-104 (0) [-] none 104 200692 B 213.293180 213.214991 4.430 fps ts mono/SoE
-105 (1) [-] none 105 200937 B 213.322374 213.247001 34.254 fps ts mono/SoE
-106 (2) [-] none 106 201013 B 213.352228 213.279005 33.496 fps ts mono/SoE
-…
-```
-
-After applying the quirk:
-
-```
-154 (2) [-] none 154 192417 B 42.199823 42.207788 27.779 fps ts mono/SoE
-155 (3) [-] none 155 192040 B 42.231834 42.239791 31.239 fps ts mono/SoE
-156 (4) [-] none 156 192213 B 42.263823 42.271822 31.261 fps ts mono/SoE
-157 (5) [-] none 157 191981 B 42.299824 42.303827 27.777 fps ts mono/SoE
-158 (6) [-] none 158 191953 B 42.331835 42.339811 31.239 fps ts mono/SoE
-159 (7) [-] none 159 191904 B 42.363824 42.371813 31.261 fps ts mono/SoE
-160 (0) [-] none 160 192210 B 42.399834 42.407801 27.770 fps ts mono/SoE
-```
-
-Link: https://lore.kernel.org/lkml/5764213.DvuYhMxLoT@natalenko.name/
-Reviewed-by: Ricardo Ribalda <ribalda@chromium.org>
-Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
+Fixes: 94aeb4117343 ("drm/amdgpu: fix ftrace event amdgpu_bo_move always move on same heap")
+Closes: https://gitlab.freedesktop.org/drm/amd/-/issues/3171
+Reviewed-by: Alex Deucher <alexander.deucher@amd.com>
+Signed-off-by: Christian König <christian.koenig@amd.com>
 ---
- drivers/media/usb/uvc/uvc_driver.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/amd/amdgpu/amdgpu_object.c | 15 +++----
+ drivers/gpu/drm/amd/amdgpu/amdgpu_object.h |  4 +-
+ drivers/gpu/drm/amd/amdgpu/amdgpu_ttm.c    | 48 ++++++++++++----------
+ 3 files changed, 37 insertions(+), 30 deletions(-)
 
-diff --git a/drivers/media/usb/uvc/uvc_driver.c b/drivers/media/usb/uvc/uvc_driver.c
-index 723e6d5680c2..444d7089885e 100644
---- a/drivers/media/usb/uvc/uvc_driver.c
-+++ b/drivers/media/usb/uvc/uvc_driver.c
-@@ -2573,7 +2573,8 @@ static const struct usb_device_id uvc_ids[] = {
- 	  .bInterfaceClass	= USB_CLASS_VIDEO,
- 	  .bInterfaceSubClass	= 1,
- 	  .bInterfaceProtocol	= 0,
--	  .driver_info		= UVC_INFO_QUIRK(UVC_QUIRK_RESTORE_CTRLS_ON_INIT) },
-+	  .driver_info		= UVC_INFO_QUIRK(UVC_QUIRK_RESTORE_CTRLS_ON_INIT
-+					       | UVC_QUIRK_INVALID_DEVICE_SOF) },
- 	/* Logitech HD Pro Webcam C922 */
- 	{ .match_flags		= USB_DEVICE_ID_MATCH_DEVICE
- 				| USB_DEVICE_ID_MATCH_INT_INFO,
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_object.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_object.c
+index 010b0cb7693c..1b706b2eeec3 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_object.c
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_object.c
+@@ -1242,19 +1242,20 @@ int amdgpu_bo_get_metadata(struct amdgpu_bo *bo, void *buffer,
+  * amdgpu_bo_move_notify - notification about a memory move
+  * @bo: pointer to a buffer object
+  * @evict: if this move is evicting the buffer from the graphics address space
++ * @new_mem: new resource for backing the BO
+  *
+  * Marks the corresponding &amdgpu_bo buffer object as invalid, also performs
+  * bookkeeping.
+  * TTM driver callback which is called when ttm moves a buffer.
+  */
+-void amdgpu_bo_move_notify(struct ttm_buffer_object *bo, bool evict)
++void amdgpu_bo_move_notify(struct ttm_buffer_object *bo,
++			   bool evict,
++			   struct ttm_resource *new_mem)
+ {
+ 	struct amdgpu_device *adev = amdgpu_ttm_adev(bo->bdev);
++	struct ttm_resource *old_mem = bo->resource;
+ 	struct amdgpu_bo *abo;
+ 
+-	if (!amdgpu_bo_is_amdgpu_bo(bo))
+-		return;
+-
+ 	abo = ttm_to_amdgpu_bo(bo);
+ 	amdgpu_vm_bo_invalidate(adev, abo, evict);
+ 
+@@ -1264,9 +1265,9 @@ void amdgpu_bo_move_notify(struct ttm_buffer_object *bo, bool evict)
+ 	    bo->resource->mem_type != TTM_PL_SYSTEM)
+ 		dma_buf_move_notify(abo->tbo.base.dma_buf);
+ 
+-	/* remember the eviction */
+-	if (evict)
+-		atomic64_inc(&adev->num_evictions);
++	/* move_notify is called before move happens */
++	trace_amdgpu_bo_move(abo, new_mem ? new_mem->mem_type : -1,
++			     old_mem ? old_mem->mem_type : -1);
+ }
+ 
+ void amdgpu_bo_get_memory(struct amdgpu_bo *bo,
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_object.h b/drivers/gpu/drm/amd/amdgpu/amdgpu_object.h
+index be679c42b0b8..0503af75dc26 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_object.h
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_object.h
+@@ -350,7 +350,9 @@ int amdgpu_bo_set_metadata (struct amdgpu_bo *bo, void *metadata,
+ int amdgpu_bo_get_metadata(struct amdgpu_bo *bo, void *buffer,
+ 			   size_t buffer_size, uint32_t *metadata_size,
+ 			   uint64_t *flags);
+-void amdgpu_bo_move_notify(struct ttm_buffer_object *bo, bool evict);
++void amdgpu_bo_move_notify(struct ttm_buffer_object *bo,
++			   bool evict,
++			   struct ttm_resource *new_mem);
+ void amdgpu_bo_release_notify(struct ttm_buffer_object *bo);
+ vm_fault_t amdgpu_bo_fault_reserve_notify(struct ttm_buffer_object *bo);
+ void amdgpu_bo_fence(struct amdgpu_bo *bo, struct dma_fence *fence,
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_ttm.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_ttm.c
+index fc418e670fda..85ca0344e4dc 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_ttm.c
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_ttm.c
+@@ -466,14 +466,16 @@ static int amdgpu_bo_move(struct ttm_buffer_object *bo, bool evict,
+ 
+ 	if (!old_mem || (old_mem->mem_type == TTM_PL_SYSTEM &&
+ 			 bo->ttm == NULL)) {
++		amdgpu_bo_move_notify(bo, evict, new_mem);
+ 		ttm_bo_move_null(bo, new_mem);
+-		goto out;
++		return 0;
+ 	}
+ 	if (old_mem->mem_type == TTM_PL_SYSTEM &&
+ 	    (new_mem->mem_type == TTM_PL_TT ||
+ 	     new_mem->mem_type == AMDGPU_PL_PREEMPT)) {
++		amdgpu_bo_move_notify(bo, evict, new_mem);
+ 		ttm_bo_move_null(bo, new_mem);
+-		goto out;
++		return 0;
+ 	}
+ 	if ((old_mem->mem_type == TTM_PL_TT ||
+ 	     old_mem->mem_type == AMDGPU_PL_PREEMPT) &&
+@@ -483,9 +485,10 @@ static int amdgpu_bo_move(struct ttm_buffer_object *bo, bool evict,
+ 			return r;
+ 
+ 		amdgpu_ttm_backend_unbind(bo->bdev, bo->ttm);
++		amdgpu_bo_move_notify(bo, evict, new_mem);
+ 		ttm_resource_free(bo, &bo->resource);
+ 		ttm_bo_assign_mem(bo, new_mem);
+-		goto out;
++		return 0;
+ 	}
+ 
+ 	if (old_mem->mem_type == AMDGPU_PL_GDS ||
+@@ -497,8 +500,9 @@ static int amdgpu_bo_move(struct ttm_buffer_object *bo, bool evict,
+ 	    new_mem->mem_type == AMDGPU_PL_OA ||
+ 	    new_mem->mem_type == AMDGPU_PL_DOORBELL) {
+ 		/* Nothing to save here */
++		amdgpu_bo_move_notify(bo, evict, new_mem);
+ 		ttm_bo_move_null(bo, new_mem);
+-		goto out;
++		return 0;
+ 	}
+ 
+ 	if (bo->type == ttm_bo_type_device &&
+@@ -510,22 +514,23 @@ static int amdgpu_bo_move(struct ttm_buffer_object *bo, bool evict,
+ 		abo->flags &= ~AMDGPU_GEM_CREATE_CPU_ACCESS_REQUIRED;
+ 	}
+ 
+-	if (adev->mman.buffer_funcs_enabled) {
+-		if (((old_mem->mem_type == TTM_PL_SYSTEM &&
+-		      new_mem->mem_type == TTM_PL_VRAM) ||
+-		     (old_mem->mem_type == TTM_PL_VRAM &&
+-		      new_mem->mem_type == TTM_PL_SYSTEM))) {
+-			hop->fpfn = 0;
+-			hop->lpfn = 0;
+-			hop->mem_type = TTM_PL_TT;
+-			hop->flags = TTM_PL_FLAG_TEMPORARY;
+-			return -EMULTIHOP;
+-		}
++	if (adev->mman.buffer_funcs_enabled &&
++	    ((old_mem->mem_type == TTM_PL_SYSTEM &&
++	      new_mem->mem_type == TTM_PL_VRAM) ||
++	     (old_mem->mem_type == TTM_PL_VRAM &&
++	      new_mem->mem_type == TTM_PL_SYSTEM))) {
++		hop->fpfn = 0;
++		hop->lpfn = 0;
++		hop->mem_type = TTM_PL_TT;
++		hop->flags = TTM_PL_FLAG_TEMPORARY;
++		return -EMULTIHOP;
++	}
+ 
++	amdgpu_bo_move_notify(bo, evict, new_mem);
++	if (adev->mman.buffer_funcs_enabled)
+ 		r = amdgpu_move_blit(bo, evict, new_mem, old_mem);
+-	} else {
++	else
+ 		r = -ENODEV;
+-	}
+ 
+ 	if (r) {
+ 		/* Check that all memory is CPU accessible */
+@@ -540,11 +545,10 @@ static int amdgpu_bo_move(struct ttm_buffer_object *bo, bool evict,
+ 			return r;
+ 	}
+ 
+-	trace_amdgpu_bo_move(abo, new_mem->mem_type, old_mem->mem_type);
+-out:
+-	/* update statistics */
++	/* update statistics after the move */
++	if (evict)
++		atomic64_inc(&adev->num_evictions);
+ 	atomic64_add(bo->base.size, &adev->num_bytes_moved);
+-	amdgpu_bo_move_notify(bo, evict);
+ 	return 0;
+ }
+ 
+@@ -1548,7 +1552,7 @@ static int amdgpu_ttm_access_memory(struct ttm_buffer_object *bo,
+ static void
+ amdgpu_bo_delete_mem_notify(struct ttm_buffer_object *bo)
+ {
+-	amdgpu_bo_move_notify(bo, false);
++	amdgpu_bo_move_notify(bo, false, NULL);
+ }
+ 
+ static struct ttm_device_funcs amdgpu_bo_driver = {
 -- 
 2.44.0
-
