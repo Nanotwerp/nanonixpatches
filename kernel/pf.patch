@@ -1,7 +1,7 @@
 From b259a201a4402586be55b484c8ca54aafa7ee866 Mon Sep 17 00:00:00 2001
 From: "Gautham R. Shenoy" <gautham.shenoy@amd.com>
 Date: Tue, 19 Mar 2024 16:28:36 +0800
-Subject: [PATCH 01/47] cpufreq: amd-pstate: Document *_limit_* fields in
+Subject: [PATCH 01/48] cpufreq: amd-pstate: Document *_limit_* fields in
  struct amd_cpudata
 
 The four fields of struct cpudata namely min_limit_perf,
@@ -40,7 +40,7 @@ index d21838835abd..212f377d615b 100644
 From 6df298e655e9b8eff07a9d9cb4f076057ec4d6df Mon Sep 17 00:00:00 2001
 From: "Gautham R. Shenoy" <gautham.shenoy@amd.com>
 Date: Tue, 19 Mar 2024 16:28:37 +0800
-Subject: [PATCH 02/47] cpufreq: amd-pstate: Document the units for freq
+Subject: [PATCH 02/48] cpufreq: amd-pstate: Document the units for freq
  variables in amd_cpudata
 
 The min_limit_freq, max_limit_freq, min_freq, max_freq, nominal_freq
@@ -88,7 +88,7 @@ index 212f377d615b..ab7e82533718 100644
 From 74934eef88d178472315b618342909edad8a8539 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Tue, 19 Mar 2024 16:28:38 +0800
-Subject: [PATCH 03/47] cpufreq: amd-pstate: Unify computation of
+Subject: [PATCH 03/48] cpufreq: amd-pstate: Unify computation of
  {max,min,nominal,lowest_nonlinear}_freq
 
 Currently the amd_get_{min, max, nominal, lowest_nonlinear}_freq()
@@ -303,7 +303,7 @@ index 2015c9fcc3c9..ba1baa6733e6 100644
 From 1109f1e60475d3ca02705d1d4695aaaa4266b9d3 Mon Sep 17 00:00:00 2001
 From: "Gautham R. Shenoy" <gautham.shenoy@amd.com>
 Date: Tue, 19 Mar 2024 16:28:39 +0800
-Subject: [PATCH 04/47] cpufreq: amd-pstate: Remove
+Subject: [PATCH 04/48] cpufreq: amd-pstate: Remove
  amd_get_{min,max,nominal,lowest_nonlinear}_freq()
 
 amd_get_{min,max,nominal,lowest_nonlinear}_freq() functions merely
@@ -406,7 +406,7 @@ index ba1baa6733e6..132330b4942f 100644
 From 79f8e570ce5c3eedb4593d1d8b4f33c901e5d26d Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Tue, 19 Mar 2024 16:28:40 +0800
-Subject: [PATCH 05/47] cpufreq: amd-pstate: Bail out if min/max/nominal_freq
+Subject: [PATCH 05/48] cpufreq: amd-pstate: Bail out if min/max/nominal_freq
  is 0
 
 The amd-pstate driver cannot work when the min_freq, nominal_freq or
@@ -460,7 +460,7 @@ index 132330b4942f..6708c436e1a2 100644
 From 1c958df7b9be948f3968974af8082954e3f57be0 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Tue, 19 Mar 2024 16:28:41 +0800
-Subject: [PATCH 06/47] cpufreq: amd-pstate: get transition delay and latency
+Subject: [PATCH 06/48] cpufreq: amd-pstate: get transition delay and latency
  value from ACPI tables
 
 Make pstate driver initially retrieve the P-state transition delay and
@@ -544,7 +544,7 @@ index 6708c436e1a2..ec049b62b366 100644
 From f69ce34b39afddaee0bcc36b880b67fe8a772c9c Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Tue, 19 Mar 2024 16:28:42 +0800
-Subject: [PATCH 07/47] cppc_acpi: print error message if CPPC is unsupported
+Subject: [PATCH 07/48] cppc_acpi: print error message if CPPC is unsupported
 
 The amd-pstate driver can fail when _CPC objects are not supported by
 the CPU. However, the current error message is ambiguous (see below) and
@@ -586,7 +586,7 @@ index 4bfbe55553f4..3134101f31b6 100644
 From 913058dec0868b55cb61fc167c4a1327bba02aa1 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Tue, 19 Mar 2024 16:28:43 +0800
-Subject: [PATCH 08/47] cpufreq: amd-pstate: Add quirk for the pstate CPPC
+Subject: [PATCH 08/48] cpufreq: amd-pstate: Add quirk for the pstate CPPC
  capabilities missing
 
 Add quirks table to get CPPC capabilities issue fixed by providing
@@ -720,7 +720,7 @@ index ab7e82533718..6b832153a126 100644
 From 231da8f8aa0fad4b08092d591e3e1f5af7c5f44b Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Mon, 18 Mar 2024 18:11:08 +0800
-Subject: [PATCH 09/47] cpufreq: acpi: move MSR_K7_HWCR_CPB_DIS_BIT into
+Subject: [PATCH 09/48] cpufreq: acpi: move MSR_K7_HWCR_CPB_DIS_BIT into
  msr-index.h
 
 There are some other drivers also need to use the
@@ -770,7 +770,7 @@ index 37f1cdf46d29..2fc82831bddd 100644
 From a8de7807e68585fb8cb867b29eb26b45a8397e38 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <Perry.Yuan@amd.com>
 Date: Mon, 18 Mar 2024 18:11:09 +0800
-Subject: [PATCH 10/47] cpufreq: amd-pstate: initialize new core precision
+Subject: [PATCH 10/48] cpufreq: amd-pstate: initialize new core precision
  boost state
 
 Add gloal global_params to represent current CPU Performance Boost(cpb)
@@ -910,7 +910,7 @@ index 6b832153a126..c5e41de65f70 100644
 From 51f606757d686d8722c67a240b073dd47adf7490 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <Perry.Yuan@amd.com>
 Date: Mon, 18 Mar 2024 18:11:10 +0800
-Subject: [PATCH 11/47] cpufreq: amd-pstate: implement cpb_boost sysfs entry
+Subject: [PATCH 11/48] cpufreq: amd-pstate: implement cpb_boost sysfs entry
  for boost control
 
 With this new sysfs entry `cpb_boost`created, user can change CPU boost
@@ -1065,7 +1065,7 @@ index 81787f83c906..4cd2818045c7 100644
 From ab8be749decdade86236f16956b54c8823e2a7f5 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <Perry.Yuan@amd.com>
 Date: Mon, 18 Mar 2024 18:11:11 +0800
-Subject: [PATCH 12/47] cpufreq: amd-pstate: fix the MSR highest perf will be
+Subject: [PATCH 12/48] cpufreq: amd-pstate: fix the MSR highest perf will be
  reset issue while cpb boost off
 
 Select the min perf to fix the highest perf value while update pstate
@@ -1109,7 +1109,7 @@ index 4cd2818045c7..513f91611cd5 100644
 From d5a062eccc81f4258aa8aa60bdc286edc03ccdd9 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <Perry.Yuan@amd.com>
 Date: Mon, 18 Mar 2024 18:11:12 +0800
-Subject: [PATCH 13/47] Documentation: cpufreq: amd-pstate: introduce the new
+Subject: [PATCH 13/48] Documentation: cpufreq: amd-pstate: introduce the new
  cpu boost control method
 
 Introduce AMD CPU frequency boosting control sysfs entry which used for
@@ -1153,7 +1153,7 @@ index 1e0d101b020a..82fbd01da658 100644
 From 203b250d319539f47252d87fb99b3f93e4450992 Mon Sep 17 00:00:00 2001
 From: Perry Yuan <perry.yuan@amd.com>
 Date: Mon, 18 Mar 2024 18:11:13 +0800
-Subject: [PATCH 14/47] cpufreq: amd-pstate-ut: support new cpb boost control
+Subject: [PATCH 14/48] cpufreq: amd-pstate-ut: support new cpb boost control
  interface
 
 As the new CPB boost control is enabled, pstate unit test needs to remove
@@ -1185,7 +1185,7 @@ index f04ae67dda37..b3601b0e6dd3 100644
 From 99789414784479ddd0fb861062419543d9911068 Mon Sep 17 00:00:00 2001
 From: Lucas Lee Jing Yi <lucasleeeeeeeee@gmail.com>
 Date: Mon, 19 Feb 2024 00:10:31 +0800
-Subject: [PATCH 15/47] amd_pstate: fix erroneous highest_perf value on some
+Subject: [PATCH 15/48] amd_pstate: fix erroneous highest_perf value on some
  CPUs
 
 On a Ryzen 7840HS the highest_perf value is 196, not 166 as AMD assumed.
@@ -1260,7 +1260,7 @@ index 513f91611cd5..57bb1fc44b36 100644
 From 8d6f427d8231970abde68cd95d56b817da5765b7 Mon Sep 17 00:00:00 2001
 From: Meng Li <li.meng@amd.com>
 Date: Tue, 27 Feb 2024 15:11:33 +0800
-Subject: [PATCH 16/47] cpufreq/amd-pstate: fix setting policy current
+Subject: [PATCH 16/48] cpufreq/amd-pstate: fix setting policy current
  frequency value
 
 When scaling min/max freq values were being setted,
@@ -1343,7 +1343,7 @@ index 57bb1fc44b36..0fd9abe85e95 100644
 From df4922fb8345fc4463958e02a2a0b299e9ddf94a Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Mon, 22 Jan 2024 20:21:40 +0100
-Subject: [PATCH 17/47] tcp/bbr3: initial import
+Subject: [PATCH 17/48] tcp/bbr3: initial import
 
 Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
 ---
@@ -4730,7 +4730,7 @@ index d1ad20ce1c8c..ef74f33c7905 100644
 From 54f62704e3296fa6dc046324c499496dfc8e07fa Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Fri, 19 Jan 2024 08:04:42 -0700
-Subject: [PATCH 18/47] block/mq-deadline: pass in queue directly to
+Subject: [PATCH 18/48] block/mq-deadline: pass in queue directly to
  dd_insert_request()
 
 The hardware queue isn't relevant, deadline only operates on the queue
@@ -4775,7 +4775,7 @@ index 02a916ba62ee..ea0e30c3f281 100644
 From 1f69f50c23de31a4043ead7ef1f1d1d85ff92e45 Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Thu, 18 Jan 2024 10:46:52 -0700
-Subject: [PATCH 19/47] block/mq-deadline: serialize request dispatching
+Subject: [PATCH 19/48] block/mq-deadline: serialize request dispatching
 
 If we're entering request dispatch but someone else is already
 dispatching, then just skip this dispatch. We know IO is inflight and
@@ -4881,7 +4881,7 @@ index ea0e30c3f281..4e40223b6931 100644
 From 71c7bb75d16133ce66ad05eea370b43d966305e8 Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Fri, 19 Jan 2024 08:16:36 -0700
-Subject: [PATCH 20/47] block/mq-deadline: skip expensive merge lookups if
+Subject: [PATCH 20/48] block/mq-deadline: skip expensive merge lookups if
  contended
 
 We do several stages of merging in the block layer - the most likely one
@@ -4940,7 +4940,7 @@ index 4e40223b6931..524828b09ad9 100644
 From eac9730ab2ff0582d131b64ce9e3fe90a7bf5069 Mon Sep 17 00:00:00 2001
 From: Bart Van Assche <bvanassche@acm.org>
 Date: Thu, 18 Jan 2024 10:53:34 -0700
-Subject: [PATCH 21/47] block/mq-deadline: use separate insertion lists
+Subject: [PATCH 21/48] block/mq-deadline: use separate insertion lists
 
 [Missing commit message from Bart]
 
@@ -5128,7 +5128,7 @@ index 524828b09ad9..8bf621316a9e 100644
 From b42443466c99874c64a01ab31f44a6981f932aac Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Sat, 20 Jan 2024 14:50:58 -0700
-Subject: [PATCH 22/47] block/bfq: pass in queue directly to
+Subject: [PATCH 22/48] block/bfq: pass in queue directly to
  dd_insert_request()
 
 The hardware queue isn't relevant, bfq only operates on the queue
@@ -5172,7 +5172,7 @@ index 4b88a54a9b76..9fa427d5f9f8 100644
 From 4bedd4dfe43405b21320262cd077672875ecadf4 Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Sat, 20 Jan 2024 14:54:37 -0700
-Subject: [PATCH 23/47] block/bfq: serialize request dispatching
+Subject: [PATCH 23/48] block/bfq: serialize request dispatching
 
 If we're entering request dispatch but someone else is already
 dispatching, then just skip this dispatch. We know IO is inflight and
@@ -5283,7 +5283,7 @@ index 467e8cfc41a2..56ff69f22163 100644
 From e4f902490c7abfcadaab74587a3e63d1a3ddf30a Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Sat, 20 Jan 2024 14:58:37 -0700
-Subject: [PATCH 24/47] block/bfq: skip expensive merge lookups if contended
+Subject: [PATCH 24/48] block/bfq: skip expensive merge lookups if contended
 
 We do several stages of merging in the block layer - the most likely one
 to work is also the cheap one, merging direct in the per-task plug when
@@ -5367,7 +5367,7 @@ index 590882b64783..ec3ec719484d 100644
 From 3e558a04a5f3fc9187457ea7bc909099aa2a4a3d Mon Sep 17 00:00:00 2001
 From: Jens Axboe <axboe@kernel.dk>
 Date: Sat, 20 Jan 2024 15:04:51 -0700
-Subject: [PATCH 25/47] block/bfq: use separate insertion lists
+Subject: [PATCH 25/48] block/bfq: use separate insertion lists
 
 Based on the similar patch for mq-deadline, this uses separate
 insertion lists so we can defer touching dd->lock until dispatch
@@ -5590,7 +5590,7 @@ index 56ff69f22163..f44f5d4ec2f4 100644
 From b2ecbb2febd55261eb2017a4538f78ecaa2e38c7 Mon Sep 17 00:00:00 2001
 From: Yu Kuai <yukuai1@huaweicloud.com>
 Date: Fri, 15 Mar 2024 09:17:56 +0800
-Subject: [PATCH 26/47] md/raid5: fix deadlock between md0_reclaim and
+Subject: [PATCH 26/48] md/raid5: fix deadlock between md0_reclaim and
  md0_raid5
 
 Commit 5e2cf333b7bd ("md/raid5: Wait for MD_SB_CHANGE_PENDING in
@@ -5663,7 +5663,7 @@ index d874abfc1836..27bdbe1469fb 100644
 From 1ca7c80ce5eba32c860b0aab283bbbe1801b9bbb Mon Sep 17 00:00:00 2001
 From: Yu Kuai <yukuai3@huawei.com>
 Date: Fri, 8 Mar 2024 17:37:26 +0800
-Subject: [PATCH 27/47] raid1: fix use-after-free for original bio in
+Subject: [PATCH 27/48] raid1: fix use-after-free for original bio in
  raid1_write_request()
 
 r1_bio->bios[] is used to record new bios that will be issued to
@@ -5758,7 +5758,7 @@ index be8ac24f50b6..7b8a71ca66dd 100644
 From 1295cd19ec0c359a011d22d5bfe814d3fdd6fbb9 Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Thu, 24 Aug 2023 23:20:15 +0200
-Subject: [PATCH 28/47] kbuild: add generic x86_64 levels
+Subject: [PATCH 28/48] kbuild: add generic x86_64 levels
 
 This is a truncated version of graysky's patch that only introduces
 extra x86_64 generic levels.
@@ -5835,7 +5835,7 @@ index 5ab93fcdd691..c98bb8415362 100644
 From 07c305f8871e866731c52ba1ef0fc7cde116fd09 Mon Sep 17 00:00:00 2001
 From: "Jan Alexander Steffens (heftig)" <jan.steffens@gmail.com>
 Date: Mon, 16 Sep 2019 04:53:20 +0200
-Subject: [PATCH 29/47] ZEN: Add sysctl and CONFIG to disallow unprivileged
+Subject: [PATCH 29/48] ZEN: Add sysctl and CONFIG to disallow unprivileged
  CLONE_NEWUSER
 
 Our default behavior continues to match the vanilla kernel.
@@ -5990,7 +5990,7 @@ index 0b0b95418b16..c4b835b91fc0 100644
 From b88c3b29e462d8cddef7818d4cb9e514c7732874 Mon Sep 17 00:00:00 2001
 From: Javier Martinez Canillas <javierm@redhat.com>
 Date: Thu, 19 May 2022 14:40:07 +0200
-Subject: [PATCH 30/47] drivers/firmware: skip simpledrm if
+Subject: [PATCH 30/48] drivers/firmware: skip simpledrm if
  nvidia-drm.modeset=1 is set
 
 The Nvidia proprietary driver has some bugs that leads to issues if used
@@ -6081,7 +6081,7 @@ index 880ffcb50088..9da05ab3c29c 100644
 From 299d06c3c5454aafad8b728865e2805a75822b4b Mon Sep 17 00:00:00 2001
 From: "Jan Alexander Steffens (heftig)" <heftig@archlinux.org>
 Date: Sat, 13 Jan 2024 15:29:25 +0100
-Subject: [PATCH 31/47] arch/Kconfig: Default to maximum amount of ASLR bits
+Subject: [PATCH 31/48] arch/Kconfig: Default to maximum amount of ASLR bits
 
 To mitigate https://zolutal.github.io/aslrnt/; do this with a patch to
 avoid having to enable `CONFIG_EXPERT`.
@@ -6118,7 +6118,7 @@ index 9f066785bb71..1e37a1c96120 100644
 From 054bd8675f9c5eae76b4d30d2fa34a97799f6b6e Mon Sep 17 00:00:00 2001
 From: Tavian Barnes <tavianator@tavianator.com>
 Date: Mon, 18 Mar 2024 09:56:53 -0400
-Subject: [PATCH 32/47] btrfs: New helper to clear EXTENT_BUFFER_READING
+Subject: [PATCH 32/48] btrfs: New helper to clear EXTENT_BUFFER_READING
 
 We are clearing the bit and waking up any waiters in two different
 places.  Factor that code out into a static helper function.
@@ -6176,7 +6176,7 @@ index 61594eaf1f89..46173dcfde4f 100644
 From 461e7c0777a0c992f36aa90feda94ed1cbba1bed Mon Sep 17 00:00:00 2001
 From: Tavian Barnes <tavianator@tavianator.com>
 Date: Mon, 18 Mar 2024 09:56:54 -0400
-Subject: [PATCH 33/47] btrfs: WARN if EXTENT_BUFFER_UPTODATE is set while
+Subject: [PATCH 33/48] btrfs: WARN if EXTENT_BUFFER_UPTODATE is set while
  reading
 
 We recently tracked down a race condition that triggered a read for an
@@ -6219,7 +6219,7 @@ index 46173dcfde4f..0024ea20bfc4 100644
 From 2004a8bdc4a4930b333b0275df5e52e07c1faaf4 Mon Sep 17 00:00:00 2001
 From: Jesper Dangaard Brouer <hawk@kernel.org>
 Date: Wed, 27 Mar 2024 13:14:56 +0100
-Subject: [PATCH 34/47] xen-netfront: Add missing skb_mark_for_recycle
+Subject: [PATCH 34/48] xen-netfront: Add missing skb_mark_for_recycle
 
 Notice that skb_mark_for_recycle() is introduced later than fixes tag in
 6a5bcd84e886 ("page_pool: Allow drivers to hint on SKB recycling").
@@ -6260,7 +6260,7 @@ index ad29f370034e..8d2aee88526c 100644
 From fe021c6a127a49c84c56ce904ebc9cc29616f3c2 Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Mon, 13 Nov 2023 08:50:41 +0100
-Subject: [PATCH 35/47] mm: expose per-process KSM control via syscalls
+Subject: [PATCH 35/48] mm: expose per-process KSM control via syscalls
 
 d7597f59d1d3 added a new API to enable per-process KSM control. It
 however uses prctl, which doesn't allow controlling KSM from outside of
@@ -6713,7 +6713,7 @@ index faad00cce269..c7c9eb656468 100644
 From c87b01ba6081be63763eb2c8ce2f83eb3fbf5024 Mon Sep 17 00:00:00 2001
 From: Ricardo Ribalda <ribalda@chromium.org>
 Date: Sat, 23 Mar 2024 10:48:02 +0000
-Subject: [PATCH 36/47] media: uvcvideo: Support timestamp lists of any size
+Subject: [PATCH 36/48] media: uvcvideo: Support timestamp lists of any size
 
 The tail of the list lives at the position before the head. This is
 mathematically noted as:
@@ -6757,7 +6757,7 @@ index 7cbf4692bd87..659c9e9880a9 100644
 From 787c065e310a0a2144c549645a157186269d36a8 Mon Sep 17 00:00:00 2001
 From: Ricardo Ribalda <ribalda@chromium.org>
 Date: Sat, 23 Mar 2024 10:48:03 +0000
-Subject: [PATCH 37/47] media: uvcvideo: Ignore empty TS packets
+Subject: [PATCH 37/48] media: uvcvideo: Ignore empty TS packets
 
 Some SunplusIT cameras took a borderline interpretation of the UVC 1.5
 standard, and fill the PTS and SCR fields with invalid data if the
@@ -6879,7 +6879,7 @@ index 659c9e9880a9..b2e70fcf4eb4 100644
 From d5decb66296513fae8ec67d2bcf581ace8bf9d14 Mon Sep 17 00:00:00 2001
 From: Ricardo Ribalda <ribalda@chromium.org>
 Date: Sat, 23 Mar 2024 10:48:04 +0000
-Subject: [PATCH 38/47] media: uvcvideo: Quirk for invalid dev_sof in Logitech
+Subject: [PATCH 38/48] media: uvcvideo: Quirk for invalid dev_sof in Logitech
  C922
 
 Logitech C922 internal SOF does not increases at a stable rate of 1kHz.
@@ -7014,7 +7014,7 @@ index 6fb0a78b1b00..cb9dd50bba8a 100644
 From c42a49c7cfcf7bd81f4807bfc1cd03fe150303f3 Mon Sep 17 00:00:00 2001
 From: Ricardo Ribalda <ribalda@chromium.org>
 Date: Sat, 23 Mar 2024 10:48:05 +0000
-Subject: [PATCH 39/47] media: uvcvideo: Allow hw clock updates with buffers
+Subject: [PATCH 39/48] media: uvcvideo: Allow hw clock updates with buffers
  not full
 
 With UVC 1.5 we get as little as one clock sample per frame. Which means
@@ -7078,7 +7078,7 @@ index d6ca383f643e..af25b9f1b53f 100644
 From ad1f9a0e09aa1b01909f07ebad5afa507e52d6a2 Mon Sep 17 00:00:00 2001
 From: Ricardo Ribalda <ribalda@chromium.org>
 Date: Sat, 23 Mar 2024 10:48:06 +0000
-Subject: [PATCH 40/47] media: uvcvideo: Refactor clock circular buffer
+Subject: [PATCH 40/48] media: uvcvideo: Refactor clock circular buffer
 
 Isolate all the changes related to the clock circular buffer to its own
 function, that way we can make changes easier to the buffer logic.
@@ -7291,7 +7291,7 @@ index af25b9f1b53f..5df8f61d39cd 100644
 From 1678138bc5e56b6b303b7bba31c69aed6273d840 Mon Sep 17 00:00:00 2001
 From: Ricardo Ribalda <ribalda@chromium.org>
 Date: Sat, 23 Mar 2024 10:48:07 +0000
-Subject: [PATCH 41/47] media: uvcvideo: Fix hw timestamp handling for slow FPS
+Subject: [PATCH 41/48] media: uvcvideo: Fix hw timestamp handling for slow FPS
 
 In UVC 1.5 we get a single clock value per frame. With the current
 buffer size of 32, FPS slowers than 32 might roll-over twice.
@@ -7377,7 +7377,7 @@ index cb9dd50bba8a..fb9f9771131a 100644
 From dccb96e40aff63d49306310747bf442f9c6603bd Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Mon, 25 Mar 2024 15:26:11 +0100
-Subject: [PATCH 42/47] media/uvcvideo: add quirk for invalid dev_sof in
+Subject: [PATCH 42/48] media/uvcvideo: add quirk for invalid dev_sof in
  Logitech C920
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
@@ -7441,7 +7441,7 @@ index 723e6d5680c2..444d7089885e 100644
 From ad604aecb27f564b77a193d89311c127cc16ecea Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Sun, 24 Mar 2024 22:31:11 +0100
-Subject: [PATCH 43/47] media: v4l2-core: add v4l2loopback driver
+Subject: [PATCH 43/48] media: v4l2-core: add v4l2loopback driver
 
 Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
 ---
@@ -11235,7 +11235,7 @@ index 000000000000..d855a3796554
 From d652d7c6c4a6744177521a3d037b7aeeb9fd79cd Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Wed, 27 Mar 2024 08:51:17 +0100
-Subject: [PATCH 44/47] zstd: import upstream v1.5.6
+Subject: [PATCH 44/48] zstd: import upstream v1.5.6
 
 Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
 ---
@@ -29885,7 +29885,7 @@ index f4ed952ed485..7d31518e9d5a 100644
 From 24031f3c2a54a7cd2dca4e57e28f84026b841ecb Mon Sep 17 00:00:00 2001
 From: Kees Cook <keescook@chromium.org>
 Date: Mon, 22 Jan 2024 16:27:56 -0800
-Subject: [PATCH 45/47] lib: zstd: Refactor intentional wrap-around test
+Subject: [PATCH 45/48] lib: zstd: Refactor intentional wrap-around test
 
 In an effort to separate intentional arithmetic wrap-around from
 unexpected wrap-around, we need to refactor places that depend on this
@@ -29949,7 +29949,7 @@ index b2bfa2b16859..c9cbc45f6ed9 100644
 From dc584d0300aca275bcdd8f1c0e0b99c06eb71922 Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Mon, 1 Apr 2024 00:03:16 +0200
-Subject: [PATCH 46/47] pf-6.9: bump to v6.9-pf0
+Subject: [PATCH 46/48] pf-6.9: bump to v6.9-pf0
 
 Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
 ---
@@ -29976,7 +29976,7 @@ index 4bef6323c47d..49722dea5915 100644
 From afb648659c0c6b0e738dbeaeed525612eeee61ba Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Christian=20K=C3=B6nig?= <ckoenig.leichtzumerken@gmail.com>
 Date: Thu, 21 Mar 2024 13:43:11 +0100
-Subject: [PATCH 47/47] drm/amdgpu: once more fix the call oder in
+Subject: [PATCH 47/48] drm/amdgpu: once more fix the call oder in
  amdgpu_ttm_move()
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
@@ -30167,5 +30167,65 @@ index fc418e670fda..85ca0344e4dc 100644
  }
  
  static struct ttm_device_funcs amdgpu_bo_driver = {
+-- 
+2.44.0
+
+
+From 77fa274de3f0f05d38063fcdd6dea240d710bf7a Mon Sep 17 00:00:00 2001
+From: Imre Deak <imre.deak@intel.com>
+Date: Mon, 11 Mar 2024 16:56:26 +0200
+Subject: [PATCH 48/48] drm/i915/dp: Fix DSC state HW readout for SST
+ connectors
+
+Commit a62e14598150 ("drm/i915/dp: Fix connector DSC HW state readout")
+moved the DSC HW state readout to a connector specific hook, however
+only added the hook for DP MST connectors, not for DP SST ones. Fix
+adding the hook for SST connectors as well.
+
+This fixes the following warn on platforms where BIOS enables DSC:
+
+[   66.208601] i915 0000:00:02.0: drm_WARN_ON(!connector->dp.dsc_decompression_aux || !connector->dp.dsc_decompression_enabled)
+...
+[   66.209024] RIP: 0010:intel_dp_sink_disable_decompression+0x76/0x110 [i915]
+...
+[   66.209333]  ? intel_dp_sink_disable_decompression+0x76/0x110 [i915]
+...
+[   66.210068]  intel_disable_ddi+0x135/0x1d0 [i915]
+[   66.210302]  intel_encoders_disable+0x9b/0xc0 [i915]
+[   66.210565]  hsw_crtc_disable+0x153/0x170 [i915]
+[   66.210823]  intel_old_crtc_state_disables+0x52/0xb0 [i915]
+[   66.211107]  intel_atomic_commit_tail+0x5cf/0x1330 [i915]
+[   66.211366]  intel_atomic_commit+0x39d/0x3f0 [i915]
+[   66.211612]  ? intel_atomic_commit+0x39d/0x3f0 [i915]
+[   66.211872]  drm_atomic_commit+0x9d/0xd0 [drm]
+[   66.211921]  ? __pfx___drm_printfn_info+0x10/0x10 [drm]
+[   66.211975]  intel_initial_commit+0x1a8/0x260 [i915]
+[   66.212234]  intel_display_driver_probe+0x2a/0x80 [i915]
+[   66.212479]  i915_driver_probe+0x7c6/0xc60 [i915]
+[   66.212664]  ? drm_privacy_screen_get+0x168/0x190 [drm]
+[   66.212711]  i915_pci_probe+0xe2/0x1c0 [i915]
+
+Fixes: a62e14598150 ("drm/i915/dp: Fix connector DSC HW state readout")
+Closes: https://gitlab.freedesktop.org/drm/intel/-/issues/10410
+Cc: Ankit Nautiyal <ankit.k.nautiyal@intel.com>
+Reviewed-by: Ankit Nautiyal <ankit.k.nautiyal@intel.com>
+Signed-off-by: Imre Deak <imre.deak@intel.com>
+Link: https://patchwork.freedesktop.org/patch/msgid/20240311145626.2454923-1-imre.deak@intel.com
+---
+ drivers/gpu/drm/i915/display/intel_dp.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/gpu/drm/i915/display/intel_dp.c b/drivers/gpu/drm/i915/display/intel_dp.c
+index f98ef4b42a44..af7ca00e9bc0 100644
+--- a/drivers/gpu/drm/i915/display/intel_dp.c
++++ b/drivers/gpu/drm/i915/display/intel_dp.c
+@@ -6557,6 +6557,7 @@ intel_dp_init_connector(struct intel_digital_port *dig_port,
+ 		intel_connector->get_hw_state = intel_ddi_connector_get_hw_state;
+ 	else
+ 		intel_connector->get_hw_state = intel_connector_get_hw_state;
++	intel_connector->sync_state = intel_dp_connector_sync_state;
+ 
+ 	if (!intel_edp_init_connector(intel_dp, intel_connector)) {
+ 		intel_dp_aux_fini(intel_dp);
 -- 
 2.44.0
