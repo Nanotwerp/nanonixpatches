@@ -6,7 +6,7 @@ Subject: [PATCH] [SelectionDAG] use HandleSDNode instead of SDValue  during
 
 ---
  .../CodeGen/SelectionDAG/SelectionDAGISel.cpp | 43 +++++++------
- llvm/test/CodeGen/X86/inline-asm-memop.ll     | 64 ++++++++++++++++---
+ test/CodeGen/X86/inline-asm-memop.ll          | 64 ++++++++++++++++---
  2 files changed, 80 insertions(+), 27 deletions(-)
 
 diff --git a/lib/CodeGen/SelectionDAG/SelectionDAGISel.cpp b/lib/CodeGen/SelectionDAG/SelectionDAGISel.cpp
