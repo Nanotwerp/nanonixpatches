@@ -5,13 +5,13 @@ Subject: [PATCH] Revert "[libc++] Fix -Wgnu-include-next in stddef.h (#88214)"
 
 This reverts commit db67e6fb9ad150f18cf9941405746a8400b60545.
 ---
- include/stddef.h | 8 ++++----
+ libcxx/include/stddef.h | 8 ++++----
  1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/include/stddef.h b/include/stddef.h
+diff --git a/libcxx/include/stddef.h b/libcxx/include/stddef.h
 index 1583e78e3739..470b5408336c 100644
---- a/include/stddef.h
-+++ b/include/stddef.h
+--- a/libcxx/include/stddef.h
++++ b/libcxx/include/stddef.h
 @@ -26,10 +26,6 @@ Types:
  
  #include <__config>
