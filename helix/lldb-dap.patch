@@ -1,0 +1,64 @@
+From 6b83701cb8199870e9f53dcc92db1d832bc9c892 Mon Sep 17 00:00:00 2001
+From: Nano Twerpus <nanotwerp@gmail.com>
+Date: Sat, 25 May 2024 03:12:49 -0400
+Subject: [PATCH] Replace `lldb-vscode` with `lldb-dap`
+
+---
+ languages.toml | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/languages.toml b/languages.toml
+index a5764420..5a484f49 100644
+--- a/languages.toml
++++ b/languages.toml
+@@ -216,9 +216,9 @@ persistent-diagnostic-sources = ["rustc", "clippy"]
+ '`' = '`'
+ 
+ [language.debugger]
+-name = "lldb-vscode"
++name = "lldb-dap"
+ transport = "stdio"
+-command = "lldb-vscode"
++command = "lldb-dap"
+ 
+ [[language.debugger.templates]]
+ name = "binary"
+@@ -435,9 +435,9 @@ language-servers = [ "clangd" ]
+ indent = { tab-width = 2, unit = "  " }
+ 
+ [language.debugger]
+-name = "lldb-vscode"
++name = "lldb-dap"
+ transport = "stdio"
+-command = "lldb-vscode"
++command = "lldb-dap"
+ 
+ [[language.debugger.templates]]
+ name = "binary"
+@@ -472,9 +472,9 @@ language-servers = [ "clangd" ]
+ indent = { tab-width = 2, unit = "  " }
+ 
+ [language.debugger]
+-name = "lldb-vscode"
++name = "lldb-dap"
+ transport = "stdio"
+-command = "lldb-vscode"
++command = "lldb-dap"
+ 
+ [[language.debugger.templates]]
+ name = "binary"
+@@ -1262,9 +1262,9 @@ indent = { tab-width = 4, unit = "    " }
+ formatter = { command = "zig" , args = ["fmt", "--stdin"] }
+ 
+ [language.debugger]
+-name = "lldb-vscode"
++name = "lldb-dap"
+ transport = "stdio"
+-command = "lldb-vscode"
++command = "lldb-dap"
+ 
+ [[language.debugger.templates]]
+ name = "binary"
+-- 
+2.44.1
+
