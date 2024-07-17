@@ -1,9 +1,12 @@
-From b4a0b92b0104506a13315680ecf65932c1c71f35 Mon Sep 17 00:00:00 2001
-From: RicoAfoat <3094209316@qq.com>
-Date: Mon, 29 Apr 2024 12:36:59 +0800
+From dd83ebaf599e801778144d62a265bb1cf2e754e9 Mon Sep 17 00:00:00 2001
+From: RicoAfoat <51285519+RicoAfoat@users.noreply.github.com>
+Date: Tue, 16 Jul 2024 19:46:32 +0800
 Subject: [PATCH] use HandleSDNode instead of SDValue during
- SelectInlineAsmMemoryOperands
+ SelectInlineAsmMemoryOperands (#85081)
 
+SelectInlineAsmMemoryOperands - change the vector of SDValue into a list of SDNodeHandle. Fixes issues where x86 might call replaceAllUses when matching address.
+
+Fixes https://github.com/llvm/llvm-project/issues/82431 - see https://github.com/llvm/llvm-project/issues/82431 for more information.
 ---
  lib/CodeGen/SelectionDAG/SelectionDAGISel.cpp | 43 +++++++------
  test/CodeGen/X86/inline-asm-memop.ll          | 64 ++++++++++++++++---
