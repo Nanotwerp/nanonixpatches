@@ -1,5 +1,5 @@
 diff --git a/arch/x86/Kconfig.cpu b/arch/x86/Kconfig.cpu
-index 1f0487e23ca7..385ad6c2f841 100644
+index 1a963ddf7908..fe13a0a4b200 100644
 --- a/arch/x86/Kconfig.cpu
 +++ b/arch/x86/Kconfig.cpu
 @@ -287,6 +287,14 @@ config MATOM
@@ -8,7 +8,7 @@ index 1f0487e23ca7..385ad6c2f841 100644
  
 +config MZEN3
 +	bool "AMD Zen 3"
-+	depends on (CC_IS_GCC && GCC_VERSION >= 100300) || (CC_IS_CLANG && CLANG_VERSION >= 120000)
++	depends on X86_64 && (CC_IS_GCC && GCC_VERSION >= 100300) || (CC_IS_CLANG && CLANG_VERSION >= 120000)
 +	help
 +	  Select this for AMD Family 19h Zen 3 processors.
 +
@@ -17,16 +17,16 @@ index 1f0487e23ca7..385ad6c2f841 100644
  config GENERIC_CPU
  	bool "Generic-x86-64"
  	depends on X86_64
-@@ -342,7 +350,7 @@ config X86_INTERNODE_CACHE_SHIFT
+@@ -326,7 +334,7 @@ config X86_INTERNODE_CACHE_SHIFT
  config X86_L1_CACHE_SHIFT
  	int
  	default "7" if MPENTIUM4 || MPSC
--	default "6" if MK7 || MK8 || MPENTIUMM || MCORE2 || MATOM || MVIAC7 || X86_GENERIC || GENERIC_CPU || GENERIC_CPU2 || GENERIC_CPU3 || GENERIC_CPU4
-+	default "6" if MK7 || MK8 || MPENTIUMM || MCORE2 || MATOM || MVIAC7 || MZEN3 || X86_GENERIC || GENERIC_CPU || GENERIC_CPU2 || GENERIC_CPU3 || GENERIC_CPU4
+-	default "6" if MK7 || MK8 || MPENTIUMM || MCORE2 || MATOM || MVIAC7 || X86_GENERIC || GENERIC_CPU
++	default "6" if MK7 || MK8 || MPENTIUMM || MCORE2 || MATOM || MVIAC7 || X86_GENERIC || GENERIC_CPU || MZEN3
  	default "4" if MELAN || M486SX || M486 || MGEODEGX1
  	default "5" if MWINCHIP3D || MWINCHIPC6 || MCRUSOE || MEFFICEON || MCYRIXIII || MK6 || MPENTIUMIII || MPENTIUMII || M686 || M586MMX || M586TSC || M586 || MVIAC3_2 || MGEODE_LX
  
-@@ -364,7 +372,7 @@ config X86_INTEL_USERCOPY
+@@ -348,7 +356,7 @@ config X86_INTEL_USERCOPY
  
  config X86_USE_PPRO_CHECKSUM
  	def_bool y
@@ -35,7 +35,7 @@ index 1f0487e23ca7..385ad6c2f841 100644
  
  #
  # P6_NOPs are a relatively minor optimization that require a family >=
-@@ -384,11 +392,11 @@ config X86_P6_NOP
+@@ -368,11 +376,11 @@ config X86_P6_NOP
  
  config X86_TSC
  	def_bool y
@@ -49,7 +49,7 @@ index 1f0487e23ca7..385ad6c2f841 100644
  
  config X86_CMPXCHG64
  	def_bool y
-@@ -374,12 +374,12 @@ config X86_CMPXCHG64
+@@ -382,7 +390,7 @@ config X86_CMPXCHG64
  # generates cmov.
  config X86_CMOV
  	def_bool y
@@ -58,32 +58,26 @@ index 1f0487e23ca7..385ad6c2f841 100644
  
  config X86_MINIMUM_CPU_FAMILY
  	int
- 	default "64" if X86_64
--	default "6" if X86_32 && (MPENTIUM4 || MPENTIUMM || MPENTIUMIII || MPENTIUMII || M686 || MVIAC3_2 || MVIAC7 || MEFFICEON || MATOM || MCORE2 || MK7 || MK8)
-+	default "6" if X86_32 && (MPENTIUM4 || MPENTIUMM || MPENTIUMIII || MPENTIUMII || M686 || MVIAC3_2 || MVIAC7 || MEFFICEON || MATOM || MCORE2 || MK7 || MK8 || MZEN3)
- 	default "5" if X86_32 && X86_CMPXCHG64
- 	default "4"
- 
 diff --git a/arch/x86/Makefile b/arch/x86/Makefile
-index c24fbbf3488b..ce2132b2ff99 100644
+index cb01c7a7d678..c133df99e2cd 100644
 --- a/arch/x86/Makefile
 +++ b/arch/x86/Makefile
-@@ -154,6 +154,7 @@ else
+@@ -178,6 +178,7 @@ else
          cflags-$(CONFIG_MPSC)		+= -march=nocona
          cflags-$(CONFIG_MCORE2)		+= -march=core2
          cflags-$(CONFIG_MATOM)		+= -march=atom
-+		cflags-$(CONFIG_MZEN3)   	+= -march=znver3
-         cflags-$(CONFIG_GENERIC_CPU2) 	+= -march=x86-64-v2
-         cflags-$(CONFIG_GENERIC_CPU3) 	+= -march=x86-64-v3
-         cflags-$(CONFIG_GENERIC_CPU4) 	+= -march=x86-64-v4
-@@ -164,6 +165,7 @@ else
++        cflags-$(CONFIG_MZEN3) 	    += -march=znver3
+       ifeq ($(CONFIG_X86_64_ISA_LEVEL),1)
+         cflags-$(CONFIG_GENERIC_CPU)	+= -mtune=generic
+         rustflags-$(CONFIG_GENERIC_CPU)	+= -Ztune-cpu=generic
+@@ -191,6 +192,7 @@ else
          rustflags-$(CONFIG_MPSC)	+= -Ctarget-cpu=nocona
          rustflags-$(CONFIG_MCORE2)	+= -Ctarget-cpu=core2
          rustflags-$(CONFIG_MATOM)	+= -Ctarget-cpu=atom
-+		rustflags-$(CONFIG_MZEN3)   += -Ctarget-cpu=znver3
-         rustflags-$(CONFIG_GENERIC_CPU)	+= -Ztune-cpu=generic
++        rustflags-$(CONFIG_MZEN3) 	+= -Ctarget-cpu=znver3
          KBUILD_RUSTFLAGS += $(rustflags-y)
  
+         KBUILD_CFLAGS += -mno-red-zone
 diff --git a/arch/x86/include/asm/vermagic.h b/arch/x86/include/asm/vermagic.h
 index 75884d2cdec3..95a6bc258e7e 100644
 --- a/arch/x86/include/asm/vermagic.h
