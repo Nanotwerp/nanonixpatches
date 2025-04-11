@@ -1,24 +1,25 @@
-From 3797ce521778efb0a15d47159899f4f275340be9 Mon Sep 17 00:00:00 2001
+From d956c9ce2429b668c6880d3a1725a669132695dc Mon Sep 17 00:00:00 2001
 From: Nano Twerpus <nanotwerp@gmail.com>
-Date: Thu, 10 Apr 2025 18:38:47 -0400
+Date: Fri, 11 Apr 2025 18:50:28 -0400
 Subject: [PATCH] zen 3 patch
 
 ---
- arch/x86/Kconfig.cpu            | 15 +++++++++++----
- arch/x86/Makefile               |  6 ++++++
+ arch/x86/Kconfig.cpu            | 16 ++++++++++++----
+ arch/x86/Makefile               | 14 +++++++++++---
  arch/x86/include/asm/vermagic.h |  2 ++
- 3 files changed, 19 insertions(+), 4 deletions(-)
+ 3 files changed, 25 insertions(+), 7 deletions(-)
 
 diff --git a/arch/x86/Kconfig.cpu b/arch/x86/Kconfig.cpu
-index 9328b576784d..4cab57b54756 100644
+index 9328b576784d..8ad8b919578e 100644
 --- a/arch/x86/Kconfig.cpu
 +++ b/arch/x86/Kconfig.cpu
-@@ -243,6 +243,13 @@ config MATOM
+@@ -243,6 +243,14 @@ config MATOM
  	  accordingly optimized code. Use a recent GCC with specific Atom
  	  support in order to fully benefit from selecting this option.
  
 +config MZEN3
 +	bool "AMD Zen 3"
++	depends on X86_64 && (CC_IS_GCC && GCC_VERSION >= 100300) || (CC_IS_CLANG && CLANG_VERSION >= 120000)
 +	help
 +	  Select this for AMD Family 19h Zen 3 processors.
 +
@@ -27,7 +28,7 @@ index 9328b576784d..4cab57b54756 100644
  endchoice
  
  config X86_GENERIC
-@@ -275,7 +282,7 @@ config X86_INTERNODE_CACHE_SHIFT
+@@ -275,7 +283,7 @@ config X86_INTERNODE_CACHE_SHIFT
  config X86_L1_CACHE_SHIFT
  	int
  	default "7" if MPENTIUM4
@@ -36,7 +37,7 @@ index 9328b576784d..4cab57b54756 100644
  	default "4" if MELAN || M486SX || M486 || MGEODEGX1
  	default "5" if MWINCHIP3D || MWINCHIPC6 || MCRUSOE || MEFFICEON || MCYRIXIII || MK6 || MPENTIUMIII || MPENTIUMII || M686 || M586MMX || M586TSC || M586 || MVIAC3_2 || MGEODE_LX
  
-@@ -301,11 +308,11 @@ config X86_USE_PPRO_CHECKSUM
+@@ -301,11 +309,11 @@ config X86_USE_PPRO_CHECKSUM
  
  config X86_TSC
  	def_bool y
@@ -50,7 +51,7 @@ index 9328b576784d..4cab57b54756 100644
  
  config X86_CX8
  	def_bool y
-@@ -315,7 +322,7 @@ config X86_CX8
+@@ -315,7 +323,7 @@ config X86_CX8
  # generates cmov.
  config X86_CMOV
  	def_bool y
@@ -60,22 +61,30 @@ index 9328b576784d..4cab57b54756 100644
  config X86_MINIMUM_CPU_FAMILY
  	int
 diff --git a/arch/x86/Makefile b/arch/x86/Makefile
-index 81087fe0a414..642f2b4736db 100644
+index 81087fe0a414..398626c0ad8e 100644
 --- a/arch/x86/Makefile
 +++ b/arch/x86/Makefile
-@@ -173,6 +173,12 @@ else
- 	# Use -mskip-rax-setup if supported.
- 	KBUILD_CFLAGS += $(call cc-option,-mskip-rax-setup)
- 
-+	cflags-$(CONFIG_MZEN3) += -march=znver3
-+	KBUILD_CFLAGS += $(cflags-y)
-+
-+	rustflags-$(CONFIG_MZEN3) 	+= -Ctarget-cpu=znver3
-+	KBUILD_RUSTFLAGS += $(rustflags-y)
-+
+@@ -176,9 +176,17 @@ else
      ifeq ($(CONFIG_X86_64_ISA_LEVEL),1)
          KBUILD_CFLAGS += -march=x86-64 -mtune=generic
          KBUILD_RUSTFLAGS += -Ctarget-cpu=x86-64 -Ztune-cpu=generic
+-    else
+-	KBUILD_CFLAGS += -march=x86-64-v$(CONFIG_X86_64_ISA_LEVEL)
+-	KBUILD_RUSTFLAGS += -Ctarget-cpu=x86-64-v$(CONFIG_X86_64_ISA_LEVEL)
++    endif
++    ifeq ($(CONFIG_X86_64_ISA_LEVEL),0)
++        ifeq ($(CONFIG_MZEN3),1)
++	    KBUILD_CFLAGS += -march=x86-64-v$(CONFIG_X86_64_ISA_LEVEL)
++	    KBUILD_RUSTFLAGS += -Ctarget-cpu=x86-64-v$(CONFIG_X86_64_ISA_LEVEL)
++	endif
++    endif
++
++    ifeq ($(CONFIG_MZEN3),0)
++        KBUILD_CFLAGS += -march=znver3
++        KBUILD_RUSTFLAGS += -Ctarget-cpu=znver3
+     endif
+ 
+         KBUILD_CFLAGS += -mno-red-zone
 diff --git a/arch/x86/include/asm/vermagic.h b/arch/x86/include/asm/vermagic.h
 index 5d471253c755..e0b7b5d7d7e4 100644
 --- a/arch/x86/include/asm/vermagic.h
