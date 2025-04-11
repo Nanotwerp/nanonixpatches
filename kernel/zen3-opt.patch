@@ -1,3 +1,14 @@
+From f0356862cff67d01de9ab9761132997907b106ef Mon Sep 17 00:00:00 2001
+From: Nano Twerpus <nanotwerp@gmail.com>
+Date: Thu, 10 Apr 2025 18:38:47 -0400
+Subject: [PATCH] zen 3 patch
+
+---
+ arch/x86/Kconfig.cpu            | 16 ++++++++++++----
+ arch/x86/Makefile               |  6 ++++++
+ arch/x86/include/asm/vermagic.h |  2 ++
+ 3 files changed, 20 insertions(+), 4 deletions(-)
+
 diff --git a/arch/x86/Kconfig.cpu b/arch/x86/Kconfig.cpu
 index 9328b576784d..8ad8b919578e 100644
 --- a/arch/x86/Kconfig.cpu
@@ -50,14 +61,18 @@ index 9328b576784d..8ad8b919578e 100644
  config X86_MINIMUM_CPU_FAMILY
  	int
 diff --git a/arch/x86/Makefile b/arch/x86/Makefile
-index 81087fe0a414..8899425c71ca 100644
+index 81087fe0a414..642f2b4736db 100644
 --- a/arch/x86/Makefile
 +++ b/arch/x86/Makefile
-@@ -173,6 +173,8 @@ else
+@@ -173,6 +173,12 @@ else
  	# Use -mskip-rax-setup if supported.
  	KBUILD_CFLAGS += $(call cc-option,-mskip-rax-setup)
  
 +	cflags-$(CONFIG_MZEN3) += -march=znver3
++	KBUILD_CFLAGS += $(cflags-y)
++
++	rustflags-$(CONFIG_MZEN3) 	+= -Ctarget-cpu=znver3
++	KBUILD_RUSTFLAGS += $(rustflags-y)
 +
      ifeq ($(CONFIG_X86_64_ISA_LEVEL),1)
          KBUILD_CFLAGS += -march=x86-64 -mtune=generic
