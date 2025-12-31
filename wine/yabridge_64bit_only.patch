@@ -1,0 +1,18 @@
+diff --git a/cross-wine.conf b/cross-wine.conf
+index 3e3301ac..06a583e9 100644
+--- a/cross-wine.conf
++++ b/cross-wine.conf
+@@ -20,9 +20,9 @@ needs_exe_wrapper = true
+ # applications are always in sync. This might not be needed anymore once Meson
+ # cross compiling to multiple targets at once.
+ # https://github.com/mesonbuild/meson/issues/5125
+-cpp_link_args = ['-mwindows']
++#cpp_link_args = ['-mwindows']
+ 
+ # For instance, this should be in the 64-bit only cross-file
+-# c_args = ['-m64']
+-# cpp_args = ['-m64']
+-# cpp_link_args = ['-m64', '-mwindows']
++c_args = ['-m64']
++cpp_args = ['-m64']
++cpp_link_args = ['-m64', '-mwindows']
